@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大藍蕉天堂 — 首頁</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ 導覽列 ══ -->
+<nav class="topnav">
+  <div class="topnav-logo">⚔ 大藍蕉天堂</div>
+  <div class="topnav-sep"></div>
+  <div class="topnav-links" id="navLinks">
+    <a class="topnav-link" href="index.html">首頁</a>
+    <a class="topnav-link" href="sponsor.html">贊助系統</a>
+    <a class="topnav-link" href="events.html">活動介紹</a>
+    <a class="topnav-link" href="features.html">遊戲特色</a>
+    <a class="topnav-link" href="boss.html">BOSS介紹</a>
+    <a class="topnav-link" href="download.html">檔案下載</a>
+    <a class="topnav-link" href="maps.html">特殊地圖掉落</a>
+    <a class="topnav-link" href="rates.html">版本倍率</a>
+    <a class="topnav-link" href="items.html">道具介紹</a>
+    <a class="topnav-link" href="referral.html">推文系統</a>
+  </div>
+  <div class="topnav-right">
+    <a class="topnav-line-btn" href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══ 浮動側欄 ══ -->
+<div class="float-sidebar">
+  <button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button>
+  <button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button>
+  <button class="float-btn" data-modal="modal-line">💬 LINE</button>
+</div>
+
+<!-- ══ 贊助 Modal ══ -->
+<div class="float-modal" id="modal-sponsor">
+  <div class="float-modal-box">
+    <span class="modal-close">✕</span>
+    <div class="modal-title">💰 贊助方案</div>
+    <div class="modal-body">
+      <p>▸ 贊助詳情請加入 LINE 社群詢問</p>
+      <p>▸ 官方客服將於 24 小時內回覆</p>
+    </div>
+    <a class="modal-btn" href="sponsor.html">查看贊助頁面</a>
+  </div>
+</div>
+
+<!-- ══ 禮包 Modal ══ -->
+<div class="float-modal" id="modal-gift">
+  <div class="float-modal-box">
+    <span class="modal-close">✕</span>
+    <div class="modal-title">🎁 新手禮包申請</div>
+    <div class="modal-body">
+      <p>歡迎加入大藍蕉天堂！新玩家可申請禮包：</p>
+      <hr>
+      <p>▸ 初級裝備套組 × 1</p>
+      <p>▸ 生命藥水（大）× 100</p>
+      <p>▸ 魔力藥水（大）× 100</p>
+      <p>▸ 新手加速符 × 3（7日有效）</p>
+      <hr>
+      <strong>加入 LINE 官方社群後私訊管理員即可領取。</strong>
+    </div>
+    <a class="modal-btn" href="#" onclick="document.getElementById('modal-gift').classList.remove('open');document.getElementById('modal-line').classList.add('open');return false;">前往 LINE 領取</a>
+  </div>
+</div>
+
+<!-- ══ LINE Modal ══ -->
+<div class="float-modal" id="modal-line">
+  <div class="float-modal-box">
+    <span class="modal-close">✕</span>
+    <div class="modal-title">💬 LINE 聯絡方式</div>
+    <div class="modal-body" style="text-align:center">
+      <p style="margin-bottom:16px">掃描 QR Code 或點擊連結加入官方社群</p>
+      <!-- 將 QR Code 圖片放在 images/line-qr.png -->
+      <div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;letter-spacing:1px;">
+        放入 LINE QR Code<br>images/line-qr.png
+      </div>
+      <p style="font-size:12px;color:var(--text-dim)">官方社群 · 客服 · 即時公告</p>
+    </div>
+    <a class="modal-btn" href="#">加入 LINE 官方社群</a>
+  </div>
+</div>
+
+<!-- ══ Hero ══ -->
+<section class="hero">
+  <div class="hero-bg hero-placeholder-bg" id="heroBg"></div>
+  <!-- 圖片就緒後取代上方 hero-placeholder-bg，改為：
+  <div class="hero-bg" id="heroBg" style="background-image: linear-gradient(180deg,rgba(10,8,8,0.4) 0%,rgba(10,8,8,0.7) 60%,rgba(10,8,8,1) 100%), url('images/banner_main.png')"></div>
+  -->
+  <div class="hero-content">
+    <div class="hero-badge">LINEAGE PRIVATE SERVER · 大藍蕉天堂</div>
+    <h1 class="hero-title">
+      <span>大藍蕉天堂</span>
+    </h1>
+    <p class="hero-tagline">經典重現 · 熱血征戰</p>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">—</div>
+        <div class="hero-stat-label">版　本</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">×—</div>
+        <div class="hero-stat-label">經驗倍率</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">×—</div>
+        <div class="hero-stat-label">掉落倍率</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">24H</div>
+        <div class="hero-stat-label">全天開放</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 最新公告 ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">ANNOUNCEMENT</div>
+      <h2 class="section-title">最新公告</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="ann-grid">
+      <a class="ann-card" href="events.html">
+        <div class="ann-card-meta">
+          <span class="ann-tag tag-event">活動</span>
+          <span class="ann-date">2026-05-12</span>
+        </div>
+        <div class="ann-card-title">【活動】開服公告</div>
+        <div class="ann-card-excerpt">大藍蕉天堂正式開放，歡迎所有玩家加入！</div>
+        <div class="ann-card-more">閱讀更多 →</div>
+      </a>
+      <a class="ann-card" href="sponsor.html">
+        <div class="ann-card-meta">
+          <span class="ann-tag tag-new">新開</span>
+          <span class="ann-date">2026-05-12</span>
+        </div>
+        <div class="ann-card-title">【贊助】開服限時贊助加碼</div>
+        <div class="ann-card-excerpt">開服首月贊助享有額外加碼，詳情請洽 LINE 客服。</div>
+        <div class="ann-card-more">閱讀更多 →</div>
+      </a>
+      <a class="ann-card" href="download.html">
+        <div class="ann-card-meta">
+          <span class="ann-tag tag-sys">系統</span>
+          <span class="ann-date">2026-05-12</span>
+        </div>
+        <div class="ann-card-title">【系統】客戶端下載上線</div>
+        <div class="ann-card-excerpt">遊戲客戶端已開放下載，請前往下載頁面取得最新版本。</div>
+        <div class="ann-card-more">閱讀更多 →</div>
+      </a>
+      <a class="ann-card" href="#">
+        <div class="ann-card-meta">
+          <span class="ann-tag tag-sys">規章</span>
+          <span class="ann-date">2026-05-12</span>
+        </div>
+        <div class="ann-card-title">【規章】伺服器公約 — 請詳閱</div>
+        <div class="ann-card-excerpt">為維護良好遊戲環境，請所有玩家遵守伺服器規章。</div>
+        <div class="ann-card-more">閱讀更多 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 職業介紹 ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">CHARACTER CLASS</div>
+      <h2 class="section-title">選擇你的職業</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <div class="class-icon">👑</div>
+        <div class="class-name">王族</div>
+        <div class="class-desc">領導型職業，可建立血盟。指揮攻城，統率全軍。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🛡️</div>
+        <div class="class-name">騎士</div>
+        <div class="class-desc">最高生命值的防禦型職業，鐵壁守護，新手友善。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🌑</div>
+        <div class="class-name">黑妖</div>
+        <div class="class-desc">暗影刺客，單體爆發最強。高風險高報酬。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🏹</div>
+        <div class="class-name">妖精</div>
+        <div class="class-desc">敏捷遠程職業，攻速快、移動靈活。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🔮</div>
+        <div class="class-name">法師</div>
+        <div class="class-desc">強力魔法職業，範圍爆發驚人，刷怪效率最高。</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <a class="btn-outline" href="features.html">查看職業詳細介紹 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 快速入口 ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">QUICK ACCESS</div>
+      <h2 class="section-title">快速入口</h2>
+      <div class="section-line"></div>
+    </div>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="download.html" class="btn-primary">立即下載</a>
+      <a href="sponsor.html" class="btn-outline">贊助系統</a>
+      <a href="features.html" class="btn-outline">遊戲特色</a>
+      <a href="referral.html" class="btn-outline">推文系統</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Footer ══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">大藍蕉天堂</div>
+      <ul class="footer-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="events.html">活動介紹</a></li>
+        <li><a href="download.html">檔案下載</a></li>
+        <li><a href="rates.html">版本倍率</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">遊戲資訊</div>
+      <ul class="footer-links">
+        <li><a href="features.html">遊戲特色</a></li>
+        <li><a href="boss.html">BOSS介紹</a></li>
+        <li><a href="maps.html">特殊地圖掉落</a></li>
+        <li><a href="items.html">道具介紹</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡我們</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 官方社群</a></li>
+        <li><a href="#" onclick="document.getElementById('modal-sponsor').classList.add('open');return false;">贊助方案</a></li>
+        <li><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></li>
+        <li><a href="referral.html">推文系統</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © 2026 大藍蕉天堂 · 版權所有<br>
+    本站為私人架設伺服器，與 NC Soft 官方無關。
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
