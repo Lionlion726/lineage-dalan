@@ -8,159 +8,216 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">大藍蕉天堂</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">首頁</a></li>
-      <li><a href="sponsor.html">贊助系統</a></li>
-      <li><a href="events.html">活動介紹</a></li>
-      <li><a href="features.html" class="active">遊戲特色</a></li>
-      <li><a href="boss.html">BOSS介紹</a></li>
-      <li><a href="download.html">檔案下載</a></li>
-      <li><a href="maps.html">特殊地圖掉落</a></li>
-      <li><a href="rates.html">版本倍率</a></li>
-      <li><a href="items.html">道具介紹</a></li>
-      <li><a href="referral.html">推文系統</a></li>
-    </ul>
-    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <span></span><span></span><span></span>
+<nav class="topnav">
+  <div class="topnav-logo">⚔ 大藍蕉天堂</div>
+  <div class="topnav-sep"></div>
+  <div class="topnav-links" id="navLinks">
+    <a class="topnav-link" href="index.html">首頁</a>
+    <a class="topnav-link" href="sponsor.html">贊助系統</a>
+    <a class="topnav-link" href="events.html">活動介紹</a>
+    <div class="topnav-dropdown">
+      <a class="topnav-link active">遊戲特色 ▾</a>
+      <div class="dropdown-menu">
+        <a href="feature-01.html">法師召喚物系統</a>
+        <a href="feature-02.html">職業特色技能</a>
+        <a href="feature-03.html">職業之力介紹</a>
+        <a href="feature-04.html">戰馬雕像能力</a>
+        <a href="feature-05.html">寵物系統介紹</a>
+        <a href="feature-06.html">主線任務勳章</a>
+        <a href="feature-07.html">威望系統</a>
+        <a href="feature-08.html">高寵介紹</a>
+        <a href="feature-09.html">在線禮包</a>
+        <a href="feature-10.html">赫卡特介紹</a>
+        <a href="feature-11.html">傲慢的掛飾</a>
+        <a href="feature-12.html">換金道具</a>
+      </div>
     </div>
+    <a class="topnav-link" href="boss.html">BOSS介紹</a>
+    <a class="topnav-link" href="download.html">檔案下載</a>
+    <a class="topnav-link" href="maps.html">特殊地圖掉落</a>
+    <a class="topnav-link" href="rates.html">版本倍率</a>
+    <a class="topnav-link" href="items.html">道具介紹</a>
+    <a class="topnav-link" href="referral.html">推文系統</a>
+  </div>
+  <div class="topnav-right">
+    <a class="topnav-line-btn" href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- 錨點快捷列 -->
-<div class="feature-nav">
-  <a href="#f01">法師召喚物</a>
-  <a href="#f02">職業特色技能</a>
-  <a href="#f03">職業之力</a>
-  <a href="#f04">戰馬雕像</a>
-  <a href="#f05">寵物系統</a>
-  <a href="#f06">主線勳章</a>
-  <a href="#f07">威望系統</a>
-  <a href="#f08">高寵介紹</a>
-  <a href="#f09">在線禮包</a>
-  <a href="#f10">赫卡特</a>
-  <a href="#f11">傲慢掛飾</a>
-  <a href="#f12">換金道具</a>
+<!-- Modals -->
+<div class="float-sidebar">
+  <button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button>
+  <button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button>
+  <button class="float-btn" data-modal="modal-line">💬 LINE</button>
+</div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包申請</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#" onclick="document.getElementById('modal-gift').classList.remove('open');document.getElementById('modal-line').classList.add('open');return false;">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">images/line-qr.png</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
+
+<div class="hero" style="height:280px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#1a0a08,#0a0818);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">GAME FEATURES</div>
+    <h1 class="hero-title"><span style="font-size:2.2rem">遊戲特色</span></h1>
+    <p class="hero-tagline">選擇項目深入了解</p>
+  </div>
 </div>
 
-<div class="page-content">
-
-  <!-- 01 法師召喚物系統 -->
-  <div class="feature-section" id="f01">
-    <div class="section-title"><h2>法師召喚物系統</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDemoDVvQyowTsRGc7ZDlV572SS6KJAAInDmsbb2ohVIswFPRAm6ILAQADAgADeQADOwQ.jpg" alt="法師召喚物系統">
-    </div>
+<div class="container" style="padding-top:60px;padding-bottom:80px">
+  <div class="section-header">
+    <div class="section-eyebrow">FEATURE LIST</div>
+    <h2 class="section-title">特色系統一覽</h2>
+    <div class="section-line"></div>
   </div>
 
-  <!-- 02 職業特色技能 -->
-  <div class="feature-section" id="f02">
-    <div class="section-title"><h2>職業特色技能</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDe2oDVwABdWp7nAQC6iWw8-KuoPJgqAACKA5rG29qIVTDxFbiZr6oqAEAAwIAA3kAAzsE.jpg" alt="職業特色技能">
-    </div>
-  </div>
+  <div class="feature-card-grid">
 
-  <!-- 03 職業之力介紹 -->
-  <div class="feature-section" id="f03">
-    <div class="section-title"><h2>職業之力介紹</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfGoDVw9AZ_nYWUKAXC9AjHKCD9uzAAIpDmsbb2ohVDA6zq_6Y9rNAQADAgADeQADOwQ.jpg" alt="職業之力介紹">
-    </div>
-  </div>
+    <a href="feature-01.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDemoDVvQyowTsRGc7ZDlV572SS6KJAAInDmsbb2ohVIswFPRAm6ILAQADAgADeQADOwQ.jpg" alt="法師召喚物系統">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">01</div>
+        <div class="feature-card-title">法師召喚物系統</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 04 戰馬雕像能力 -->
-  <div class="feature-section" id="f04">
-    <div class="section-title"><h2>戰馬雕像能力</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfWoDVxvoiYathFFp060wA1jBUrrtAAIqDmsbb2ohVFTjFMKa7UAUAQADAgADeQADOwQ.jpg" alt="戰馬雕像能力">
-    </div>
-  </div>
+    <a href="feature-02.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDe2oDVwABdWp7nAQC6iWw8-KuoPJgqAACKA5rG29qIVTDxFbiZr6oqAEAAwIAA3kAAzsE.jpg" alt="職業特色技能">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">02</div>
+        <div class="feature-card-title">職業特色技能</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 05 寵物系統介紹 -->
-  <div class="feature-section" id="f05">
-    <div class="section-title"><h2>寵物系統介紹</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfmoDVyS9O3xry2dk3SI2Lkx-vpvMAAIrDmsbb2ohVP4AAaXGRKUq2gEAAwIAA3kAAzsE.jpg" alt="寵物系統介紹">
-    </div>
-  </div>
+    <a href="feature-03.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfGoDVw9AZ_nYWUKAXC9AjHKCD9uzAAIpDmsbb2ohVDA6zq_6Y9rNAQADAgADeQADOwQ.jpg" alt="職業之力介紹">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">03</div>
+        <div class="feature-card-title">職業之力介紹</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 06 主線任務勳章 -->
-  <div class="feature-section" id="f06">
-    <div class="section-title"><h2>主線任務勳章</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDf2oDVy_2S2webdbvRMp87BKcoaQ6AAIsDmsbb2ohVLHC5YFgWkHAAQADAgADeQADOwQ.jpg" alt="主線任務勳章">
-    </div>
-  </div>
+    <a href="feature-04.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfWoDVxvoiYathFFp060wA1jBUrrtAAIqDmsbb2ohVFTjFMKa7UAUAQADAgADeQADOwQ.jpg" alt="戰馬雕像能力">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">04</div>
+        <div class="feature-card-title">戰馬雕像能力</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 07 威望系統 -->
-  <div class="feature-section" id="f07">
-    <div class="section-title"><h2>威望系統</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgGoDV1sklC5ejNk-9i7wtWUdH205AAItDmsbb2ohVNf1R3HvZRkFAQADAgADeQADOwQ.jpg" alt="威望系統">
-    </div>
-  </div>
+    <a href="feature-05.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDfmoDVyS9O3xry2dk3SI2Lkx-vpvMAAIrDmsbb2ohVP4AAaXGRKUq2gEAAwIAA3kAAzsE.jpg" alt="寵物系統介紹">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">05</div>
+        <div class="feature-card-title">寵物系統介紹</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 08 高寵介紹 -->
-  <div class="feature-section" id="f08">
-    <div class="section-title"><h2>高寵介紹</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgWoDV2PHE6IMuE7VdQxDDZqtGOP5AAIuDmsbb2ohVJKxCe4c66yuAQADAgADeQADOwQ.jpg" alt="高寵介紹">
-    </div>
-  </div>
+    <a href="feature-06.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDf2oDVy_2S2webdbvRMp87BKcoaQ6AAIsDmsbb2ohVLHC5YFgWkHAAQADAgADeQADOwQ.jpg" alt="主線任務勳章">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">06</div>
+        <div class="feature-card-title">主線任務勳章</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 09 在線禮包 -->
-  <div class="feature-section" id="f09">
-    <div class="section-title"><h2>在線禮包</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgmoDV2tILLSGbFNqKngTHiNpP0BlAAIvDmsbb2ohVFKgsBoarPkwAQADAgADeQADOwQ.jpg" alt="在線禮包">
-    </div>
-  </div>
+    <a href="feature-07.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgGoDV1sklC5ejNk-9i7wtWUdH205AAItDmsbb2ohVNf1R3HvZRkFAQADAgADeQADOwQ.jpg" alt="威望系統">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">07</div>
+        <div class="feature-card-title">威望系統</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 10 赫卡特介紹 -->
-  <div class="feature-section" id="f10">
-    <div class="section-title"><h2>赫卡特介紹</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDg2oDV3Y19i2kpzJDlL2uYGI7_qglAAIwDmsbb2ohVCAWLuQicDlAAQADAgADeQADOwQ.jpg" alt="赫卡特介紹">
-    </div>
-  </div>
+    <a href="feature-08.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgWoDV2PHE6IMuE7VdQxDDZqtGOP5AAIuDmsbb2ohVJKxCe4c66yuAQADAgADeQADOwQ.jpg" alt="高寵介紹">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">08</div>
+        <div class="feature-card-title">高寵介紹</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 11 傲慢的掛飾 -->
-  <div class="feature-section" id="f11">
-    <div class="section-title"><h2>傲慢的掛飾</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDhGoDV340ml9WrOBEzWdSC7FsWFoOAAIxDmsbb2ohVIv_12eueZfmAQADAgADeQADOwQ.jpg" alt="傲慢的掛飾">
-    </div>
-  </div>
+    <a href="feature-09.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDgmoDV2tILLSGbFNqKngTHiNpP0BlAAIvDmsbb2ohVFKgsBoarPkwAQADAgADeQADOwQ.jpg" alt="在線禮包">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">09</div>
+        <div class="feature-card-title">在線禮包</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
-  <!-- 12 換金道具 -->
-  <div class="feature-section" id="f12">
-    <div class="section-title"><h2>換金道具</h2></div>
-    <div class="divider"></div>
-    <div class="section-image">
-      <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDhWoDV4V5UEjCyNnsZcHOetYNgaySAAIyDmsbb2ohVKimx6xDjX06AQADAgADeQADOwQ.jpg" alt="換金道具">
-    </div>
-  </div>
+    <a href="feature-10.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDg2oDV3Y19i2kpzJDlL2uYGI7_qglAAIwDmsbb2ohVCAWLuQicDlAAQADAgADeQADOwQ.jpg" alt="赫卡特介紹">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">10</div>
+        <div class="feature-card-title">赫卡特介紹</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
 
+    <a href="feature-11.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDhGoDV340ml9WrOBEzWdSC7FsWFoOAAIxDmsbb2ohVIv_12eueZfmAQADAgADeQADOwQ.jpg" alt="傲慢的掛飾">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">11</div>
+        <div class="feature-card-title">傲慢的掛飾</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
+
+    <a href="feature-12.html" class="feature-card">
+      <div class="feature-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDhWoDV4V5UEjCyNnsZcHOetYNgaySAAIyDmsbb2ohVKimx6xDjX06AQADAgADeQADOwQ.jpg" alt="換金道具">
+      </div>
+      <div class="feature-card-body">
+        <div class="feature-card-num">12</div>
+        <div class="feature-card-title">換金道具</div>
+        <div class="feature-card-arrow">了解更多 →</div>
+      </div>
+    </a>
+
+  </div>
 </div>
 
 <footer>
-  <p>© 大藍蕉天堂｜本站為私人架設遊戲伺服器，與原廠無關</p>
-  <p style="margin-top:8px"><a href="#">LINE社群</a> ／ <a href="#">Discord</a> ／ <a href="referral.html">推文系統</a></p>
+  <div class="footer-inner">
+    <div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">遊戲特色</a></li><li><a href="download.html">檔案下載</a></li></ul></div>
+    <div><div class="footer-col-title">聯絡我們</div><ul class="footer-links"><li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a></li><li><a href="referral.html">推文系統</a></li></ul></div>
+  </div>
+  <div class="footer-copy">© 2026 大藍蕉天堂 · 本站為私人架設伺服器，與 NC Soft 官方無關。</div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
