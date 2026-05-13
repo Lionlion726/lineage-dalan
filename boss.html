@@ -30,6 +30,19 @@
 .tier-table th{padding:10px;font-weight:800;font-size:.9em}
 .tier-table td{padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);color:var(--text-muted)}
 .tier-table tr:hover td{background:rgba(255,255,255,.03)}
+/* 收藏系統 */
+.col-section{margin-bottom:40px}
+.col-section-title{font-size:1em;font-weight:900;letter-spacing:1px;padding:10px 0 10px 14px;margin:0 0 0 0;border-left:4px solid currentColor}
+.col-table{width:100%;border-collapse:collapse;font-size:.86em}
+.col-table thead tr{background:var(--bg3)}
+.col-table thead th{padding:10px 14px;text-align:left;font-weight:700;font-size:.85em;letter-spacing:.5px}
+.col-table tbody td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:middle}
+.col-table tbody tr:nth-child(odd){background:var(--bg3)}
+.col-table tbody tr:hover td{background:rgba(255,255,255,.04);color:var(--text)}
+.col-table td:first-child{color:var(--text);font-weight:600}
+.col-table td:last-child{color:#6fffe9;font-size:.83em}
+.section-divider{border:none;border-top:2px solid var(--border);margin:56px 0;position:relative}
+.section-divider::after{content:attr(data-label);position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 16px;color:var(--text-muted);font-size:.78em;font-weight:700;letter-spacing:2px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -43,11 +56,166 @@
 
 <!-- 固定錨點選單 -->
 <div class="boss-anchor-nav" id="bossAnchorNav">
-  <a href="#section-schedule" class="boss-anchor-btn">⏰ BOSS 登場時刻表</a>
+  <a href="#section-collection" class="boss-anchor-btn">🏆 BOSS 收藏</a>
+  <a href="#section-schedule" class="boss-anchor-btn">⏰ 登場時刻表</a>
   <a href="#section-drops" class="boss-anchor-btn">📦 各等級掉落物</a>
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
+
+  <!-- ══ SECTION 0: BOSS 收藏 ══ -->
+  <div id="section-collection" style="scroll-margin-top:100px">
+    <div class="section-header" style="margin-bottom:28px">
+      <div class="section-eyebrow">COLLECTION SYSTEM</div>
+      <h2 class="section-title">BOSS 收藏系統圖鑑</h2>
+      <div class="section-line"></div>
+    </div>
+    <p style="color:var(--text-muted);font-size:.88em;margin-bottom:28px;text-align:center">💡 擊殺 BOSS 並收藏其道具，即可解鎖<strong style="color:var(--accent)">永久能力加成</strong>！</p>
+
+    <!-- 高級 -->
+    <div class="col-section">
+      <h3 class="col-section-title" style="color:#69f0ae">⚔️ 高級 BOSS 收藏 🟢</h3>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
+        <table class="col-table">
+          <thead><tr><th style="color:#69f0ae">BOSS 名稱</th><th style="color:#69f0ae">收藏能力加成</th></tr></thead>
+          <tbody>
+            <tr><td>巨大鱷魚</td><td>HP +25</td></tr>
+            <tr><td>迪哥</td><td>HP +25</td></tr>
+            <tr><td>西瑪</td><td>回魔 +10</td></tr>
+            <tr><td>巴土瑟</td><td>魔法爆擊倍率 +0.1</td></tr>
+            <tr><td>卡士伯</td><td>魔法攻擊／命中 +1</td></tr>
+            <tr><td>馬庫爾</td><td>魔法爆擊倍率 +0.1</td></tr>
+            <tr><td>伊弗利特</td><td>近戰傷害 +1，HP +10</td></tr>
+            <tr><td>飛龍／豪勢</td><td>遠距攻擊 +1，HP +10</td></tr>
+            <tr><td>曼波兔／樹精</td><td>藥水恢復 +3%</td></tr>
+            <tr><td>賽尼斯</td><td>魔攻 +1，MP +5</td></tr>
+            <tr><td>反王肯恩</td><td>近戰傷害 +1，HP +10</td></tr>
+            <tr><td>鑽石高崙</td><td>傷害減免 +1</td></tr>
+            <tr><td>瑪依奴夏門</td><td>精神 +1</td></tr>
+            <tr><td>巴貝多</td><td>狩獵經驗 +5%</td></tr>
+            <tr><td>卡普</td><td>MP +10</td></tr>
+            <tr><td>巨大蜈蚣</td><td>PVP 傷害 +1</td></tr>
+            <tr><td>浮士德</td><td>防禦 -2</td></tr>
+            <tr><td>艾爾摩大將軍</td><td>近距命中 +1，MP +5</td></tr>
+            <tr><td>疾風的夏斯奇</td><td>遠距命中 +1，MP +5</td></tr>
+            <tr><td>狂風的夏斯奇</td><td>魔攻 +1，MP +5</td></tr>
+            <tr><td>須曼</td><td>抗魔 +2</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 稀有 -->
+    <div class="col-section">
+      <h3 class="col-section-title" style="color:#64b5f6">🌟 稀有 BOSS 收藏 🔵</h3>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
+        <table class="col-table">
+          <thead><tr><th style="color:#64b5f6">BOSS 名稱</th><th style="color:#64b5f6">收藏能力加成</th></tr></thead>
+          <tbody>
+            <tr><td>魔法師</td><td>MP +10</td></tr>
+            <tr><td>黑長者</td><td>魔法爆擊 +1%</td></tr>
+            <tr><td>德雷克</td><td>PVP 傷害 +2</td></tr>
+            <tr><td>庫曼</td><td>防禦 -3</td></tr>
+            <tr><td>變形怪首領</td><td>魔攻 +2</td></tr>
+            <tr><td>巴風特</td><td>近戰傷害 +2，近戰命中 +2</td></tr>
+            <tr><td>巴列斯</td><td>昏迷命中 +3</td></tr>
+            <tr><td>巨大牛人</td><td>傷害減免 +1，HP +50</td></tr>
+            <tr><td>巨蟻女皇</td><td>遠距傷害 +2，遠距命中 +2</td></tr>
+            <tr><td>四大精靈王</td><td>對應能力（力／敏／智／精）+1</td></tr>
+            <tr><td>深淵之主</td><td>HP 恢復 +3，MP 恢復 +3</td></tr>
+            <tr><td>阿利歐克</td><td>法術減傷 +2</td></tr>
+            <tr><td>半魚人首領</td><td>PVP 減傷 +1</td></tr>
+            <tr><td>大王烏賊</td><td>藥水恢復量 +5%</td></tr>
+            <tr><td>塔洛斯／曼孟／瑪雅</td><td>魔武傷害 +2%</td></tr>
+            <tr><td>冰之女王</td><td>魔法命中 +2</td></tr>
+            <tr><td>冰魔</td><td>遠距命中 +4</td></tr>
+            <tr><td>大腳瑪幽</td><td>近距命中 +4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 英雄 -->
+    <div class="col-section">
+      <h3 class="col-section-title" style="color:#ff5252">🔱 英雄 BOSS 收藏 🔴</h3>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
+        <table class="col-table">
+          <thead><tr><th style="color:#ff5252">BOSS 名稱</th><th style="color:#ff5252">收藏能力加成</th></tr></thead>
+          <tbody>
+            <tr><td>潔尼斯女王</td><td>精神 +1，魔攻 +2</td></tr>
+            <tr><td>幻象眼魔</td><td>智力 +1，法術命中 +2</td></tr>
+            <tr><td>吸血鬼</td><td>抗魔 +5，HP +50</td></tr>
+            <tr><td>騎士范德</td><td>昏迷命中 +6</td></tr>
+            <tr><td>殭屍王</td><td>防禦 -1，傷害減免 +2</td></tr>
+            <tr><td>黑豹</td><td>近距攻擊 +3，遠距攻擊 +3</td></tr>
+            <tr><td>木乃伊王</td><td>魔攻 +2，MP +30</td></tr>
+            <tr><td>艾莉絲</td><td>近距命中 +3，遠距命中 +3</td></tr>
+            <tr><td>巫妖</td><td>魔法命中 +3</td></tr>
+            <tr><td>死亡騎士</td><td>力量 +1，HP 恢復 +3</td></tr>
+            <tr><td>不死鳥</td><td>敏捷 +1，MP 恢復 +3</td></tr>
+            <tr><td>惡魔</td><td>敏捷 +1，智力 +1</td></tr>
+            <tr><td>古代巨人／克特</td><td>魔防 +10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 傳說 -->
+    <div class="col-section">
+      <h3 class="col-section-title" style="color:#ce93d8">🐲 傳說 BOSS 收藏 🟣</h3>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
+        <table class="col-table">
+          <thead><tr><th style="color:#ce93d8">BOSS 名稱</th><th style="color:#ce93d8">收藏能力加成</th></tr></thead>
+          <tbody>
+            <tr><td>暗殺軍王．史雷佛</td><td>經驗 +3%，HP +50，無視閃避 +1</td></tr>
+            <tr><td>冥法軍王．海露拜</td><td>經驗 +3%，HP +50，無視迴避 +1</td></tr>
+            <tr><td>魔獸軍王．巴蘭卡</td><td>經驗 +3%，HP +50，昏迷抗性 +5</td></tr>
+            <tr><td>法令軍王．蕾雅</td><td>經驗 +3%，HP +50，魔法穿透 +1</td></tr>
+            <tr><td>長老．琪娜</td><td>經驗 +3%，MP +50，魔法爆擊 +1%</td></tr>
+            <tr><td>長老．巴塔斯</td><td>經驗 +3%，HP +50，近遠爆擊 +1%</td></tr>
+            <tr><td>長老．巴洛斯</td><td>經驗 +3%，HP +70，力量 +1</td></tr>
+            <tr><td>長老．安迪斯</td><td>經驗 +3%，HP +70，敏捷 +1</td></tr>
+            <tr><td>長老．艾迪爾</td><td>經驗 +3%，HP +70，智力 +1</td></tr>
+            <tr><td>長老．泰瑪斯</td><td>經驗 +3%，HP +50，魔法減免 +3</td></tr>
+            <tr><td>長老．拉曼斯</td><td>經驗 +3%，HP +50，傷害減免 +2</td></tr>
+            <tr><td>長老．巴陸德</td><td>經驗 +3%，MP +50，精神 +1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 神話 -->
+    <div class="col-section">
+      <h3 class="col-section-title" style="color:var(--gold)">👑 神話 BOSS 收藏 🟡</h3>
+      <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-top:12px">
+        <table class="col-table">
+          <thead><tr><th style="color:var(--gold)">BOSS 名稱</th><th style="color:var(--gold)">收藏能力加成</th></tr></thead>
+          <tbody>
+            <tr><td>鐮刀死神</td><td>經驗 +6%，魔武發動 +1%，魔減 +8</td></tr>
+            <tr><td>林德拜爾</td><td>魔武發動 +1%，魔攻 +5，風抗 +10</td></tr>
+            <tr><td>安塔瑞斯</td><td>魔武發動 +1%，魔減 +4，敏 +2，地抗 +10</td></tr>
+            <tr><td>法利昂</td><td>魔武發動 +1%，傷減 +3，智 +2，水抗 +10</td></tr>
+            <tr><td>巴拉卡斯</td><td>魔武發動 +1%，法傷 +20，力 +2，火抗 +10</td></tr>
+            <tr><td>吉爾塔斯</td><td>經驗 +6%，魔武發動 +1%，PVP減傷 +2，抗魔 +10</td></tr>
+            <tr><td>獨角獸</td><td>魔武發動 +1%，魔武傷 +2%，魔爆 +1%</td></tr>
+            <tr><td>沙蟲</td><td>經驗 +12%，PvP 增傷 +3，抗魔 +10</td></tr>
+            <tr><td>白面金毛殺生石</td><td>經驗 +6%，魔武爆擊 +1%，遠攻 +5</td></tr>
+            <tr><td>混沌</td><td>近攻 +4，遠攻 +4，魔攻 +3</td></tr>
+            <tr><td>死亡</td><td>經驗 +6%，魔武爆擊 +1%，近攻 +5</td></tr>
+            <tr><td>墮落</td><td>經驗 +6%，魔武發動 +1%，魔命 +3</td></tr>
+            <tr><td>炎魔</td><td>經驗 +6%，魔法爆擊 +1%，近命 +6</td></tr>
+            <tr><td>火焰之影</td><td>經驗 +6%，魔法爆擊 +1%，遠命 +6</td></tr>
+            <tr><td>底比斯 賀洛斯／玉藻前</td><td>智力 +3，魔武傷害 +5%</td></tr>
+            <tr><td>底比斯 阿努比斯／巨型骷髏</td><td>力量 +3，魔武傷害 +5%</td></tr>
+            <tr><td>白面金毛九尾狐／杰弗雷庫（雄）</td><td>敏捷 +3，魔武傷害 +5%</td></tr>
+            <tr><td>杰弗雷庫（雌）</td><td>精神 +3，魔武傷害 +5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" data-label="BOSS SCHEDULE">
 
   <!-- ══ SECTION 1: 登場時刻表 ══ -->
   <div id="section-schedule" style="scroll-margin-top:100px">
@@ -231,6 +399,8 @@
     <div style="text-align:center;color:var(--accent);border:1px dashed rgba(0,229,255,.3);padding:16px;border-radius:8px;font-size:.9em;font-weight:700;letter-spacing:1px;margin-bottom:48px">🔥 更多強大 BOSS 即將覺醒，請屏息以待！ 🔥</div>
   </div>
 
+  <hr class="section-divider" data-label="DROP TIERS">
+
   <!-- ══ SECTION 2: 各等級掉落物 ══ -->
   <div id="section-drops" style="scroll-margin-top:100px">
     <div class="section-header" style="margin-bottom:28px">
@@ -301,7 +471,7 @@
 // 錨點選單 active 狀態
 (function(){
   var btns = document.querySelectorAll('.boss-anchor-btn');
-  var sections = ['section-schedule','section-drops'].map(function(id){ return document.getElementById(id); });
+  var sections = ['section-collection','section-schedule','section-drops'].map(function(id){ return document.getElementById(id); });
   function update(){
     var scroll = window.scrollY + 120;
     var active = 0;
