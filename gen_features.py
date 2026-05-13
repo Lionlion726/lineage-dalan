@@ -99,7 +99,7 @@ def page(num, title, heading, img_url, body, prev_n, next_n, nav_html=None, cate
     <a href="feature-{next_n:02d}.html" class="btn-outline">下一項 →</a>
   </div>
 </div>
-<footer><div class="footer-copy">© 2026 大藍蕉天堂 · 本站為私人架設伺服器，與 NC Soft 官方無關。</div></footer>
+<footer><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
 <script src="main.js"></script>
 </body>
 </html>'''
