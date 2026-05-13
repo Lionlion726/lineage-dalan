@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大藍蕉天堂 - 贊助系統</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 贊助系統</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">大藍蕉天堂</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">首頁</a></li>
-      <li><a href="sponsor.html" class="active">贊助系統</a></li>
-      <li><a href="events.html">活動介紹</a></li>
-      <li><a href="features.html">遊戲特色</a></li>
-      <li><a href="boss.html">BOSS介紹</a></li>
-      <li><a href="download.html">檔案下載</a></li>
-      <li><a href="maps.html">特殊地圖掉落</a></li>
-      <li><a href="rates.html">版本倍率</a></li>
-      <li><a href="items.html">道具介紹</a></li>
-      <li><a href="referral.html">推文系統</a></li>
+<nav class="topnav"><div class="topnav-logo">⚔ 大藍蕉天堂</div><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><div class="topnav-dropdown"><a class="topnav-link">活動公告 ▾</a><div class="dropdown-menu"><a href="events.html">開局紅變+紅娃</a><a href="event-line.html">預約LINE禮包</a><a href="event-bonfire.html">烽火慶典禮包</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲特色 ▾</a><div class="dropdown-menu"><a href="features.html">特色總覽</a></div></div><div class="topnav-dropdown"><a class="topnav-link">道具裝備 ▾</a><div class="dropdown-menu"><a href="items.html">道具介紹</a><a href="weapons.html">武器介紹</a><a href="armor.html">防具介紹</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲資料 ▾</a><div class="dropdown-menu"><a href="transform.html">變身介紹</a><a href="dolls.html">娃娃介紹</a><a href="boss.html">BOSS介紹</a><a href="maps.html">地圖介紹</a></div></div><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link active" href="sponsor.html">贊助系統</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a><a href="sponsor-info.html">贊助須知</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
+<div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#100808,#0a0818);"></div><div class="hero-content"><div class="hero-badge">SPONSOR</div><h1 class="hero-title"><span style="font-size:2rem">贊助系統</span></h1><p class="hero-tagline">支持我們，獲得專屬豐厚回饋</p></div></div>
+<div class="container" style="padding-top:56px;padding-bottom:80px">
+  <div class="section-image"><div class="img-placeholder">[ 贊助系統主圖 — 貼上圖片URL ]</div></div>
+  <div class="feature-detail-content" style="margin-top:32px">
+    <h3>贊助說明</h3>
+    <p>感謝您願意支持大藍蕉天堂！您的贊助是我們持續維運、優化遊戲體驗的重要動力。所有贊助方案均提供對應的遊戲內回饋，請放心選擇。</p>
+    <ul>
+      <li>贊助採台灣銀行轉帳 / 超商代碼付款</li>
+      <li>贊助完成後請提供轉帳截圖至 LINE 客服確認</li>
+      <li>回饋道具將於確認後 24 小時內發放</li>
+      <li>贊助前請詳閱 <a href="sponsor-info.html" style="color:var(--gold)">贊助須知</a></li>
     </ul>
-    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+    <h3>贊助方案</h3>
+    <p>詳細方案內容請加入 LINE 官方社群詢問管理員，我們將依最新版本提供最即時的贊助資訊。</p>
   </div>
-</nav>
-<div class="hero" style="padding-top:60px">
-  <!-- <img src="images/banner_sponsor.png" alt="贊助系統"> -->
-  <div class="hero-placeholder"><h1>贊助系統</h1><p>支持我們，獲得專屬回饋</p></div>
-</div>
-<div class="page-content">
-  <div class="section-title"><h2>贊助方案</h2></div>
-  <div class="divider"></div>
-  <div class="section-image">
-    <!-- <img src="images/sponsor_main.png" alt="贊助方案"> -->
-    <div class="img-placeholder">[ 贊助系統主圖 — 替換圖片 1280x960 ]</div>
-  </div>
-  <div class="section-image">
-    <!-- <img src="images/sponsor_items.png" alt="贊助道具"> -->
-    <div class="img-placeholder">[ 贊助道具一覽 — 替換圖片 1280x960 ]</div>
+  <div class="section-image" style="margin-top:32px"><div class="img-placeholder">[ 贊助方案圖 — 貼上圖片URL ]</div></div>
+  <div class="section-image"><div class="img-placeholder">[ 贊助回饋道具一覽 — 貼上圖片URL ]</div></div>
+  <div style="text-align:center;margin-top:40px">
+    <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" class="btn-gold" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#0a0808;font-weight:700;border-radius:6px;text-decoration:none;font-size:1rem;letter-spacing:1px;">加入 LINE 詢問贊助方案</a>
   </div>
 </div>
-<footer>
-  <p>© 大藍蕉天堂｜本站為私人架設遊戲伺服器，與原廠無關</p>
-  <p style="margin-top:8px"><a href="#">LINE社群</a> ／ <a href="#">Discord</a> ／ <a href="referral.html">推文系統</a></p>
-</footer>
-</body>
-</html>
+<footer><div class="footer-inner"><div><div class="footer-col-title">規章說明</div><ul class="footer-links"><li><a href="disclaimer.html">免責聲明</a></li><li><a href="rules.html">遊戲規章</a></li><li><a href="sponsor-info.html">贊助須知</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂 · 本站為私人架設伺服器，與 NC Soft 官方無關。</div></footer>
+<script src="main.js"></script>
+</body></html>
