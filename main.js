@@ -40,9 +40,33 @@ function initParallax() {
   }, { passive: true });
 }
 
+// ══ 下拉選單 click-toggle ══
+function initDropdowns() {
+  document.querySelectorAll('.topnav-dropdown').forEach(dd => {
+    dd.querySelector(':scope > .topnav-link').addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('open');
+      // 關閉所有其他
+      document.querySelectorAll('.topnav-dropdown.open').forEach(o => o.classList.remove('open'));
+      if (!isOpen) dd.classList.add('open');
+    });
+  });
+  // 點選單外部關閉
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.topnav-dropdown.open').forEach(o => o.classList.remove('open'));
+  });
+  // 選單內連結點擊後關閉
+  document.querySelectorAll('.dropdown-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelectorAll('.topnav-dropdown.open').forEach(o => o.classList.remove('open'));
+    });
+  });
+}
+
 // ══ 啟動 ══
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initDropdowns();
   initFloatSidebar();
   initParallax();
 });
