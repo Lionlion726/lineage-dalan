@@ -71,7 +71,7 @@ SIDEBAR = '''<div class="float-sidebar">
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#">前往 LINE 領取</a></div></div>
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto;"></div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>'''
 
-def page(num, title, heading, img_url, body, prev_n, next_n, nav_html=None):
+def page(num, title, heading, img_url, body, prev_n, next_n, nav_html=None, category='遊戲特色'):
     nav = nav_html if nav_html else NAV_FEAT
     return f'''<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -87,7 +87,7 @@ def page(num, title, heading, img_url, body, prev_n, next_n, nav_html=None):
 <div class="feature-detail">
   <div style="margin-bottom:20px"><a href="features.html" style="color:var(--text-muted);font-size:.78rem;letter-spacing:1px;">← 返回遊戲特色</a></div>
   <div class="section-header" style="text-align:left;margin-bottom:32px">
-    <div class="section-eyebrow">{num:02d} / 12</div>
+    <div class="section-eyebrow">{category}</div>
     <h2 class="section-title" style="text-align:left">{heading}</h2>
   </div>
   <div class="feature-detail-img"><img src="{img_url}" alt="{heading}"></div>
@@ -664,20 +664,20 @@ IMGS = {
 
 # Pages: (num, title, heading, body, prev, next, nav)
 PAGES = [
-    (3,  '職業之力介紹', '職業之力介紹',  body_03, 2,  4,  NAV_FEAT),
-    (4,  '戰馬雕像能力', '戰馬雕像能力',  body_04, 3,  5,  NAV_ITEM),
-    (5,  '寵物系統介紹', '寵物系統介紹',  body_05, 4,  6,  NAV_FEAT),
-    (6,  '主線任務勳章', '主線任務勳章',  body_06, 5,  7,  NAV_ITEM),
-    (7,  '威望系統',    '威望系統',      body_07, 6,  8,  NAV_FEAT),
-    (8,  '高寵介紹',    '高寵介紹',      body_08, 7,  9,  NAV_FEAT),
-    (9,  '在線禮包',    '在線禮包',      body_09, 8,  10, NAV_FEAT),
-    (10, '赫卡特介紹',  '赫卡特介紹',    body_10, 9,  11, NAV_ITEM),
-    (11, '傲慢的掛飾',  '傲慢的掛飾',    body_11, 10, 12, NAV_ITEM),
-    (12, '換金道具',    '換金道具',      body_12, 11, 1,  NAV_FEAT),
+    (3,  '職業之力介紹', '職業之力介紹',  body_03, 2,  4,  NAV_FEAT, '遊戲特色'),
+    (4,  '戰馬雕像能力', '戰馬雕像能力',  body_04, 3,  5,  NAV_ITEM, '道具裝備'),
+    (5,  '寵物系統介紹', '寵物系統介紹',  body_05, 4,  6,  NAV_FEAT, '遊戲特色'),
+    (6,  '主線任務勳章', '主線任務勳章',  body_06, 5,  7,  NAV_ITEM, '道具裝備'),
+    (7,  '威望系統',    '威望系統',      body_07, 6,  8,  NAV_FEAT, '遊戲特色'),
+    (8,  '高寵介紹',    '高寵介紹',      body_08, 7,  9,  NAV_FEAT, '遊戲特色'),
+    (9,  '在線禮包',    '在線禮包',      body_09, 8,  10, NAV_FEAT, '遊戲特色'),
+    (10, '赫卡特介紹',  '赫卡特介紹',    body_10, 9,  11, NAV_ITEM, '道具裝備'),
+    (11, '傲慢的掛飾',  '傲慢的掛飾',    body_11, 10, 12, NAV_ITEM, '道具裝備'),
+    (12, '換金道具',    '換金道具',      body_12, 11, 1,  NAV_FEAT, '遊戲特色'),
 ]
 
-for num, title, heading, body, prev_n, next_n, nav in PAGES:
-    html = page(num, title, heading, IMGS[num], body, prev_n, next_n, nav_html=nav)
+for num, title, heading, body, prev_n, next_n, nav, cat in PAGES:
+    html = page(num, title, heading, IMGS[num], body, prev_n, next_n, nav_html=nav, category=cat)
     fname = f'feature-{num:02d}.html'
     with open(fname, 'w', encoding='utf-8') as f:
         f.write(html)

@@ -9,30 +9,61 @@
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#080810,#101808);"></div><div class="hero-content"><div class="hero-badge">SERVER RATES</div><h1 class="hero-title"><span style="font-size:2rem">版本倍率</span></h1><p class="hero-tagline">381 版本 · 詳細數值一覽</p></div></div>
 <div class="container" style="padding-top:56px;padding-bottom:80px">
-  <div class="section-image"><div class="img-placeholder">[ 版本倍率主圖 — 貼上圖片URL ]</div></div>
-  <div class="feature-detail-content" style="margin-top:32px">
-    <h3>基本倍率設定</h3>
-    <p>大藍蕉天堂採用天堂 381 版本，提供高倍率的升級體驗，讓玩家能快速體驗頂級內容。以下為本服核心數值設定。</p>
+  <div style="max-width:800px;margin:0 auto">
+
+    <!-- 基礎倍率與版本 -->
+    <div style="background:var(--bg2);border:1px solid rgba(0,229,255,.2);border-radius:12px;padding:24px;margin-bottom:24px">
+      <h3 style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">💎 基礎倍率與版本</h3>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 遊戲版本：<strong style="color:#ff9800">3.81 手動（天M版）</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 經驗倍率：<strong style="color:#00ff7f">10 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 金幣倍率：<strong style="color:#00ff7f">3 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 掉寶倍率：<strong style="color:#00ff7f">2 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 武防強化：<strong style="color:#00ff7f">2 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 正義倍率：<strong style="color:#00ff7f">3 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 負重倍率：<strong style="color:#00ff7f">4 倍</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔹 寵物倍率：<strong style="color:#00ff7f">5 倍</strong></li>
+      </ul>
+    </div>
+
+    <!-- 角色素質與等級限制 -->
+    <div style="background:var(--bg2);border:1px solid rgba(0,229,255,.2);border-radius:12px;padding:24px;margin-bottom:24px">
+      <h3 style="color:var(--accent);margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid var(--accent);padding-left:10px">📊 角色素質與等級限制</h3>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 玩家等級上限：<strong style="color:#ff4444">70 級</strong> <span style="color:var(--text-muted);font-size:.85em">（階段性開放）</span></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 手點能力上限：<strong style="color:#ffcc00">25 點</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 萬能藥限制：<strong style="color:#ffcc00">10 瓶</strong></li>
+        <li style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.9em">🔸 素質總上限：<strong style="color:#ff4444">35 點</strong> <span style="color:var(--text-muted);font-size:.85em">（含萬能藥）</span></li>
+      </ul>
+    </div>
+
+    <!-- 帳號與發話限制 -->
+    <div style="background:var(--bg2);border:1px solid rgba(255,68,68,.25);border-radius:12px;padding:24px;margin-bottom:24px">
+      <h3 style="color:#ff6b6b;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ff6b6b;padding-left:10px">🛡️ 帳號與發話限制</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px">
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">🚫 <strong style="color:var(--text)">多開限制：</strong><span style="color:#ff6b6b">IP 限制 3 開</span></div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">👤 <strong style="color:var(--text)">角色限制：</strong><span style="color:#ff6b6b">每帳號可創 2 隻</span></div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">🗣️ <strong style="color:var(--text)">公頻發話：</strong><span style="color:#ffcc00">Lv.30 以上</span></div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:.9em">🤫 <strong style="color:var(--text)">密語發話：</strong><span style="color:#ffcc00">Lv.5 以上</span></div>
+      </div>
+    </div>
+
+    <!-- 魔法與平衡機制 -->
+    <div style="background:var(--bg2);border:1px solid rgba(186,104,200,.25);border-radius:12px;padding:24px">
+      <h3 style="color:#ce93d8;margin:0 0 16px 0;font-size:1em;letter-spacing:1px;border-left:3px solid #ce93d8;padding-left:10px">⚔️ 魔法與平衡機制</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--bg3);border-left:4px solid #e040fb;border-radius:0 8px 8px 0;padding:14px 16px">
+          <strong style="color:#e040fb;font-size:.9em">✨ 動態調整</strong>
+          <p style="color:var(--text-muted);font-size:.87em;margin:6px 0 0 0;line-height:1.7">負面魔法免疫機率將依照伺服器進度動態調整，無絕對命中或絕對免疫。</p>
+        </div>
+        <div style="background:var(--bg3);border-left:4px solid #e040fb;border-radius:0 8px 8px 0;padding:14px 16px">
+          <strong style="color:#e040fb;font-size:.9em">💡 戰術建議</strong>
+          <p style="color:var(--text-muted);font-size:.87em;margin:6px 0 0 0;line-height:1.7">請善用 <span style="color:#ffff00;text-decoration:underline">「魔法消除」</span> 破除對方免疫狀態以取得優勢。</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div style="margin-top:32px;overflow-x:auto">
-    <table style="width:100%;border-collapse:collapse;background:var(--bg2);border-radius:8px;overflow:hidden">
-      <thead>
-        <tr style="background:var(--bg4)">
-          <th style="padding:14px 20px;text-align:left;color:var(--gold);font-size:0.9rem;letter-spacing:1px;border-bottom:1px solid var(--border)">項目</th>
-          <th style="padding:14px 20px;text-align:center;color:var(--gold);font-size:0.9rem;letter-spacing:1px;border-bottom:1px solid var(--border)">數值</th>
-          <th style="padding:14px 20px;text-align:left;color:var(--gold);font-size:0.9rem;letter-spacing:1px;border-bottom:1px solid var(--border)">說明</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid var(--border)"><td style="padding:13px 20px;color:var(--text)">遊戲版本</td><td style="padding:13px 20px;text-align:center;color:var(--accent);font-weight:700">381</td><td style="padding:13px 20px;color:var(--text-muted)">天堂 381 正式版</td></tr>
-        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:13px 20px;color:var(--text)">手動經驗</td><td style="padding:13px 20px;text-align:center;color:var(--gold);font-weight:700">× 30</td><td style="padding:13px 20px;color:var(--text-muted)">手動操作時的經驗值倍率</td></tr>
-        <tr style="border-bottom:1px solid var(--border)"><td style="padding:13px 20px;color:var(--text)">內掛經驗</td><td style="padding:13px 20px;text-align:center;color:var(--gold);font-weight:700">× 10</td><td style="padding:13px 20px;color:var(--text-muted)">掛機模式時的經驗值倍率</td></tr>
-        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:13px 20px;color:var(--text)">掉落倍率</td><td style="padding:13px 20px;text-align:center;color:var(--gold);font-weight:700">× 4</td><td style="padding:13px 20px;color:var(--text-muted)">道具與裝備掉落率</td></tr>
-        <tr><td style="padding:13px 20px;color:var(--text)">開放時間</td><td style="padding:13px 20px;text-align:center;color:var(--accent);font-weight:700">24H</td><td style="padding:13px 20px;color:var(--text-muted)">全天候 24 小時開放</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="section-image" style="margin-top:40px"><div class="img-placeholder">[ 倍率對照圖 — 貼上圖片URL ]</div></div>
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">快速連結</div><ul class="footer-links"><li><a href="download.html">檔案下載</a></li><li><a href="rates.html">版本倍率</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂 · 本站為私人架設伺服器，與 NC Soft 官方無關。</div></footer>
 <script src="main.js"></script>
