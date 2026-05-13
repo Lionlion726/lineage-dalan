@@ -13,31 +13,99 @@
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:220px"><div class="hero-bg" style="background:linear-gradient(135deg,#1a0a08,#0a0818);"></div><div class="hero-content"><div class="hero-badge">SPONSOR INFO</div><h1 class="hero-title"><span style="font-size:2rem">贊助須知</span></h1><p class="hero-tagline">贊助前請詳細閱讀</p></div></div>
 <div class="container" style="padding-top:56px;padding-bottom:80px">
-  <div style="max-width:900px;margin:0 auto">
+  <div class="feature-detail-content" style="max-width:800px;margin:0 auto">
 
-    <div class="section-image"><div class="img-placeholder">[ 贊助須知主圖 — 貼上圖片URL ]</div></div>
-
-    <div class="feature-detail-content" style="margin-top:32px">
-      <h3>贊助比例換算</h3>
-      <div class="section-image"><div class="img-placeholder">[ 贊助比例換算表圖 — 貼上圖片URL ]</div></div>
-
-      <h3 style="margin-top:32px">贊助流程</h3>
-      <ul>
-        <li>加入 LINE 官方社群</li>
-        <li>私訊管理員告知欲贊助方案及角色名稱</li>
-        <li>依管理員指示完成付款</li>
-        <li>付款後提供收據截圖，等待道具發送</li>
-      </ul>
+    <!-- 裝備道具找回機制 -->
+    <div style="background:var(--bg2);border:1px solid rgba(201,169,110,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+      <h3 style="margin-top:0;color:var(--gold);border-left:3px solid var(--gold);padding-left:10px">🔄 裝備／道具找回機制</h3>
+      <div style="background:var(--bg3);border:1px solid rgba(255,153,68,.2);border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:.88em;color:var(--text-muted);line-height:1.7">
+        <strong style="color:#ffcc00">⚠️ 找回機制說明：</strong>找回僅限「玩家誤刪除」之狀況，<strong style="color:var(--text)">不包含</strong>衝裝點爆、正常交易錯誤等非誤操作行為。請玩家妥善保管自身帳號與物品。
+      </div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="background:linear-gradient(to bottom,rgba(201,169,110,.2),rgba(201,169,110,.1))">
+              <th style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--gold);font-size:.9em;width:35%">裝備類型</th>
+              <th style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--gold);font-size:.9em;width:35%">贖回費用</th>
+              <th style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--gold);font-size:.9em;width:30%">贖回狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--bg3)">
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#ff6b6b;font-weight:700">英雄裝備（及以下）</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700;font-size:1.05em">1,000 新台幣</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#88eecc">歸還 +0 狀態</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#b366ff;font-weight:700">傳說裝備</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700;font-size:1.05em">2,000 新台幣</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#88eecc">歸還 +0 狀態</td>
+            </tr>
+            <tr style="background:var(--bg3)">
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#ffcc00;font-weight:700">神話裝備</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700;font-size:1.05em">3,000 新台幣</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#88eecc">歸還 +0 狀態</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:right;font-size:.8em;color:var(--text-muted);margin:12px 0 0 0">※ 大藍蕉天堂營運團隊保有最終修改、解釋與審核之權利。</p>
     </div>
 
-    <div class="section-image" style="margin-top:32px"><div class="img-placeholder">[ VIP方案說明圖 — 貼上圖片URL ]</div></div>
+    <!-- 裝備衝爆贖回規章 -->
+    <div style="background:var(--bg2);border:1px solid rgba(201,169,110,.25);border-radius:10px;padding:24px 28px;margin-bottom:20px">
+      <h3 style="margin-top:0;color:var(--gold);border-left:3px solid var(--gold);padding-left:10px">💥 裝備衝爆贖回規章</h3>
+      <p style="color:var(--text-muted);line-height:1.8;margin:0 0 16px 0">為維護遊戲裝備平衡，針對強化失敗損毀之裝備，提供贖回機制。贖回費用將隨次數遞增，請各位玩家審慎評估。</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;margin-bottom:16px">
+          <thead>
+            <tr style="background:linear-gradient(to bottom,rgba(201,169,110,.2),rgba(201,169,110,.1))">
+              <th style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--gold);font-size:.9em">贖回次數</th>
+              <th style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--gold);font-size:.9em">所需費用（點數）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:var(--bg3)">
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--text)">首次贖回</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700">2,000</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--text)">第二次贖回</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700">4,000</td>
+            </tr>
+            <tr style="background:var(--bg3)">
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--text)">第三次贖回</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:#6fffe9;font-weight:700">6,000</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--text-muted)">後續每次</td>
+              <td style="padding:12px 16px;text-align:center;border:1px solid var(--border);color:var(--text-muted)">前次費用 + 2,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center">
+        <p style="color:var(--gold);font-weight:700;margin:0 0 10px 0">💰 贖回費用試算</p>
+        <p style="color:var(--text-muted);font-size:.88em;margin:0 0 10px 0">請輸入第幾次贖回：</p>
+        <input type="number" id="si-redeem-times" value="4" min="1" style="width:72px;padding:8px;background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:4px;font-size:1em;text-align:center" oninput="siCalcRedeem()">
+        <div style="margin-top:14px;font-size:1em;color:var(--text)">預計費用：<span style="color:#6fffe9;font-weight:900;font-size:1.3em" id="si-redeem-result">8,000</span> 點</div>
+      </div>
+      <p style="text-align:right;font-size:.8em;color:var(--text-muted);margin:12px 0 0 0">※ 贖回次數以帳號為單位計算，每件裝備贖回後強化等級保持不變。</p>
+    </div>
 
-    <div style="text-align:center;margin-top:36px">
-      <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#0a0808;font-weight:700;border-radius:6px;text-decoration:none;font-size:1rem;letter-spacing:1px;">加入 LINE 聯繫贊助</a>
+    <div style="text-align:center;margin-top:8px">
+      <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#0a0808;font-weight:700;border-radius:6px;text-decoration:none;font-size:1rem;letter-spacing:1px;">加入 LINE 聯繫客服</a>
     </div>
 
   </div>
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">規章說明</div><ul class="footer-links"><li><a href="disclaimer.html">免責聲明</a></li><li><a href="rules.html">遊戲規章</a></li><li><a href="sponsor-info.html">贊助須知</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂 · 本站為私人架設伺服器，與 NC Soft 官方無關。</div></footer>
 <script src="main.js"></script>
+<script>
+function siCalcRedeem(){
+  var n=parseInt(document.getElementById('si-redeem-times').value)||1;
+  if(n<1)n=1;
+  document.getElementById('si-redeem-result').textContent=(n*2000).toLocaleString();
+}
+</script>
 </body></html>
