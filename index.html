@@ -80,7 +80,9 @@
 <!-- ══ Hero ══ -->
 <section class="hero">
   <div class="hero-bg" id="heroBg" style="background-image: linear-gradient(180deg,rgba(10,8,8,0.3) 0%,rgba(10,8,8,0.65) 60%,rgba(10,8,8,1) 100%), url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDeWoDTr38Y51dC_mIZcPgYWnHLx4XAAI8EWsbb2oZVEjiw-LZRQIWAQADAgADdwADOwQ.png'); background-size:cover; background-position:center top;"></div>
-  <div class="hero-content">
+  <!-- 浮動粒子層 -->
+  <canvas id="heroParticles" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1"></canvas>
+  <div class="hero-content" style="position:relative;z-index:2">
     <div class="hero-badge">LINEAGE PRIVATE SERVER · 大藍蕉天堂</div>
     <h1 class="hero-title">
       <span>大藍蕉天堂</span>
@@ -116,8 +118,139 @@
   </div>
 </section>
 
-<!-- ══ 最新公告 ══ -->
+<!-- ══ 職業介紹 ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">CHARACTER CLASS</div>
+      <h2 class="section-title">選擇你的職業</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <div class="class-icon">👑</div>
+        <div class="class-name">王族</div>
+        <div class="class-desc">領導型職業</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🛡️</div>
+        <div class="class-name">騎士</div>
+        <div class="class-desc">防禦型職業，鐵壁守護，新手友善。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🌑</div>
+        <div class="class-name">黑妖</div>
+        <div class="class-desc">單體爆發最強。高爆傷高迴避。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🏹</div>
+        <div class="class-name">妖精</div>
+        <div class="class-desc">玩法超多樣，近戰／遠攻通通好。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🔮</div>
+        <div class="class-name">法師</div>
+        <div class="class-desc">強力魔法職業，範圍爆發驚人，輔助擔當。</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <a class="btn-outline" href="feature-02.html">查看職業詳細介紹 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 熱賣商品 ══ -->
 <section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">HOT ITEMS</div>
+      <h2 class="section-title">熱賣商品
+        <span style="display:inline-block;background:linear-gradient(135deg,#ff4500,#ff8c00);color:#fff;font-size:.55em;font-weight:900;padding:3px 10px;border-radius:20px;letter-spacing:2px;margin-left:10px;vertical-align:middle;animation:hotPulse 1.5s ease-in-out infinite">🔥 HOT</span>
+      </h2>
+      <div class="section-line"></div>
+    </div>
+    <style>
+    @keyframes hotPulse{0%,100%{box-shadow:0 0 8px rgba(255,69,0,.5)}50%{box-shadow:0 0 20px rgba(255,140,0,.8)}}
+    .hot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+    .hot-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;position:relative}
+    .hot-card:hover{transform:translateY(-5px);border-color:var(--border-hi);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+    .hot-card-badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,#ff4500,#ff8c00);color:#fff;font-size:.68em;font-weight:900;padding:2px 8px;border-radius:10px;letter-spacing:1px;z-index:1}
+    .hot-card-img{width:100%;height:130px;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:3rem}
+    .hot-card-img img{width:100%;height:100%;object-fit:cover}
+    .hot-card-body{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:4px}
+    .hot-card-name{font-size:.92rem;font-weight:700;color:var(--white);letter-spacing:1px}
+    .hot-card-desc{font-size:.75rem;color:var(--text-muted);line-height:1.6;flex:1}
+    .hot-card-price{font-size:.9rem;font-weight:700;color:var(--gold);margin-top:8px}
+    .hot-card-btn{display:block;text-align:center;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#1a0e00;font-weight:700;font-size:.8rem;padding:8px;border-radius:0 0 12px 12px;text-decoration:none;letter-spacing:1px;transition:filter .2s}
+    .hot-card-btn:hover{filter:brightness(1.1)}
+    </style>
+    <div class="hot-grid">
+      <div class="hot-card">
+        <div class="hot-card-badge">🔥 熱銷</div>
+        <div class="hot-card-img">💎</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">藍鑽儲值包 500</div>
+          <div class="hot-card-desc">500 藍鑽，適合日常消費與 VIP 累積紅利</div>
+          <div class="hot-card-price">NT$ 1,000</div>
+        </div>
+        <a href="sponsor.html" class="hot-card-btn">立即贊助 →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-card-badge">👑 推薦</div>
+        <div class="hot-card-img">👑</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">VIP 白金大老包</div>
+          <div class="hot-card-desc">單筆達 $10,000 享比值 1:1.15，直衝 VIP4</div>
+          <div class="hot-card-price">NT$ 10,000</div>
+        </div>
+        <a href="sponsor.html" class="hot-card-btn">立即贊助 →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-card-badge">✨ 限量</div>
+        <div class="hot-card-img">🔴</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">紅變身卡套組</div>
+          <div class="hot-card-desc">開服限定紅色變身卡，稀有度最高，數量有限</div>
+          <div class="hot-card-price">洽詢官方</div>
+        </div>
+        <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" class="hot-card-btn">私訊客服 →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-card-badge">🎁 超值</div>
+        <div class="hot-card-img">🐾</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">稀有娃娃禮包</div>
+          <div class="hot-card-desc">含高稀有度娃娃一隻，屬性加成超強悍</div>
+          <div class="hot-card-price">洽詢官方</div>
+        </div>
+        <a href="dolls.html" class="hot-card-btn">查看娃娃 →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-card-badge">⚡ 新品</div>
+        <div class="hot-card-img">⚡</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">至尊大爺禮包</div>
+          <div class="hot-card-desc">單筆 $50,000 享最高比值 1:1.50，頂級回饋</div>
+          <div class="hot-card-price">NT$ 50,000</div>
+        </div>
+        <a href="sponsor.html" class="hot-card-btn">立即贊助 →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-card-badge">🛡 必買</div>
+        <div class="hot-card-img">🛡️</div>
+        <div class="hot-card-body">
+          <div class="hot-card-name">新手啟航禮包</div>
+          <div class="hot-card-desc">初級裝備套組 + 藥水補給，快速站穩腳步</div>
+          <div class="hot-card-price">免費領取</div>
+        </div>
+        <a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;" class="hot-card-btn">申請禮包 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 最新公告 ══ -->
+<section class="section section-alt">
   <div class="container">
     <div class="section-header">
       <div class="section-eyebrow">ANNOUNCEMENT</div>
@@ -161,47 +294,6 @@
         <div class="ann-card-excerpt">為維護良好遊戲環境，請所有玩家遵守伺服器規章。</div>
         <div class="ann-card-more">閱讀更多 →</div>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ 職業介紹 ══ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">CHARACTER CLASS</div>
-      <h2 class="section-title">選擇你的職業</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="class-grid">
-      <div class="class-card">
-        <div class="class-icon">👑</div>
-        <div class="class-name">王族</div>
-        <div class="class-desc">領導型職業</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🛡️</div>
-        <div class="class-name">騎士</div>
-        <div class="class-desc">防禦型職業，鐵壁守護，新手友善。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🌑</div>
-        <div class="class-name">黑妖</div>
-        <div class="class-desc">單體爆發最強。高爆傷高迴避。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🏹</div>
-        <div class="class-name">妖精</div>
-        <div class="class-desc">玩法超多樣，近戰／遠攻通通好。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🔮</div>
-        <div class="class-name">法師</div>
-        <div class="class-desc">強力魔法職業，範圍爆發驚人，輔助擔當。</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:8px">
-      <a class="btn-outline" href="feature-02.html">查看職業詳細介紹 →</a>
     </div>
   </div>
 </section>
@@ -311,5 +403,66 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+/* ── Hero 粒子動畫 ── */
+(function(){
+  const canvas = document.getElementById('heroParticles');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Particle(){
+    this.reset = function(){
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.r = Math.random() * 1.6 + 0.4;
+      this.speed = Math.random() * 0.4 + 0.1;
+      this.angle = Math.random() * Math.PI * 2;
+      this.drift = (Math.random() - 0.5) * 0.008;
+      this.alpha = Math.random() * 0.5 + 0.15;
+      this.flicker = Math.random() * 0.012 + 0.004;
+      this.flickDir = 1;
+      // gold or cyan tint
+      this.color = Math.random() > 0.5
+        ? `rgba(201,169,110,${this.alpha})`
+        : `rgba(0,229,255,${this.alpha * 0.6})`;
+    };
+    this.reset();
+    this.y = Math.random() * H; // spread on init
+  }
+
+  function init(){
+    resize();
+    const count = Math.floor((W * H) / 9000);
+    particles = Array.from({length: count}, () => new Particle());
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.angle += p.drift;
+      p.x += Math.cos(p.angle) * p.speed;
+      p.y -= p.speed * 0.5;
+      p.alpha += p.flicker * p.flickDir;
+      if(p.alpha > 0.65 || p.alpha < 0.05) p.flickDir *= -1;
+      if(p.y < -5 || p.x < -5 || p.x > W + 5) p.reset(), p.y = H + 5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, p.alpha + ')');
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  init();
+  draw();
+})();
+</script>
 </body>
 </html>
