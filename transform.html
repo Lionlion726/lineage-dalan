@@ -1,36 +1,326 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 變身介紹</title><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 變身介紹</title><link rel="stylesheet" href="style.css">
+<style>
+.t-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:30px}
+.t-item{padding:8px;border-radius:4px;font-size:13px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-gen{background:rgba(158,158,158,.12);color:#bdbdbd;border:1px solid rgba(158,158,158,.2)}
+.t-adv{background:rgba(67,160,71,.12);color:#69f0ae;border:1px solid rgba(67,160,71,.2)}
+.t-rare{background:rgba(30,136,229,.12);color:#82b1ff;border:1px solid rgba(30,136,229,.2)}
+.t-hero{background:rgba(229,57,53,.12);color:#ff8a80;border:1px solid rgba(229,57,53,.2)}
+.t-sec{margin-top:30px;margin-bottom:15px;font-size:1.1em;display:flex;align-items:center;padding:8px 12px;border-radius:6px}
+.t-badge{font-size:.82em;margin-left:auto;padding:2px 10px;border-radius:20px;background:rgba(255,255,255,.08)}
+.t-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:30px}
+.t-table th,.t-table td{border:1px solid var(--border);padding:8px;text-align:left}
+.t-table th{background:var(--bg3);color:var(--gold)}
+.t-table tr:nth-child(even) td{background:var(--bg2)}
+.t-table td{color:var(--text-muted)}
+.t-table td:first-child{color:var(--text);font-weight:bold}
+.coll-table{width:100%;border-collapse:collapse;font-size:13px;min-width:700px}
+.coll-table th{padding:12px 14px;background:rgba(0,229,255,.15);color:var(--accent);text-align:left;border-bottom:2px solid rgba(0,229,255,.2)}
+.coll-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-muted)}
+.coll-table tr:nth-child(even) td{background:var(--bg2)}
+.coll-table td:nth-child(2){font-weight:bold;color:var(--text)}
+.coll-table td:nth-child(3){color:#ff8a80;font-weight:bold}
+.t-anchor-nav{position:sticky;top:0;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--border);margin-bottom:20px;z-index:10;display:flex;gap:8px;overflow-x:auto;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.t-anchor-nav a{text-decoration:none;padding:5px 14px;border-radius:20px;font-size:13px;border:1px solid;flex-shrink:0}
+.page-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:30px}
+.page-tab{padding:10px 24px;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;font-size:14px;background:none;border-top:none;border-left:none;border-right:none}
+.page-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none}.tab-content.active{display:block}
+</style>
+</head>
 <body>
 <nav class="topnav"><div class="topnav-logo">⚔ 大藍蕉天堂</div><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><div class="topnav-dropdown"><a class="topnav-link">活動公告 ▾</a><div class="dropdown-menu"><a href="events.html">開局紅變+紅娃</a><a href="event-line.html">預約LINE禮包</a><a href="event-bonfire.html">烽火慶典禮包</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲特色 ▾</a><div class="dropdown-menu"><a href="features.html">特色總覽</a><a href="feature-01.html">法師召喚物系統</a><a href="feature-02.html">職業特色技能</a><a href="feature-03.html">職業之力介紹</a><a href="feature-05.html">寵物系統介紹</a><a href="feature-07.html">威望系統</a><a href="feature-08.html">高寵介紹</a><a href="feature-09.html">在線禮包</a><a href="feature-12.html">換金道具</a></div></div><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link active" href="transform.html">變身介紹</a><a class="topnav-link" href="dolls.html">娃娃介紹</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a><a href="sponsor-info.html">贊助須知</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
 <div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
 <div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#">前往 LINE 領取</a></div></div>
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
-<div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#0a1020,#180818);"></div><div class="hero-content"><div class="hero-badge">TRANSFORMATION</div><h1 class="hero-title"><span style="font-size:2rem">變身介紹</span></h1><p class="hero-tagline">強化你的戰鬥能力</p></div></div>
-<div class="container" style="padding-top:56px;padding-bottom:80px">
-  <div class="feature-detail-content" style="margin-top:32px">
-    <h3>變身系統說明</h3>
-    <p>變身是天堂遊戲中重要的強化機制，使用變身道具可以幫助角色呈現出不同的外觀，同時獲得對應的能力加成，讓你在戰場上更具優勢。</p>
-    <ul>
-      <li>變身分為普通、稀有、史詩、傳說四個等級</li>
-      <li>紅色系變身為最高稀有度，提供最強屬性加成</li>
-      <li>變身有使用時間限制，時間到期需重新使用</li>
-      <li>部分變身為活動限定，錯過期間即無法取得</li>
-      <li>開局活動提供限定紅色變身，把握機會領取</li>
-    </ul>
-    <h3>取得方式</h3>
-    <ul>
-      <li>地圖怪物掉落</li>
-      <li>BOSS 掉落（高稀有度）</li>
-      <li>活動獎勵（限定款式）</li>
-      <li>贊助回饋</li>
-      <li>合成系統</li>
-    </ul>
+
+<div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#0a1020,#180818);"></div><div class="hero-content"><div class="hero-badge">TRANSFORMATION</div><h1 class="hero-title"><span style="font-size:2rem">變身介紹</span></h1><p class="hero-tagline">強化你的戰鬥能力，掌握每一種變身</p></div></div>
+
+<div class="container" style="padding-top:40px;padding-bottom:80px">
+
+  <div class="page-tabs">
+    <button class="page-tab active" onclick="switchTab('atlas')">📖 圖鑑大全</button>
+    <button class="page-tab" onclick="switchTab('collection')">🏆 收藏系統</button>
   </div>
-  
-  
+
+  <!-- ══ TAB 1: 圖鑑大全 ══ -->
+  <div id="tab-atlas" class="tab-content active">
+
+    <div style="background:var(--bg2);border:1px solid rgba(249,168,37,.2);border-radius:10px;padding:18px;margin-bottom:24px">
+      <h3 style="margin-top:0;color:var(--gold);font-size:1em;border-left:3px solid var(--gold);padding-left:10px">💡 系統提示</h3>
+      <ul style="margin:8px 0 0 0;padding-left:20px;color:var(--text-muted);line-height:1.9">
+        <li><strong style="color:var(--text)">變身消耗：</strong>所有變身皆須使用 <span style="color:#ff6b6b;font-weight:bold">"變形石"</span>（主城 NPC 購買）。</li>
+        <li><strong style="color:var(--text)">自動功能：</strong>自動變身請使用 <span style="color:var(--accent);font-weight:bold">"LH輔助區"</span> 設定（輔助 › 變身 › 其他變身道具 › 輸入「自動變形卷軸」）。</li>
+        <li><strong style="color:var(--text)">屬性加成：</strong>僅有 <span style="color:#ce93d8;font-weight:bold">傳說以上</span> 變身擁有額外的屬性加成能力。</li>
+        <li><strong style="color:var(--text)">武器限制：</strong>名稱後方標有 <strong style="color:#ffb74d">🏹</strong> 的變身，代表可裝備弓箭武器。</li>
+      </ul>
+    </div>
+
+    <div class="t-anchor-nav">
+      <a href="#gen" style="background:rgba(158,158,158,.15);color:#bdbdbd;border-color:rgba(158,158,158,.3)">⚪ 一般</a>
+      <a href="#adv" style="background:rgba(67,160,71,.12);color:#69f0ae;border-color:rgba(67,160,71,.25)">🟢 高級</a>
+      <a href="#rare" style="background:rgba(30,136,229,.12);color:#82b1ff;border-color:rgba(30,136,229,.25)">🔵 稀有</a>
+      <a href="#hero" style="background:rgba(229,57,53,.12);color:#ff8a80;border-color:rgba(229,57,53,.25)">🔴 英雄</a>
+      <a href="#legend" style="background:rgba(142,36,170,.12);color:#ce93d8;border-color:rgba(142,36,170,.25)">🟣 傳說</a>
+      <a href="#myth" style="background:rgba(249,168,37,.12);color:var(--gold);border-color:rgba(249,168,37,.25)">👑 神話</a>
+    </div>
+
+    <h3 id="gen" class="t-sec" style="background:rgba(158,158,158,.1);color:#bdbdbd;border-left:4px solid #9e9e9e">⚪ 一般變身 <span class="t-badge">攻速/施法 24%</span></h3>
+    <div class="t-grid">
+      <div class="t-item t-gen">強盜弓箭手</div><div class="t-item t-gen">狼人 / 萊肯</div><div class="t-item t-gen">小小鬼(粉紅)</div>
+      <div class="t-item t-gen">奇異鸚鵡</div><div class="t-item t-gen">食人妖精</div><div class="t-item t-gen">思克巴</div>
+      <div class="t-item t-gen">紙人</div><div class="t-item t-gen">骷髏槍兵</div><div class="t-item t-gen">妖魔</div>
+      <div class="t-item t-gen">浣熊</div><div class="t-item t-gen">骷髏弓箭手</div><div class="t-item t-gen">哥布林</div>
+      <div class="t-item t-gen">長者</div><div class="t-item t-gen">歐姆民兵</div><div class="t-item t-gen">妖魔巡守</div>
+      <div class="t-item t-gen">食人妖精王</div><div class="t-item t-gen">妖魔弓箭手</div><div class="t-item t-gen">黑暗妖精法師</div>
+      <div class="t-item t-gen">骷髏</div><div class="t-item t-gen">曼波兔</div><div class="t-item t-gen">雪人</div>
+      <div class="t-item t-gen">果凍怪</div><div class="t-item t-gen">橘子</div><div class="t-item t-gen">安普長老</div>
+      <div class="t-item t-gen">巨蟻</div><div class="t-item t-gen">都達瑪拉妖魔</div><div class="t-item t-gen">妖魔鬥士</div>
+      <div class="t-item t-gen">追蹤者卡爾</div><div class="t-item t-gen">海盜獵人雷歐</div><div class="t-item t-gen">獵人戴伊</div>
+      <div class="t-item t-gen">魔幻士兵</div><div class="t-item t-gen">巨大兵蟻</div><div class="t-item t-gen">地獄之花</div>
+      <div class="t-item t-gen">安特</div><div class="t-item t-gen">紅狼蛛</div><div class="t-item t-gen">飛蛾人</div>
+      <div class="t-item t-gen">飛蛾女王</div><div class="t-item t-gen">瘋狗</div><div class="t-item t-gen">樹精鹿</div>
+      <div class="t-item t-gen">樹精戰士</div><div class="t-item t-gen">錘鈴</div><div class="t-item t-gen">鐵門騎士</div>
+    </div>
+
+    <h3 id="adv" class="t-sec" style="background:rgba(67,160,71,.1);color:#69f0ae;border-left:4px solid #43a047">🟢 高級變身 <span class="t-badge">攻速/施法 27%</span></h3>
+    <div class="t-grid">
+      <div class="t-item t-adv">狂暴槍騎</div><div class="t-item t-adv">狂暴將軍</div><div class="t-item t-adv">桓夢</div>
+      <div class="t-item t-adv">墮落的賽尼斯</div><div class="t-item t-adv">德雷克</div><div class="t-item t-adv">達伊諾思打者</div>
+      <div class="t-item t-adv">侏儒</div><div class="t-item t-adv">火焰弓箭手</div><div class="t-item t-adv">黑騎士</div>
+      <div class="t-item t-adv">刺客首領</div><div class="t-item t-adv">賞金獵人</div><div class="t-item t-adv">魔法師</div>
+      <div class="t-item t-adv">達伊諾思投手</div><div class="t-item t-adv">海洋哈維</div><div class="t-item t-adv">死亡騎士</div>
+      <div class="t-item t-adv">奧爾汀</div><div class="t-item t-adv">優卡</div><div class="t-item t-adv">黑暗妖精</div>
+      <div class="t-item t-adv">布雷哲</div><div class="t-item t-adv">強盜頭目</div><div class="t-item t-adv">沙蟲士兵 🏹</div>
+      <div class="t-item t-adv">巨蟻女皇士兵 🏹</div><div class="t-item t-adv">大黃蜂殺手</div><div class="t-item t-adv">石頭高崙</div>
+      <div class="t-item t-adv">海馬守衛</div><div class="t-item t-adv">強盜矮人</div><div class="t-item t-adv">深海獵人</div>
+      <div class="t-item t-adv">袋鼠拳擊手</div><div class="t-item t-adv">超級螳螂</div><div class="t-item t-adv">黑貓</div>
+      <div class="t-item t-adv">溫迪</div><div class="t-item t-adv">貓咪法師</div><div class="t-item t-adv">貓咪戰士</div>
+      <div class="t-item t-adv">貓咪騎士</div><div class="t-item t-adv">薩提爾士兵</div><div class="t-item t-adv">薩提爾戰士</div>
+      <div class="t-item t-adv">薩蒂羅斯_魔術師</div><div class="t-item t-adv">鼴鼠坦克</div><div class="t-item t-adv">鼴鼠戰士</div>
+      <div class="t-item t-adv">變色龍大師</div><div class="t-item t-adv">鬣狗獵人</div>
+    </div>
+
+    <h3 id="rare" class="t-sec" style="background:rgba(30,136,229,.1);color:#82b1ff;border-left:4px solid #1e88e5">🔵 稀有變身 <span class="t-badge">攻速/施法 30%</span></h3>
+    <div class="t-grid">
+      <div class="t-item t-rare">惡魔</div><div class="t-item t-rare">炎魔</div><div class="t-item t-rare">歐吉王</div>
+      <div class="t-item t-rare">夜巡</div><div class="t-item t-rare">黑暗騎士</div><div class="t-item t-rare">黑暗法師</div>
+      <div class="t-item t-rare">黑暗巡守</div><div class="t-item t-rare">黑暗刺客</div><div class="t-item t-rare">黑暗火槍手</div>
+      <div class="t-item t-rare">黑暗龍騎士</div><div class="t-item t-rare">銀光騎士</div><div class="t-item t-rare">銀光法師</div>
+      <div class="t-item t-rare">銀光巡守</div><div class="t-item t-rare">銀光刺客</div><div class="t-item t-rare">銀光火槍手</div>
+      <div class="t-item t-rare">銀光龍騎士</div><div class="t-item t-rare">黃金騎士</div><div class="t-item t-rare">黃金法師</div>
+      <div class="t-item t-rare">黃金刺客</div><div class="t-item t-rare">黃金巡守</div><div class="t-item t-rare">黃金火槍手</div>
+      <div class="t-item t-rare">黃金龍騎士</div><div class="t-item t-rare">白金騎士</div><div class="t-item t-rare">白金法師</div>
+      <div class="t-item t-rare">白金巡守</div><div class="t-item t-rare">白金刺客</div><div class="t-item t-rare">白金火槍手</div>
+      <div class="t-item t-rare">白金龍騎士</div><div class="t-item t-rare">真死亡騎士</div><div class="t-item t-rare">真黑暗妖精</div>
+      <div class="t-item t-rare">巨大牛人</div><div class="t-item t-rare">力卡溫</div><div class="t-item t-rare">少女賽尼斯</div>
+      <div class="t-item t-rare">黑法師</div><div class="t-item t-rare">紅色妖魔</div><div class="t-item t-rare">哈維</div>
+      <div class="t-item t-rare">海音警衛</div><div class="t-item t-rare">老虎</div><div class="t-item t-rare">白色幼犬</div>
+      <div class="t-item t-rare">暗殺軍王史雷佛</div><div class="t-item t-rare">冥法軍王海露拜</div><div class="t-item t-rare">魔獸軍王巴蘭卡</div>
+      <div class="t-item t-rare">法令軍王蕾雅</div><div class="t-item t-rare">長老凱伊納</div><div class="t-item t-rare">長老拉米阿斯</div>
+      <div class="t-item t-rare">長老伊戴亞</div><div class="t-item t-rare">長老提亞麥斯</div><div class="t-item t-rare">長老巴洛麥斯</div>
+      <div class="t-item t-rare">長老安迪斯</div><div class="t-item t-rare">長老比亞塔斯</div><div class="t-item t-rare">黃金安迪斯</div>
+      <div class="t-item t-rare">黃金史雷佛</div><div class="t-item t-rare">黑暗妖精警衛</div><div class="t-item t-rare">黑暗妖精盜賊</div>
+      <div class="t-item t-rare">武獅</div><div class="t-item t-rare">追蹤者凱伊</div><div class="t-item t-rare">曼玻兔(紅蘿菠)</div>
+      <div class="t-item t-rare">海盜獵人珍</div><div class="t-item t-rare">獵人里德</div><div class="t-item t-rare">菁英魔幻士兵</div>
+      <div class="t-item t-rare">波若斯妖魔鬥士</div><div class="t-item t-rare">波若斯妖魔法師</div><div class="t-item t-rare">波若斯妖魔弓箭手</div>
+      <div class="t-item t-rare">艾爾摩將軍</div><div class="t-item t-rare">艾爾摩士兵</div><div class="t-item t-rare">艾爾魔法師</div>
+      <div class="t-item t-rare">聖地侏儒斧頭兵</div><div class="t-item t-rare">聖地侏儒弓手</div><div class="t-item t-rare">聖地侏儒槍兵</div>
+      <div class="t-item t-rare">聖地侏儒劍士</div><div class="t-item t-rare">巨蟻女皇隊長 🏹</div><div class="t-item t-rare">沙蟲隊長 🏹</div>
+      <div class="t-item t-rare">釣魚少年保羅</div><div class="t-item t-rare">黑暗狂暴槍兵</div><div class="t-item t-rare">銀光狂暴槍騎</div>
+      <div class="t-item t-rare">黃金狂暴槍騎</div><div class="t-item t-rare">白金狂暴槍騎</div><div class="t-item t-rare">黑暗死神</div>
+      <div class="t-item t-rare">銀光死神</div><div class="t-item t-rare">黃金死神</div><div class="t-item t-rare">白金死神</div>
+      <div class="t-item t-rare">巴爾塔扎爾</div><div class="t-item t-rare">梅奎爾</div><div class="t-item t-rare">卡斯帕</div>
+      <div class="t-item t-rare">塞瑪</div><div class="t-item t-rare">亞丁騎士</div><div class="t-item t-rare">亞丁狂暴槍騎</div>
+      <div class="t-item t-rare">亞丁菁英騎士</div><div class="t-item t-rare">海音騎士</div><div class="t-item t-rare">海音狂暴槍騎</div>
+      <div class="t-item t-rare">海音弓手</div><div class="t-item t-rare">妖魔士兵</div><div class="t-item t-rare">妖魔弓手</div>
+      <div class="t-item t-rare">妖魔斧兵</div><div class="t-item t-rare">妖魔騎兵</div><div class="t-item t-rare">墓穴守護者騎士</div>
+      <div class="t-item t-rare">墓穴守護者法師</div><div class="t-item t-rare">墓穴守護者</div><div class="t-item t-rare">韓服少年</div>
+      <div class="t-item t-rare">韓服少女</div><div class="t-item t-rare">歐瑞靈魂</div><div class="t-item t-rare">歐瑞十字弓</div>
+      <div class="t-item t-rare">方</div><div class="t-item t-rare">火焰通</div><div class="t-item t-rare">生日慶祝妖精</div>
+      <div class="t-item t-rare">冰原狼人</div><div class="t-item t-rare">邪惡蛋糕怪</div><div class="t-item t-rare">邪惡麋鹿</div>
+      <div class="t-item t-rare">佩利克</div><div class="t-item t-rare">拉班</div><div class="t-item t-rare">青蛙孟克</div>
+      <div class="t-item t-rare">南瓜 🏹</div><div class="t-item t-rare">紅魔法師 🏹</div><div class="t-item t-rare">背叛的聖物</div>
+      <div class="t-item t-rare">狼騎士</div><div class="t-item t-rare">鬼靈 🏹</div><div class="t-item t-rare">惡夢的稻草人 🏹</div>
+      <div class="t-item t-rare">惡霸鯊魚</div><div class="t-item t-rare">菲爾菲爾</div><div class="t-item t-rare">愛爾芬(乞丐)</div>
+      <div class="t-item t-rare">神聖魔法師 🏹</div><div class="t-item t-rare">瑪依奴</div><div class="t-item t-rare">舞獅(金)</div>
+      <div class="t-item t-rare">墮落的修道士</div><div class="t-item t-rare">稻草人(藍) 🏹</div><div class="t-item t-rare">犧牲的聖職者</div>
+      <div class="t-item t-rare">鐵門騎士團長</div><div class="t-item t-rare">魔女 🏹</div><div class="t-item t-rare">懺悔的修女</div>
+    </div>
+
+    <h3 id="hero" class="t-sec" style="background:rgba(229,57,53,.1);color:#ff8a80;border-left:4px solid #e53935">🔴 英雄變身 <span class="t-badge">攻速/施法 33%</span></h3>
+    <div class="t-grid">
+      <div class="t-item t-hero">巴列斯</div><div class="t-item t-hero">反王肯恩</div><div class="t-item t-hero">賽尼斯</div>
+      <div class="t-item t-hero">依詩蒂</div><div class="t-item t-hero">海露拜</div><div class="t-item t-hero">絲莉安</div>
+      <div class="t-item t-hero">甘特</div><div class="t-item t-hero">特羅斯</div><div class="t-item t-hero">死亡騎士(黃金)</div>
+      <div class="t-item t-hero">覺醒炎魔</div><div class="t-item t-hero">死亡騎士(焚焰)</div><div class="t-item t-hero">天上騎士 🏹</div>
+      <div class="t-item t-hero">克特</div><div class="t-item t-hero">巴風特</div><div class="t-item t-hero">宙斯</div>
+      <div class="t-item t-hero">警衛(弓)</div><div class="t-item t-hero">警衛(矛)</div><div class="t-item t-hero">警衛(綠)(弓)</div>
+      <div class="t-item t-hero">警衛(綠)(矛)</div><div class="t-item t-hero">警衛(紅)(弓)</div><div class="t-item t-hero">警衛(紅)(矛)</div>
+      <div class="t-item t-hero">歐瑞(藍)</div><div class="t-item t-hero">歐瑞(綠)</div><div class="t-item t-hero">塞巴斯蒂安</div>
+      <div class="t-item t-hero">格鬥家男 🏹</div><div class="t-item t-hero">格鬥家女 🏹</div><div class="t-item t-hero">布魯迪卡</div>
+      <div class="t-item t-hero">丹特斯</div><div class="t-item t-hero">真死亡騎士(紅)</div><div class="t-item t-hero">真死亡騎士(藍)</div>
+      <div class="t-item t-hero">荊棘公主艾薇</div><div class="t-item t-hero">阿斯態爾</div><div class="t-item t-hero">格立特(弓)</div>
+      <div class="t-item t-hero">死神</div><div class="t-item t-hero">依詩蒂(槍)</div><div class="t-item t-hero">潘朵拉 🏹</div>
+      <div class="t-item t-hero">暗黑騎士莉爾利</div><div class="t-item t-hero">艾依爾</div><div class="t-item t-hero">狂暴將軍(紅)</div>
+      <div class="t-item t-hero">狂暴將軍(藍)</div><div class="t-item t-hero">刺客首領(紅)</div><div class="t-item t-hero">黃金布雷哲</div>
+      <div class="t-item t-hero">素還真 🏹</div><div class="t-item t-hero">莉茲 🏹</div><div class="t-item t-hero">伯爵安托里歐 🏹</div>
+      <div class="t-item t-hero">師團長哈波 🏹</div><div class="t-item t-hero">兔子少女 🏹</div><div class="t-item t-hero">傑克吳燈籠(紅)</div>
+      <div class="t-item t-hero">葉小釵 🏹</div><div class="t-item t-hero">棄天帝 🏹</div><div class="t-item t-hero">優秀騎士</div>
+      <div class="t-item t-hero">優秀巡守</div><div class="t-item t-hero">優秀法師</div><div class="t-item t-hero">優秀狂暴槍騎</div>
+      <div class="t-item t-hero">暗夜聖殿(金)</div><div class="t-item t-hero">暗夜聖殿(紅)</div><div class="t-item t-hero">暗夜聖殿(紫)</div>
+      <div class="t-item t-hero">暗夜聖殿(藍)</div><div class="t-item t-hero">巴士瑟</div><div class="t-item t-hero">卡士伯</div>
+      <div class="t-item t-hero">西瑪</div><div class="t-item t-hero">馬庫爾</div><div class="t-item t-hero">格鬥家(紅)</div>
+      <div class="t-item t-hero">格鬥家(黃)</div><div class="t-item t-hero">格鬥家(藍)</div><div class="t-item t-hero">格鬥家(女)(藍)</div>
+      <div class="t-item t-hero">秩序煉金術師</div><div class="t-item t-hero">混沌煉金術師</div><div class="t-item t-hero">伊娃守護者 🏹</div>
+      <div class="t-item t-hero">沙哈守護者</div><div class="t-item t-hero">帕格里奧守護者</div><div class="t-item t-hero">馬普勒守護者</div>
+      <div class="t-item t-hero">Doguri 🏹</div><div class="t-item t-hero">女僕安娜 🏹</div><div class="t-item t-hero">天上守護騎士 🏹</div>
+      <div class="t-item t-hero">世拉</div><div class="t-item t-hero">古代企鵝</div><div class="t-item t-hero">巨大墓穴守護者</div>
+      <div class="t-item t-hero">地獄傑克吳燈籠 🏹</div><div class="t-item t-hero">查曼卡</div><div class="t-item t-hero">姬武者</div>
+      <div class="t-item t-hero">家門守護者菲莉亞</div><div class="t-item t-hero">挪威海怪 🏹</div><div class="t-item t-hero">豹人</div>
+      <div class="t-item t-hero">雪之蜥蜴人</div><div class="t-item t-hero">凱普莉夏</div><div class="t-item t-hero">惡夢傑克吳燈籠</div>
+      <div class="t-item t-hero">暗黑死亡騎士</div><div class="t-item t-hero">潘</div><div class="t-item t-hero">覺醒 肯勞厄爾</div>
+      <div class="t-item t-hero">覺醒 愛爾芬</div><div class="t-item t-hero">黑兔少女</div><div class="t-item t-hero">蘿絲瑪莉</div>
+      <div class="t-item t-hero">通緝犯庫傑</div>
+    </div>
+
+    <h3 id="legend" class="t-sec" style="background:rgba(142,36,170,.1);color:#ce93d8;border-left:4px solid #8e24aa">🟣 傳說變身 <span class="t-badge">額外能力加成</span></h3>
+    <div style="overflow-x:auto;border:1px solid rgba(142,36,170,.2);border-radius:8px;margin-bottom:30px">
+      <table class="t-table">
+        <thead><tr><th style="width:30%">變身名稱</th><th>額外能力</th></tr></thead>
+        <tbody>
+          <tr><td>黑暗之星宙斯</td><td>魔攻+1, 回魔+3, 昏迷耐性+4%</td></tr>
+          <tr><td>月之絲莉安</td><td>遠攻+3, 遠爆+3%, 昏迷耐性+4</td></tr>
+          <tr><td>鋼鐵阿頓</td><td>近攻+3, 昏迷耐性+4, 藥水+3%</td></tr>
+          <tr><td>屠龍者 🏹</td><td>近/遠攻+2, 減傷+1</td></tr>
+          <tr><td>暗夜殺戮者</td><td>近攻+3, 昏迷耐性+4</td></tr>
+          <tr><td>黑暗殺手</td><td>遠攻+3, 遠命+1, 昏迷耐性+4</td></tr>
+          <tr><td>地獄死亡騎士</td><td>減傷+2, PVP 減傷+2</td></tr>
+          <tr><td>幻影騎士</td><td>藥水+3%, 減傷+1, 暈命+3, 暈抗+4</td></tr>
+          <tr><td>黑暗哈汀</td><td>防禦+2, 近攻+3</td></tr>
+          <tr><td>憎恨的死亡騎士</td><td>近攻+3, 近命+2, 暈命+3</td></tr>
+          <tr><td>警衛(矛)隊長</td><td>近攻+2, 減傷+1, 暈抗+4</td></tr>
+          <tr><td>警衛(弓)隊長</td><td>藥水+2%, 遠攻+2, 暈抗+4</td></tr>
+          <tr><td>帕拉丁</td><td>近攻+2, PVP 傷+1, 減傷+1</td></tr>
+          <tr><td>天鵝的勞安格林 🏹</td><td>近攻+3, 防禦+1, 暈命+3</td></tr>
+          <tr><td>哈汀之魂</td><td>魔攻+2, MP+125, 暈抗+4</td></tr>
+          <tr><td>漆黑的死亡騎士</td><td>近攻+3, 暈命+3%, 藥水+3</td></tr>
+          <tr><td>公爵馬庫斯 🏹</td><td>近攻+3, 暈命+3%, 暈抗+3</td></tr>
+          <tr><td>軍團長艾克斯特 🏹</td><td>遠攻+3, 暈抗+4, 無視減傷+2</td></tr>
+          <tr><td>不敗的甘特</td><td>暈抗+3, 暈命+3%, 減傷+1</td></tr>
+          <tr><td>赫發斯特斯</td><td>暈抗+3, 暈命+3%, 無視減傷+1</td></tr>
+          <tr><td>第1代多魯嘉</td><td>近傷+3, 暈命+3%, 近爆+1%</td></tr>
+          <tr><td>吉倫</td><td>暈抗+4, 魔攻+2, 魔命+1</td></tr>
+          <tr><td>貝里斯</td><td>近傷+3, 暈抗+4%, PVP 減傷+1</td></tr>
+          <tr><td>暗黑龍宙斯</td><td>魔攻+3, 魔命+3</td></tr>
+          <tr><td>暗黑龍阿頓</td><td>近攻+3, 暈命+6%, 無視減傷+3</td></tr>
+          <tr><td>暗黑龍絲莉安</td><td>遠攻+3, 暈命+6%, 無視減傷+3</td></tr>
+          <tr><td>Mr斯摩格 🏹</td><td>遠攻+3, 暈抗+4%, 支撐+3%, PVP傷+3</td></tr>
+          <tr><td>昔日的騎士范德 🏹</td><td>暈抗+3%, 恐怖抗+3%, 暈命+4%</td></tr>
+          <tr><td>席琳的守衛 🏹</td><td>遠攻+3, 暈命+3%, 暈抗+4%</td></tr>
+          <tr><td>格蘭肯的逆麟 🏹</td><td>近攻+3, 暈命+3%, 暈抗+4%</td></tr>
+          <tr><td>殷海薩的影子 🏹</td><td>魔攻+3, 暈抗+4%, 支撐+2%</td></tr>
+          <tr><td>烈焰死亡騎士</td><td>近傷+3, 暈命+3%, PVP傷+2</td></tr>
+          <tr><td>國王 艾歐丁</td><td>暈命+3%, 暈抗+4%, 無視減傷+1</td></tr>
+          <tr><td>勞待碼依</td><td>暈命+3%, 暈抗+4%, 無視減傷+1</td></tr>
+          <tr><td>暗殺的雅莉亞精靈</td><td>暈抗+4%, 恐怖抗+3%, 無視減傷+3</td></tr>
+          <tr><td>齊天大聖 🏹</td><td>減傷+2, 近/遠傷+2, 魔攻+1</td></tr>
+          <tr><td>龍鬥士</td><td>近攻+3, 暈命+3%, 暈抗+4%, 恐抗+3%, 無視閃避+1</td></tr>
+          <tr><td>禪</td><td>近傷+3, 暈命+3%, 暈抗+4%, 恐抗+3%, 無視近閃+1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="myth" class="t-sec" style="background:rgba(249,168,37,.1);color:var(--gold);border-left:4px solid #fdd835">👑 神話變身 <span class="t-badge">詳情能力</span></h3>
+    <div style="background:rgba(255,152,0,.08);border-left:3px solid #ff9800;padding:10px 16px;margin-bottom:14px;border-radius:4px;font-size:13px;color:#ffb74d">
+      <strong>⚠️ 提醒：</strong>遊戲內因字數過多會造成閃退，詳細能力請至官網查詢。
+    </div>
+    <div style="overflow-x:auto;border:1px solid rgba(249,168,37,.2);border-radius:8px;margin-bottom:30px">
+      <table class="t-table">
+        <thead><tr><th style="width:30%">變身名稱</th><th>完整能力屬性內容</th></tr></thead>
+        <tbody>
+          <tr><td>變身卡：白金死亡騎士(神話)</td><td>昏迷耐性+5、PVP傷害減免+2、近距離攻擊力+6、近戰爆擊發動率+3、魔攻+3、攻擊時一定機率發動地獄火傷害</td></tr>
+          <tr><td>變身卡：白金巴風特(神話)</td><td>昏迷耐性+8%、SP+10、PVP傷害減免+5、近距離攻擊力+3、近距離命中+10、魔法爆擊發動率+5</td></tr>
+          <tr><td>變身卡：神聖劍士(神話)</td><td>近距離攻擊力+8、昏迷命中+8%、昏迷耐性+5、近遠命中+3、PVP傷害減免+2</td></tr>
+          <tr><td>變身卡：龍騎士(神話)</td><td>近距離攻擊力+5、近距離命中+3、魔攻+5、魔法命中+3、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害、PVP減免+3、藥水恢復量+50</td></tr>
+          <tr><td>變身卡：黑暗騎士(神話)</td><td>近距離攻擊力+8、昏迷命中+8%、昏迷耐性+5、近遠命中+3、PVP傷害減免+2</td></tr>
+          <tr><td>變身卡：死神(神話)</td><td>近距離攻擊力+5、近距離命中+10、昏迷命中+8%、昏迷耐性+8、恐懼耐性+4、PVP傷害減免+2、吸取MP固定值+10、魔攻+12、魔法爆擊發動率+5</td></tr>
+          <tr><td>變身卡：變形怪(神話) 🏹</td><td>昏迷耐性+5、恐懼耐性+4%、PVP傷害減免+2、PVP傷害+3、三重矢攻擊力+6、近距離攻擊力+5、遠距離攻擊力+5、魔攻+3</td></tr>
+          <tr><td>變身卡：王族(神話)</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+5、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：騎士(神話)</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+5、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：妖精(神話) 🏹</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+5、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：法師(神話)</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+5、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：黑妖(神話)</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+5、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：槍手(神話) 🏹</td><td>遠距離攻擊力+7、遠距離命中+5、昏迷耐性+5、支撐耐性+4、三重矢傷害+7</td></tr>
+          <tr><td>變身卡：狂戰士(神話) 🏹</td><td>近距離攻擊力+4、遠距離攻擊力+4、近距離命中+3、遠距離命中+3、魔攻+8、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+10</td></tr>
+          <tr><td>變身卡：雷神(神話) 🏹</td><td>近距離攻擊力+5、遠距離攻擊力+5、近距離命中+3、遠距離命中+3、魔攻+8、魔法命中+3、三重矢傷害+5、昏迷命中+8%、昏迷耐性+5、支撐耐性+4、PVP傷害+2、PVP減免+2</td></tr>
+          <tr><td>變身卡：海王波賽頓(神話) 🏹</td><td>近距離攻擊力+3、遠距離攻擊力+8、遠距離命中+5、昏迷命中+8%、昏迷耐性+5、恐懼耐性+4、PVP傷害減免+2、魔攻+8</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="t-sec" style="background:rgba(194,24,91,.1);color:#f48fb1;border-left:4px solid #e91e63">💎 唯一變身</h3>
+    <div style="background:var(--bg2);border:1px dashed rgba(233,30,99,.3);border-radius:8px;padding:20px;text-align:center;color:#f48fb1">
+      <strong>🚧 目前尚未開放，敬請期待！</strong>
+    </div>
+
+  </div><!-- end tab-atlas -->
+
+  <!-- ══ TAB 2: 收藏清單 ══ -->
+  <div id="tab-collection" class="tab-content">
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+      <table class="coll-table">
+        <thead><tr><th style="width:50%">所需變身卡</th><th style="width:25%">圖鑑名稱</th><th style="width:25%">獲得能力</th></tr></thead>
+        <tbody>
+          <tr><td>變身卡：食人妖精(一般)<br>變身卡：食人妖精王(一般)<br>變身卡：南瓜(稀有)<br>變身卡：地獄的傑克吳燈籠(英雄)<br>變身卡：惡夢的傑克吳燈籠(英雄)</td><td>圓圓兄弟</td><td>魔力上限+5</td></tr>
+          <tr><td>變身卡：紙人(一般)<br>變身卡：雪人(一般)<br>變身卡：黑貓(高級)<br>變身卡：溫迪(高級)<br>變身卡：貓咪法師(高級)<br>變身卡：貓咪戰士(高級)<br>變身卡：貓咪騎士(高級)</td><td>曾想當人類</td><td>防禦+1</td></tr>
+          <tr><td>變身卡：浣熊(一般)<br>變身卡：曼波兔(一般)<br>變身卡：黑兔少女(英雄)</td><td>兔子和狸貓</td><td>近遠距離攻擊力+1</td></tr>
+          <tr><td>變身卡：果凍怪(一般)<br>變身卡：橘子(一般)</td><td>四角型和圓型</td><td>魔法攻擊力+1</td></tr>
+          <tr><td>變身卡：骷髏槍兵(一般)<br>變身卡：骷髏弓箭手(一般)<br>變身卡：骷髏(一般)</td><td>結果是骨頭組合</td><td>體力上限+10</td></tr>
+          <tr><td>變身卡：骷髏弓箭手(一般)<br>變身卡：妖魔巡守(一般)<br>變身卡：妖魔弓箭手(一般)<br>變身卡：強盜頭目(高級)</td><td>拙劣的弓箭手團</td><td>魔法防禦+1</td></tr>
+          <tr><td>變身卡：哥布林(一般)<br>變身卡：歐姆民兵(一般)<br>變身卡：安普長老(一般)<br>變身卡：強盜矮人(高級)</td><td>矮小的小鬼</td><td>閃避率+1</td></tr>
+          <tr><td>變身卡：思克巴(一般)<br>變身卡：長者(一般)<br>變身卡：黑暗妖精法師(一般)</td><td>學會了光箭</td><td>體力上限+15</td></tr>
+          <tr><td>變身卡：妖魔巡守(一般)<br>變身卡：妖魔弓箭手(一般)<br>變身卡：都達瑪拉妖魔(一般)<br>變身卡：妖魔鬥士(一般)</td><td>將來的希望是辛巴</td><td>魔力上限+10</td></tr>
+          <tr><td>變身卡：達伊諾思打者(高級)<br>變身卡：達伊諾思投手(高級)</td><td>NC達伊諾思</td><td>傷害減免+1</td></tr>
+          <tr><td>變身卡：德雷克(高級)<br>變身卡：刺客首領(高級)<br>變身卡：布雷哲(高級)</td><td>雙手各拿一把劍</td><td>魔法防禦+2</td></tr>
+          <tr><td>變身卡：骷髏槍兵(一般)<br>變身卡：都達瑪拉妖魔(一般)<br>變身卡：狂暴槍騎(高級)<br>變身卡：狂暴將軍(高級)<br>變身卡：黑騎士(高級)</td><td>第一次拿的槍</td><td>防禦+1</td></tr>
+          <tr><td>變身卡：黑暗妖精法師(一般)<br>變身卡：墮落的賽尼斯(高級)<br>變身卡：魔法師(高級)<br>變身卡：奧爾汀(高級)</td><td>魔力的重要性</td><td>體力上限+10</td></tr>
+          <tr><td>變身卡：奇異鸚鵡(一般)<br>變身卡：桓夢(高級)<br>變身卡：海洋哈維(高級)<br>變身卡：優卡(高級)<br>變身卡：海馬守衛(高級)<br>變身卡：深海獵人(高級)<br>變身卡：袋鼠拳擊手(高級)<br>變身卡：變色龍大師(高級)<br>變身卡：佩利克(稀有)<br>變身卡：拉班(稀有)<br>變身卡：青蛙孟克(稀有)<br>變身卡：惡霸鯊魚(稀有)<br>變身卡：菲爾菲爾(稀有)<br>變身卡：瑪依奴(稀有)<br>變身卡：Doguri(英雄)<br>變身卡：古代企鵝(英雄)<br>變身卡：挪威海怪(英雄)<br>變身卡：齊天大聖(傳說)</td><td>未知的動物</td><td>魔力恢復量+1</td></tr>
+          <tr><td>變身卡：德雷克(高級)<br>變身卡：魔法師(高級)<br>變身卡：奧爾汀(高級)<br>變身卡：布雷哲(高級)</td><td>我曾經也是首領</td><td>遠距離命中+1</td></tr>
+          <tr><td>變身卡：死亡騎士(高級)<br>變身卡：黑暗妖精(高級)</td><td>變身界的兩大支柱</td><td>魔力恢復量+1</td></tr>
+          <tr><td>變身卡：哥布林(一般)<br>變身卡：侏儒(高級)</td><td>最好的蠟燭</td><td>傷害減免+1</td></tr>
+          <tr><td>變身卡：長者(一般)<br>變身卡：魔法師(高級)</td><td>鴛鴦戒指的傳說</td><td>體力上限+30</td></tr>
+          <tr><td>變身卡：強盜弓箭手(一般)<br>變身卡：骷髏弓箭手(一般)<br>變身卡：妖魔弓箭手(一般)<br>變身卡：火焰弓箭手(高級)</td><td>弓箭手們的聚會</td><td>魔力上限+20</td></tr>
+          <tr><td>變身卡：黑暗法師(稀有)<br>變身卡：黑法師(稀有)</td><td>黑魔法師們</td><td>體力上限+30</td></tr>
+          <tr><td>變身卡：妖魔(一般)<br>變身卡：紅色妖魔(稀有)</td><td>我們是同一個種族</td><td>PVP減傷+1</td></tr>
+          <tr><td>變身卡：惡魔(稀有)<br>變身卡：炎魔(稀有)</td><td>魔族領袖們</td><td>體力恢復量+1</td></tr>
+          <tr><td>變身卡：賞金獵人(高級)<br>變身卡：海音警衛(稀有)<br>變身卡：亞丁騎士(稀有)<br>變身卡：亞丁狂暴槍騎(稀有)<br>變身卡：亞丁菁英騎士(稀有)<br>變身卡：海音騎士(稀有)<br>變身卡：海音狂暴槍騎(稀有)<br>變身卡：海音弓手(稀有)</td><td>亞丁守護者</td><td>防禦+1</td></tr>
+          <tr><td>變身卡：歐吉王(稀有)<br>變身卡：巨大牛人(稀有)</td><td>遺忘之島在哪裡</td><td>近距離攻擊力+1</td></tr>
+          <tr><td>變身卡：狼人(一般)<br>變身卡：萊肯(一般)<br>變身卡：力卡溫(稀有)</td><td>鬢毛飛揚</td><td>近距離命中+1</td></tr>
+          <tr><td>變身卡：奇異鸚鵡(一般)<br>變身卡：海洋哈維(高級)<br>變身卡：哈維(稀有)</td><td>種類</td><td>遠距離命中+1</td></tr>
+          <tr><td>變身卡：紙人(一般)<br>變身卡：奧爾汀(高級)<br>變身卡：惡魔(稀有)<br>變身卡：巴爾塔扎爾(稀有)<br>變身卡：梅奎爾(稀有)<br>變身卡：卡斯帕(稀有)<br>變身卡：塞瑪(稀有)<br>變身卡：方(稀有)<br>變身卡：火焰通(稀有)<br>變身卡：秩序的煉金術師(英雄)<br>變身卡：混沌的煉金術師(英雄)</td><td>象牙塔居民</td><td>魔法命中+1</td></tr>
+          <tr><td>變身卡：黑暗騎士(稀有)<br>變身卡：銀光騎士(稀有)<br>變身卡：黃金騎士(稀有)<br>變身卡：白金騎士(稀有)</td><td>劍的達人們</td><td>體力上限+20</td></tr>
+          <tr><td>變身卡：黑暗刺客(稀有)<br>變身卡：銀光刺客(稀有)<br>變身卡：黃金刺客(稀有)<br>變身卡：白金刺客(稀有)</td><td>雙手的達人們</td><td>體力上限+20</td></tr>
+          <tr><td>變身卡：黑暗巡守(稀有)<br>變身卡：銀光巡守(稀有)<br>變身卡：黃金巡守(稀有)<br>變身卡：白金巡守(稀有)</td><td>弓箭手的達人們</td><td>體力上限+20</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div><!-- end tab-collection -->
+
 </div>
-<footer><div class="footer-inner"><div><div class="footer-col-title">遊戲資料</div><ul class="footer-links"><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">遊戲特色</a></li><li><a href="download.html">檔案下載</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
 <script src="main.js"></script>
+<script>
+function switchTab(name){
+  document.querySelectorAll('.page-tab').forEach((t,i)=>{
+    t.classList.toggle('active', (i===0&&name==='atlas')||(i===1&&name==='collection'));
+  });
+  document.getElementById('tab-atlas').classList.toggle('active', name==='atlas');
+  document.getElementById('tab-collection').classList.toggle('active', name==='collection');
+}
+</script>
 </body></html>
