@@ -334,6 +334,11 @@
     .qc-referral{background:linear-gradient(135deg,#1a0d1e,#120a18);border-color:rgba(180,100,255,.3);color:#d8b4fe}
     .qc-referral::before{background:linear-gradient(135deg,rgba(180,100,255,.12),rgba(120,60,200,.08));border:1px solid rgba(180,100,255,.5)}
     .qc-referral:hover{box-shadow:0 8px 32px rgba(160,80,255,.25)}
+
+    .qc-hot{background:linear-gradient(135deg,#1e0800,#160500);border-color:rgba(255,100,30,.35);color:#ffa060;position:relative}
+    .qc-hot::before{background:linear-gradient(135deg,rgba(255,100,30,.14),rgba(200,60,0,.08));border:1px solid rgba(255,120,40,.55)}
+    .qc-hot:hover{box-shadow:0 8px 32px rgba(255,80,0,.3)}
+    .qc-hot-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#ff4500,#ff8c00);color:#fff;font-size:.62em;font-weight:900;padding:2px 7px;border-radius:10px;letter-spacing:1px;animation:hotPulse 1.5s ease-in-out infinite;z-index:2}
     </style>
 
     <div class="quick-grid">
@@ -360,6 +365,13 @@
         <div class="quick-card-title">推文系統</div>
         <div class="quick-card-sub">邀請好友一起冒險<br>雙方皆享豐厚獎勵</div>
         <div class="quick-card-arrow">立即推文 →</div>
+      </a>
+      <a href="sponsor.html" class="quick-card qc-hot">
+        <div class="qc-hot-badge">🔥 HOT</div>
+        <div class="quick-card-icon">🛒</div>
+        <div class="quick-card-title">熱賣商品</div>
+        <div class="quick-card-sub">限量好物・限時加碼<br>手刀搶購別錯過</div>
+        <div class="quick-card-arrow">查看商品 →</div>
       </a>
     </div>
   </div>
