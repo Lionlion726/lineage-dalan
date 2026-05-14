@@ -6,7 +6,7 @@
 <div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
 <div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#">前往 LINE 領取</a></div></div>
-<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
 
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#100808,#0a0818);"></div><div class="hero-content"><div class="hero-badge">SPONSOR</div><h1 class="hero-title"><span style="font-size:2rem">贊助須知</span></h1><p class="hero-tagline">支持我們，獲得專屬豐厚回饋</p></div></div>
 
@@ -20,9 +20,13 @@
     </h2>
     <div class="section-line"></div>
   </div>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px">
-    <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:14px 38px;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#0a0808;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(201,169,110,.4)">💰 點我贊助</a>
-    <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-flex;align-items:center;gap:8px;padding:14px 38px;background:linear-gradient(135deg,#06c755,#00b347);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(6,199,85,.3)">💬 官方LINE</a>
+  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:56px;max-width:720px;margin-left:auto;margin-right:auto">
+    <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#0a0808;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(201,169,110,.4)">💰 點我贊助</a>
+    <div style="text-align:center;padding:0 16px;white-space:nowrap">
+      <div style="font-size:1.1rem;font-weight:800;color:var(--gold);letter-spacing:2px">贊助須知</div>
+      <div style="font-size:.72em;color:var(--text-muted);margin-top:4px;letter-spacing:.5px">支持我們，獲得專屬豐厚回饋</div>
+    </div>
+    <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#06c755,#00b347);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(6,199,85,.3)">💬 官方LINE</a>
   </div>
 
   <!-- ══ 項目二：贊助比值階梯 ══ -->
@@ -33,29 +37,86 @@
     </h2>
     <div class="section-line"></div>
   </div>
-  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(201,169,110,.4);box-shadow:0 4px 20px rgba(0,0,0,.4);margin-bottom:56px;max-width:600px;margin-left:auto;margin-right:auto">
-    <div style="background:linear-gradient(90deg,#c9a96e,#f2d06b);padding:14px 20px">
-      <h3 style="margin:0;color:#1a1a1a;font-size:1.2em">💵 比值一覽表</h3>
+
+  <style>
+  .ratio-table-wrap{max-width:660px;margin:0 auto 56px;border-radius:16px;overflow:hidden;box-shadow:0 0 40px rgba(201,169,110,.25),0 0 80px rgba(0,0,0,.6);border:1px solid rgba(201,169,110,.5)}
+  .ratio-header{background:linear-gradient(90deg,#7a4e00,#c9a96e,#f2d06b,#c9a96e,#7a4e00);padding:18px 24px;text-align:center}
+  .ratio-header h3{margin:0;font-size:1.3em;color:#1a0e00;letter-spacing:3px;text-shadow:0 1px 0 rgba(255,255,255,.3)}
+  .ratio-header p{margin:4px 0 0;font-size:.78em;color:rgba(30,15,0,.7);letter-spacing:1px}
+  .ratio-row{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.05);transition:filter .15s}
+  .ratio-row:hover{filter:brightness(1.12)}
+  .ratio-row:last-child{border-bottom:none}
+  .ratio-cell{padding:13px 16px;display:flex;align-items:center;justify-content:center;text-align:center}
+  .ratio-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.78em;font-weight:700;letter-spacing:1px;white-space:nowrap}
+  .ratio-value{font-size:1.15em;font-weight:800;letter-spacing:1px}
+  .ratio-thead .ratio-cell{padding:11px 16px;font-size:.78em;letter-spacing:2px;color:rgba(201,169,110,.7);font-weight:600;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(201,169,110,.25)}
+  @keyframes shimmer{0%,100%{opacity:1}50%{opacity:.7}}
+  .tier-legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:.75em;color:var(--text-muted)}
+  .tier-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+  </style>
+
+  <div class="ratio-table-wrap">
+    <div class="ratio-header">
+      <h3>👑 贊助比值一覽表</h3>
+      <p>贊助越多，回饋越豐厚 — 大爺您值得最好的</p>
     </div>
-    <div style="overflow-x:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:.95em">
-        <thead>
-          <tr style="background:var(--bg3)">
-            <th style="padding:12px 20px;border-bottom:2px solid var(--border);text-align:center;color:var(--gold)">贊助金額（NTD）</th>
-            <th style="padding:12px 20px;border-bottom:2px solid var(--border);text-align:center;color:var(--gold)">兌換比值</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:var(--bg2)"><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$1,000 – $2,999</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#6fffe9;font-weight:700">1 ： 100</td></tr>
-          <tr><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$3,000 – $5,999</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#6fffe9;font-weight:700">1 ： 1.05</td></tr>
-          <tr style="background:var(--bg2)"><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$6,000 – $9,999</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#6fffe9;font-weight:700">1 ： 1.10</td></tr>
-          <tr><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$10,000 以上</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#69f0ae;font-weight:700">1 ： 1.15</td></tr>
-          <tr style="background:var(--bg2)"><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$20,000 以上</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#69f0ae;font-weight:700">1 ： 1.20</td></tr>
-          <tr><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$30,000 以上</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#ff8a80;font-weight:700">1 ： 1.30</td></tr>
-          <tr style="background:var(--bg2)"><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:var(--text)">$40,000 以上</td><td style="padding:12px 20px;border-bottom:1px solid var(--border);text-align:center;color:#ff8a80;font-weight:700">1 ： 1.40</td></tr>
-          <tr style="border-top:2px solid var(--gold)"><td style="padding:14px 20px;text-align:center;font-weight:700;color:var(--text)">$50,000 以上</td><td style="padding:14px 20px;text-align:center;color:var(--gold);font-weight:700;font-size:1.1em">1 ： 1.50</td></tr>
-        </tbody>
-      </table>
+    <!-- thead -->
+    <div class="ratio-row ratio-thead">
+      <div class="ratio-cell">階級稱號</div>
+      <div class="ratio-cell">贊助金額（NTD）</div>
+      <div class="ratio-cell">兌換比值</div>
+    </div>
+    <!-- 入門 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#0d1117,#101820)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(120,160,200,.15);border:1px solid rgba(120,160,200,.3);color:#90caf9">⚔ 入門冒險者</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$1,000 – $2,999</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#90caf9">1 ： 1.00</span></div>
+    </div>
+    <!-- 銀盃 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#0d1520,#101a24)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(150,200,220,.15);border:1px solid rgba(150,200,220,.35);color:#80deea">🥈 銀盃贊助者</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$3,000 – $5,999</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#80deea">1 ： 1.05</span></div>
+    </div>
+    <!-- 金盃 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#111408,#17190a)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(210,180,80,.15);border:1px solid rgba(210,180,80,.35);color:#f2d06b">🥇 金盃贊助者</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$6,000 – $9,999</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#f2d06b">1 ： 1.10</span></div>
+    </div>
+    <!-- 白金 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#0c1418,#101c22)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(100,220,200,.15);border:1px solid rgba(100,220,200,.4);color:#4dd0e1">💠 白金大老</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$10,000 以上</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#4dd0e1">1 ： 1.15</span></div>
+    </div>
+    <!-- 鑽石 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#0a1020,#0d1428)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(130,180,255,.18);border:1px solid rgba(130,180,255,.45);color:#82b1ff">💎 鑽石貴賓</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$20,000 以上</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#82b1ff">1 ： 1.20</span></div>
+    </div>
+    <!-- 翡翠 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#071410,#0a1a14)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(0,230,180,.15);border:1px solid rgba(0,230,180,.4);color:#69f0ae">🍀 翡翠尊爵</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$30,000 以上</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#69f0ae">1 ： 1.30</span></div>
+    </div>
+    <!-- 紅寶石 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#180808,#200a0a)">
+      <div class="ratio-cell"><span class="ratio-badge" style="background:rgba(255,100,100,.15);border:1px solid rgba(255,100,100,.4);color:#ff8a80">🔴 紅寶尊主</span></div>
+      <div class="ratio-cell" style="color:#b0bec5;font-size:.92em">$40,000 以上</div>
+      <div class="ratio-cell"><span class="ratio-value" style="color:#ff8a80">1 ： 1.40</span></div>
+    </div>
+    <!-- 至尊 -->
+    <div class="ratio-row" style="background:linear-gradient(90deg,#1a1000,#251600,#1a1000);border-top:1px solid rgba(255,215,0,.4);box-shadow:inset 0 0 30px rgba(212,175,55,.08)">
+      <div class="ratio-cell">
+        <span class="ratio-badge" style="background:linear-gradient(135deg,rgba(212,175,55,.25),rgba(255,215,0,.15));border:1px solid rgba(212,175,55,.6);color:#f2d06b;font-size:.85em;animation:shimmer 2.5s ease-in-out infinite">👑 至尊大爺</span>
+      </div>
+      <div class="ratio-cell" style="color:#d4af37;font-weight:700">$50,000 以上</div>
+      <div class="ratio-cell">
+        <span class="ratio-value" style="color:#f2d06b;font-size:1.3em;text-shadow:0 0 12px rgba(242,208,107,.6)">1 ： 1.50</span>
+      </div>
     </div>
   </div>
 
@@ -174,11 +235,14 @@
   </div>
 
   <!-- 聯絡開單 -->
-  <div style="text-align:center;margin-bottom:50px">
-    <p style="font-size:1.3rem;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:28px">或是洽詢官方小編協助開單</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:14px 38px;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#0a0808;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(201,169,110,.4)">💰 點我贊助</a>
-      <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-flex;align-items:center;gap:8px;padding:14px 38px;background:linear-gradient(135deg,#06c755,#00b347);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(6,199,85,.3)">💬 官方LINE</a>
+  <div style="margin-bottom:50px">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;max-width:720px;margin:0 auto">
+      <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#0a0808;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(201,169,110,.4)">💰 點我贊助</a>
+      <div style="text-align:center;padding:0 16px;white-space:nowrap">
+        <div style="font-size:1.1rem;font-weight:800;color:var(--gold);letter-spacing:2px">贊助須知</div>
+        <div style="font-size:.72em;color:var(--text-muted);margin-top:4px;letter-spacing:.5px">支持我們，獲得專屬豐厚回饋</div>
+      </div>
+      <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:linear-gradient(135deg,#06c755,#00b347);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(6,199,85,.3)">💬 官方LINE</a>
     </div>
   </div>
 
