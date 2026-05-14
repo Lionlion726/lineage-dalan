@@ -9,24 +9,59 @@
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#100808,#0a0818);"></div><div class="hero-content"><div class="hero-badge">SPONSOR</div><h1 class="hero-title"><span style="font-size:2rem">贊助系統</span></h1><p class="hero-tagline">支持我們，獲得專屬豐厚回饋</p></div></div>
 <div class="container" style="padding-top:56px;padding-bottom:80px">
-  <div class="section-image"><div class="img-placeholder">[ 贊助系統主圖 — 貼上圖片URL ]</div></div>
-  <div class="feature-detail-content" style="margin-top:32px">
-    <h3>贊助說明</h3>
-    <p>感謝您願意支持大藍蕉天堂！您的贊助是我們持續維運、優化遊戲體驗的重要動力。所有贊助方案均提供對應的遊戲內回饋，請放心選擇。</p>
-    <ul>
-      <li>贊助採台灣銀行轉帳 / 超商代碼付款</li>
-      <li>贊助完成後請提供轉帳截圖至 LINE 客服確認</li>
-      <li>回饋道具將於確認後 24 小時內發放</li>
-      <li>贊助前請詳閱 <a href="sponsor-info.html" style="color:var(--gold)">贊助須知</a></li>
-    </ul>
-    <h3>贊助方案</h3>
-    <p>詳細方案內容請加入 LINE 官方社群詢問管理員，我們將依最新版本提供最即時的贊助資訊。</p>
+
+  <div class="section-header">
+    <div class="section-eyebrow">SPONSOR</div>
+    <h2 class="section-title">💰 贊助資訊與連結
+      <a href="sponsor-info.html" style="font-size:.55em;color:var(--accent);text-decoration:none;margin-left:12px;font-weight:normal;border:1px solid rgba(0,229,255,.4);padding:3px 12px;border-radius:20px;letter-spacing:0">流程教學請點我</a>
+    </h2>
+    <div class="section-line"></div>
   </div>
-  <div class="section-image" style="margin-top:32px"><div class="img-placeholder">[ 贊助方案圖 — 貼上圖片URL ]</div></div>
-  <div class="section-image"><div class="img-placeholder">[ 贊助回饋道具一覽 — 貼上圖片URL ]</div></div>
-  <div style="text-align:center;margin-top:40px">
-    <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" class="btn-gold" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#0a0808;font-weight:700;border-radius:6px;text-decoration:none;font-size:1rem;letter-spacing:1px;">加入 LINE 詢問贊助方案</a>
+
+  <!-- VIP 階級表 -->
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,.5);margin-bottom:40px">
+    <div style="background:linear-gradient(90deg,#c9a96e,#f2d06b);padding:14px 20px">
+      <h3 style="margin:0;color:#1a1a1a;font-size:1.3em">💎 VIP 階級權益總覽</h3>
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:.93em">
+        <thead>
+          <tr style="background:var(--bg3);color:var(--gold)">
+            <th style="padding:14px 16px;border-bottom:2px solid var(--border);text-align:left">VIP 階段</th>
+            <th style="padding:14px 16px;border-bottom:2px solid var(--border);text-align:left">累計紅利</th>
+            <th style="padding:14px 16px;border-bottom:2px solid var(--border);text-align:left">VIP 能力</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP1</td><td style="padding:11px 16px;color:var(--text-muted)">1,000</td><td style="padding:11px 16px;color:var(--text-muted)">HP+40, MP+20, <span style="color:#4db6ac">經驗+2%</span></td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP2</td><td style="padding:11px 16px;color:var(--text-muted)">3,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-1, HP+60, MP+30, <span style="color:#4db6ac">經驗+4%</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP3</td><td style="padding:11px 16px;color:var(--text-muted)">6,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-1, HP+80, MP+40, <span style="color:#4db6ac">經驗+6%</span>, 體力/魔力回復+1</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP4</td><td style="padding:11px 16px;color:var(--text-muted)">10,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-1, 額外攻擊+1, HP+100, MP+50, <span style="color:#4db6ac">經驗+8%</span>, 體力/魔力回復+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP5</td><td style="padding:11px 16px;color:var(--text-muted)">20,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-2, 額外攻擊+1, HP+120, MP+60, <span style="color:#4db6ac">經驗+10%</span>, 體力/魔力回復+2</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP6</td><td style="padding:11px 16px;color:var(--text-muted)">30,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-2, 額外攻擊+2, <span style="color:#ff8a65">力敏智+1</span>, HP+160, MP+70, <span style="color:#4db6ac">經驗+11%</span>, 體力/魔力回復+2, 傷害減免+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP7</td><td style="padding:11px 16px;color:var(--text-muted)">40,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-3, 額外攻擊+5, <span style="color:#ff8a65">力敏智+1</span>, HP+180, MP+80, <span style="color:#4db6ac">經驗+12%</span>, 體力/魔力回復+2, 傷害減免+1</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP8</td><td style="padding:11px 16px;color:var(--text-muted)">50,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-4, 額外攻擊+5, <span style="color:#ff8a65">力敏智+1</span>, HP+200, MP+90, <span style="color:#4db6ac">經驗+13%</span>, 體力/魔力回復+3, 傷害減免+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP9</td><td style="padding:11px 16px;color:var(--text-muted)">60,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-5, 額外攻擊+7, <span style="color:#ff8a65">力敏智+1</span>, HP+220, MP+100, <span style="color:#4db6ac">經驗+14%</span>, 體力/魔力回復+4, 傷害減免+3</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP10</td><td style="padding:11px 16px;color:var(--text-muted)">80,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-8, 額外攻擊+9, <span style="color:#ff8a65">力敏智+2</span>, HP+250, MP+150, <span style="color:#4db6ac;font-weight:700">經驗+20%</span>, 體力/魔力回復+5, 傷害減免+4</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP11</td><td style="padding:11px 16px;color:var(--text-muted)">90,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-10, 額外攻擊+11, <span style="color:#ff8a65">力敏智+3</span>, HP+500, MP+300, <span style="color:#4db6ac;font-weight:700">經驗+25%</span>, 體力/魔力回復+6, 傷害減免+5</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP12</td><td style="padding:11px 16px;color:var(--text-muted)">100,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-12, 額外攻擊+12, <span style="color:#ff8a65">力敏智+3</span>, HP+600, MP+350, <span style="color:#4db6ac">經驗+26%</span>, 體力/魔力回復+8, 傷害減免+6</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP13</td><td style="padding:11px 16px;color:var(--text-muted)">110,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-14, 額外攻擊+13, <span style="color:#ff8a65">力敏智+3</span>, HP+700, MP+400, <span style="color:#4db6ac">經驗+27%</span>, 體力/魔力回復+10, 傷害減免+7</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:11px 16px;font-weight:700;color:#f2d06b">VIP14</td><td style="padding:11px 16px;color:var(--text-muted)">120,000</td><td style="padding:11px 16px;color:var(--text-muted)">防禦-16, 額外攻擊+14, <span style="color:#ff8a65">力敏智+4</span>, HP+800, MP+450, <span style="color:#4db6ac">經驗+28%</span>, 體力/魔力回復+12, 傷害減免+8</td></tr>
+          <tr style="border-top:2px solid var(--gold)"><td style="padding:14px 16px;font-weight:700;background:linear-gradient(135deg,rgba(184,134,11,.3),rgba(212,175,55,.2));color:var(--gold);font-size:1.05em">VIP15</td><td style="padding:14px 16px;font-weight:700;color:var(--text)">130,000</td><td style="padding:14px 16px;color:var(--text)">防禦-18, 額外攻擊+15, <span style="color:#ffab91;font-weight:700">力敏智+4</span>, HP+900, MP+500, <span style="color:#80cbc4;font-weight:700">經驗+30%</span>, 體力/魔力回復+14, 傷害減免+10</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <!-- 聯絡開單 -->
+  <div style="text-align:center;margin-bottom:50px">
+    <p style="font-size:1.4rem;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:28px">或是洽詢官方小編協助開單</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:linear-gradient(135deg,#c9a96e,#f2d06b);color:#0a0808;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(201,169,110,.4)">💰 點我贊助</a>
+      <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:linear-gradient(135deg,#06c755,#00b347);color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:1.05rem;letter-spacing:1px;box-shadow:0 4px 16px rgba(6,199,85,.3)">💬 官方LINE</a>
+    </div>
+  </div>
+
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">規章說明</div><ul class="footer-links"><li><a href="disclaimer.html">免責聲明</a></li><li><a href="rules.html">遊戲規章</a></li><li><a href="sponsor-info.html">贊助須知</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
 <script src="main.js"></script>
