@@ -118,126 +118,6 @@
   </div>
 </section>
 
-<!-- ══ 快速入口 ══ -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">QUICK ACCESS</div>
-      <h2 class="section-title">快速入口</h2>
-      <div class="section-line"></div>
-    </div>
-    <style>
-    .quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:8px}
-    .quick-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;border-radius:14px;padding:36px 20px 28px;border:1px solid transparent;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;text-align:center}
-    .quick-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .25s;border-radius:14px}
-    .quick-card:hover{transform:translateY(-6px)}
-    .quick-card:hover::before{opacity:1}
-    .quick-card-icon{font-size:2.6rem;margin-bottom:14px;line-height:1;position:relative;z-index:1;filter:drop-shadow(0 0 8px currentColor)}
-    .quick-card-title{font-size:1.05rem;font-weight:700;letter-spacing:2px;margin-bottom:6px;position:relative;z-index:1}
-    .quick-card-sub{font-size:.75rem;letter-spacing:.5px;opacity:.75;position:relative;z-index:1;line-height:1.6}
-    .quick-card-arrow{position:relative;z-index:1;margin-top:16px;font-size:.78rem;opacity:.6;transition:opacity .2s,transform .2s}
-    .quick-card:hover .quick-card-arrow{opacity:1;transform:translateX(4px)}
-
-    /* 各卡配色 */
-    .qc-download{background:linear-gradient(135deg,#0d1f3c,#0a1628);border-color:rgba(0,180,255,.3);color:#7dd4fc}
-    .qc-download::before{background:linear-gradient(135deg,rgba(0,180,255,.12),rgba(0,100,200,.08));border:1px solid rgba(0,180,255,.5)}
-    .qc-download:hover{box-shadow:0 8px 32px rgba(0,150,255,.25)}
-
-    .qc-sponsor{background:linear-gradient(135deg,#1e1200,#140d00);border-color:rgba(201,169,110,.35);color:#f2d06b}
-    .qc-sponsor::before{background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(160,120,50,.08));border:1px solid rgba(201,169,110,.6)}
-    .qc-sponsor:hover{box-shadow:0 8px 32px rgba(201,169,110,.3)}
-
-    .qc-features{background:linear-gradient(135deg,#0e1a0d,#0a1408);border-color:rgba(0,220,150,.25);color:#6ee7b7}
-    .qc-features::before{background:linear-gradient(135deg,rgba(0,220,150,.1),rgba(0,160,100,.06));border:1px solid rgba(0,220,150,.45)}
-    .qc-features:hover{box-shadow:0 8px 32px rgba(0,200,130,.2)}
-
-    .qc-referral{background:linear-gradient(135deg,#1a0d1e,#120a18);border-color:rgba(180,100,255,.3);color:#d8b4fe}
-    .qc-referral::before{background:linear-gradient(135deg,rgba(180,100,255,.12),rgba(120,60,200,.08));border:1px solid rgba(180,100,255,.5)}
-    .qc-referral:hover{box-shadow:0 8px 32px rgba(160,80,255,.25)}
-
-    .qc-hot{background:linear-gradient(135deg,#1e0800,#160500);border-color:rgba(255,100,30,.35);color:#ffa060;position:relative}
-    .qc-hot::before{background:linear-gradient(135deg,rgba(255,100,30,.14),rgba(200,60,0,.08));border:1px solid rgba(255,120,40,.55)}
-    .qc-hot:hover{box-shadow:0 8px 32px rgba(255,80,0,.3)}
-    .qc-hot-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#ff4500,#ff8c00);color:#fff;font-size:.62em;font-weight:900;padding:2px 7px;border-radius:10px;letter-spacing:1px;animation:hotPulse 1.5s ease-in-out infinite;z-index:2}
-    </style>
-
-    <div class="quick-grid">
-      <a href="download.html" class="quick-card qc-download">
-        <div class="quick-card-icon">⬇️</div>
-        <div class="quick-card-title">立即下載</div>
-        <div class="quick-card-sub">取得最新客戶端<br>馬上加入冒險</div>
-        <div class="quick-card-arrow">前往下載 →</div>
-      </a>
-      <a href="sponsor.html" class="quick-card qc-sponsor">
-        <div class="quick-card-icon">💰</div>
-        <div class="quick-card-title">贊助系統</div>
-        <div class="quick-card-sub">查看比值與 VIP 福利<br>大爺您值得最好的</div>
-        <div class="quick-card-arrow">查看方案 →</div>
-      </a>
-      <a href="features.html" class="quick-card qc-features">
-        <div class="quick-card-icon">⚔️</div>
-        <div class="quick-card-title">遊戲特色</div>
-        <div class="quick-card-sub">職業技能・特色系統<br>專屬天堂玩法</div>
-        <div class="quick-card-arrow">探索特色 →</div>
-      </a>
-      <a href="referral.html" class="quick-card qc-referral">
-        <div class="quick-card-icon">📣</div>
-        <div class="quick-card-title">推文系統</div>
-        <div class="quick-card-sub">邀請好友一起冒險<br>雙方皆享豐厚獎勵</div>
-        <div class="quick-card-arrow">立即推文 →</div>
-      </a>
-      <a href="sponsor.html" class="quick-card qc-hot">
-        <div class="qc-hot-badge">🔥 HOT</div>
-        <div class="quick-card-icon">🛒</div>
-        <div class="quick-card-title">熱賣商品</div>
-        <div class="quick-card-sub">限量好物・限時加碼<br>手刀搶購別錯過</div>
-        <div class="quick-card-arrow">查看商品 →</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ 職業介紹 ══ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">CHARACTER CLASS</div>
-      <h2 class="section-title">選擇你的職業</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="class-grid">
-      <div class="class-card">
-        <div class="class-icon">👑</div>
-        <div class="class-name">王族</div>
-        <div class="class-desc">領導型職業</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🛡️</div>
-        <div class="class-name">騎士</div>
-        <div class="class-desc">防禦型職業，鐵壁守護，新手友善。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🌑</div>
-        <div class="class-name">黑妖</div>
-        <div class="class-desc">單體爆發最強。高爆傷高迴避。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🏹</div>
-        <div class="class-name">妖精</div>
-        <div class="class-desc">玩法超多樣，近戰／遠攻通通好。</div>
-      </div>
-      <div class="class-card">
-        <div class="class-icon">🔮</div>
-        <div class="class-name">法師</div>
-        <div class="class-desc">強力魔法職業，範圍爆發驚人，輔助擔當。</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:8px">
-      <a class="btn-outline" href="feature-02.html">查看職業詳細介紹 →</a>
-    </div>
-  </div>
-</section>
-
 <!-- ══ 熱賣商品 ══ -->
 <section class="section">
   <div class="container">
@@ -328,6 +208,78 @@
   </div>
 </section>
 
+<!-- ══ 快速入口 ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">QUICK ACCESS</div>
+      <h2 class="section-title">快速入口</h2>
+      <div class="section-line"></div>
+    </div>
+    <style>
+    .quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:8px}
+    .quick-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;border-radius:14px;padding:36px 20px 28px;border:1px solid transparent;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;text-align:center}
+    .quick-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .25s;border-radius:14px}
+    .quick-card:hover{transform:translateY(-6px)}
+    .quick-card:hover::before{opacity:1}
+    .quick-card-icon{font-size:2.6rem;margin-bottom:14px;line-height:1;position:relative;z-index:1;filter:drop-shadow(0 0 8px currentColor)}
+    .quick-card-title{font-size:1.05rem;font-weight:700;letter-spacing:2px;margin-bottom:6px;position:relative;z-index:1}
+    .quick-card-sub{font-size:.75rem;letter-spacing:.5px;opacity:.75;position:relative;z-index:1;line-height:1.6}
+    .quick-card-arrow{position:relative;z-index:1;margin-top:16px;font-size:.78rem;opacity:.6;transition:opacity .2s,transform .2s}
+    .quick-card:hover .quick-card-arrow{opacity:1;transform:translateX(4px)}
+
+    /* 各卡配色 */
+    .qc-download{background:linear-gradient(135deg,#0d1f3c,#0a1628);border-color:rgba(0,180,255,.3);color:#7dd4fc}
+    .qc-download::before{background:linear-gradient(135deg,rgba(0,180,255,.12),rgba(0,100,200,.08));border:1px solid rgba(0,180,255,.5)}
+    .qc-download:hover{box-shadow:0 8px 32px rgba(0,150,255,.25)}
+
+    .qc-sponsor{background:linear-gradient(135deg,#1e1200,#140d00);border-color:rgba(201,169,110,.35);color:#f2d06b}
+    .qc-sponsor::before{background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(160,120,50,.08));border:1px solid rgba(201,169,110,.6)}
+    .qc-sponsor:hover{box-shadow:0 8px 32px rgba(201,169,110,.3)}
+
+    .qc-features{background:linear-gradient(135deg,#0e1a0d,#0a1408);border-color:rgba(0,220,150,.25);color:#6ee7b7}
+    .qc-features::before{background:linear-gradient(135deg,rgba(0,220,150,.1),rgba(0,160,100,.06));border:1px solid rgba(0,220,150,.45)}
+    .qc-features:hover{box-shadow:0 8px 32px rgba(0,200,130,.2)}
+
+    .qc-referral{background:linear-gradient(135deg,#1a0d1e,#120a18);border-color:rgba(180,100,255,.3);color:#d8b4fe}
+    .qc-referral::before{background:linear-gradient(135deg,rgba(180,100,255,.12),rgba(120,60,200,.08));border:1px solid rgba(180,100,255,.5)}
+    .qc-referral:hover{box-shadow:0 8px 32px rgba(160,80,255,.25)}
+
+    .qc-hot{background:linear-gradient(135deg,#1e0800,#160500);border-color:rgba(255,100,30,.35);color:#ffa060;position:relative}
+    .qc-hot::before{background:linear-gradient(135deg,rgba(255,100,30,.14),rgba(200,60,0,.08));border:1px solid rgba(255,120,40,.55)}
+    .qc-hot:hover{box-shadow:0 8px 32px rgba(255,80,0,.3)}
+    .qc-hot-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#ff4500,#ff8c00);color:#fff;font-size:.62em;font-weight:900;padding:2px 7px;border-radius:10px;letter-spacing:1px;animation:hotPulse 1.5s ease-in-out infinite;z-index:2}
+    </style>
+
+    <div class="quick-grid">
+      <a href="download.html" class="quick-card qc-download">
+        <div class="quick-card-icon">⬇️</div>
+        <div class="quick-card-title">立即下載</div>
+        <div class="quick-card-sub">取得最新客戶端<br>馬上加入冒險</div>
+        <div class="quick-card-arrow">前往下載 →</div>
+      </a>
+      <a href="sponsor.html" class="quick-card qc-sponsor">
+        <div class="quick-card-icon">💰</div>
+        <div class="quick-card-title">贊助系統</div>
+        <div class="quick-card-sub">查看比值與 VIP 福利<br>大爺您值得最好的</div>
+        <div class="quick-card-arrow">查看方案 →</div>
+      </a>
+      <a href="features.html" class="quick-card qc-features">
+        <div class="quick-card-icon">⚔️</div>
+        <div class="quick-card-title">遊戲特色</div>
+        <div class="quick-card-sub">職業技能・特色系統<br>專屬天堂玩法</div>
+        <div class="quick-card-arrow">探索特色 →</div>
+      </a>
+      <a href="referral.html" class="quick-card qc-referral">
+        <div class="quick-card-icon">📣</div>
+        <div class="quick-card-title">推文系統</div>
+        <div class="quick-card-sub">邀請好友一起冒險<br>雙方皆享豐厚獎勵</div>
+        <div class="quick-card-arrow">立即推文 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ 最新公告 ══ -->
 <section class="section section-alt">
   <div class="container">
@@ -373,6 +325,47 @@
         <div class="ann-card-excerpt">為維護良好遊戲環境，請所有玩家遵守伺服器規章。</div>
         <div class="ann-card-more">閱讀更多 →</div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 職業介紹 ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">CHARACTER CLASS</div>
+      <h2 class="section-title">選擇你的職業</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <div class="class-icon">👑</div>
+        <div class="class-name">王族</div>
+        <div class="class-desc">領導型職業</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🛡️</div>
+        <div class="class-name">騎士</div>
+        <div class="class-desc">防禦型職業，鐵壁守護，新手友善。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🌑</div>
+        <div class="class-name">黑妖</div>
+        <div class="class-desc">單體爆發最強。高爆傷高迴避。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🏹</div>
+        <div class="class-name">妖精</div>
+        <div class="class-desc">玩法超多樣，近戰／遠攻通通好。</div>
+      </div>
+      <div class="class-card">
+        <div class="class-icon">🔮</div>
+        <div class="class-name">法師</div>
+        <div class="class-desc">強力魔法職業，範圍爆發驚人，輔助擔當。</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <a class="btn-outline" href="feature-02.html">查看職業詳細介紹 →</a>
     </div>
   </div>
 </section>
