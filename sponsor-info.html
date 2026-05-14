@@ -4,13 +4,93 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>大藍蕉天堂 - 贊助流程教學</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── 流程頁專用 ── */
+    .flow-wrap{max-width:800px;margin:0 auto;padding-bottom:80px}
+
+    /* 步驟卡 */
+    .flow-step{margin-bottom:56px;position:relative}
+    .flow-step-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .flow-step-num{
+      width:52px;height:52px;border-radius:50%;flex-shrink:0;
+      background:linear-gradient(135deg,#c9a96e,#f2d06b);
+      color:#1a0e00;font-weight:900;font-size:1.4rem;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 18px rgba(201,169,110,.5);
+    }
+    .flow-step-title{font-size:1.25rem;font-weight:700;color:var(--gold);letter-spacing:2px}
+
+    /* 圖片框 */
+    .flow-img-frame{
+      width:100%;border-radius:12px;overflow:hidden;
+      border:2px solid rgba(201,169,110,.45);
+      box-shadow:0 4px 30px rgba(0,0,0,.7),0 0 20px rgba(201,169,110,.12);
+      margin-bottom:16px;line-height:0;background:#000;
+    }
+    .flow-img-frame img{width:100%;height:auto;display:block;transition:transform .5s ease}
+    .flow-step:hover .flow-img-frame img{transform:scale(1.02)}
+
+    /* 說明文字 */
+    .flow-step-desc{
+      background:var(--bg2);border-left:3px solid var(--gold);
+      border-radius:0 8px 8px 0;padding:14px 20px;
+      color:var(--text);line-height:1.85;font-size:.95rem;
+    }
+    .flow-step-desc .hl{color:var(--gold);font-weight:700}
+
+    /* 箭頭連接 */
+    .flow-arrow{text-align:center;font-size:1.8rem;color:var(--gold);
+      margin:-20px 0 36px;opacity:.5;animation:flowArrow 2s ease-in-out infinite}
+    @keyframes flowArrow{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:.8;transform:translateY(8px)}}
+
+    /* 提醒框 */
+    .flow-notice{
+      background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.35);
+      border-radius:10px;padding:20px 24px;margin-bottom:40px;
+      color:var(--text);line-height:1.85;font-size:.93rem;
+    }
+    .flow-notice strong{color:var(--gold-light);font-size:1em}
+
+    /* CTA 區 */
+    .flow-cta{text-align:center;padding:16px 0}
+    .flow-cta-donate{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:16px 52px;
+      background:linear-gradient(135deg,#c9a96e,#f2d06b);
+      color:#1a0e00;font-weight:900;font-size:1.2rem;border-radius:10px;
+      text-decoration:none;letter-spacing:2px;
+      box-shadow:0 0 24px rgba(201,169,110,.5),0 4px 16px rgba(0,0,0,.4);
+      transition:.25s;margin-bottom:20px;
+      animation:ctaPulse 2.5s ease-in-out infinite;
+    }
+    .flow-cta-donate:hover{transform:scale(1.06);box-shadow:0 0 40px rgba(242,208,107,.7)}
+    @keyframes ctaPulse{0%,100%{box-shadow:0 0 16px rgba(201,169,110,.4)}50%{box-shadow:0 0 36px rgba(201,169,110,.75)}}
+
+    .flow-cta-line{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:13px 36px;
+      background:linear-gradient(180deg,#06c755,#04a344);
+      color:#fff;font-weight:700;font-size:1rem;border-radius:50px;
+      text-decoration:none;letter-spacing:1px;
+      box-shadow:0 4px 16px rgba(6,199,85,.35);
+      transition:.25s;
+    }
+    .flow-cta-line:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(6,199,85,.55)}
+
+    .flow-divider{border:none;border-top:1px solid rgba(201,169,110,.2);margin:32px 0}
+
+    @media(max-width:600px){
+      .flow-step-title{font-size:1.05rem}
+      .flow-cta-donate{font-size:1rem;padding:14px 32px}
+    }
+  </style>
 </head>
 <body>
-<nav class="topnav"><div class="topnav-logo">⚔ 大藍蕉天堂</div><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><div class="topnav-dropdown"><a class="topnav-link">活動公告 ▾</a><div class="dropdown-menu"><a href="events.html">開局紅變+紅娃</a><a href="event-line.html">預約LINE禮包</a><a href="event-bonfire.html">烽火慶典禮包</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲特色 ▾</a><div class="dropdown-menu"><a href="features.html">特色總覽</a><a href="feature-01.html">法師召喚物系統</a><a href="feature-02.html">職業特色技能</a><a href="feature-03.html">職業之力介紹</a><a href="feature-05.html">寵物系統介紹</a><a href="feature-07.html">威望系統</a><a href="feature-08.html">高寵介紹</a><a href="feature-09.html">在線禮包</a><a href="feature-12.html">換金道具</a></div></div><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="transform.html">變身介紹</a><a class="topnav-link" href="dolls.html">娃娃介紹</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="sponsor.html">贊助須知</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link active">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a><a href="sponsor-info.html">贊助流程教學</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<nav class="topnav"><div class="topnav-logo">⚔ 大藍蕉天堂</div><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><div class="topnav-dropdown"><a class="topnav-link">活動公告 ▾</a><div class="dropdown-menu"><a href="events.html">開局紅變+紅娃</a><a href="event-line.html">預約LINE禮包</a><a href="event-bonfire.html">烽火慶典禮包</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲特色 ▾</a><div class="dropdown-menu"><a href="features.html">特色總覽</a><a href="feature-01.html">法師召喚物系統</a><a href="feature-02.html">職業特色技能</a><a href="feature-03.html">職業之力介紹</a><a href="feature-05.html">寵物系統介紹</a><a href="feature-07.html">威望系統</a><a href="feature-08.html">高寵介紹</a><a href="feature-09.html">在線禮包</a><a href="feature-12.html">換金道具</a></div></div><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="transform.html">變身介紹</a><a class="topnav-link" href="dolls.html">娃娃介紹</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="sponsor.html">贊助須知</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link active">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a><a href="sponsor-info.html">贊助流程教學</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/a3TiZsP" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
 <div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
 <div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
-<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="#">前往 LINE 領取</a></div></div>
-<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div></div><a class="modal-btn" href="#">加入 LINE 官方社群</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/a3TiZsP" target="_blank">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://lin.ee/a3TiZsP" target="_blank">加入 LINE 官方社群</a></div></div>
 
 <div class="hero" style="height:220px">
   <div class="hero-bg" style="background:linear-gradient(135deg,#1a0a08,#0a0818);"></div>
@@ -21,42 +101,107 @@
   </div>
 </div>
 
-<div class="container" style="padding-top:56px;padding-bottom:80px">
-  <div class="feature-detail-content" style="max-width:800px;margin:0 auto">
+<div class="container" style="padding-top:56px">
+  <div class="flow-wrap">
 
-    <!-- 流程內容區塊（待補充） -->
-    <div style="background:var(--bg2);border:1px solid rgba(201,169,110,.25);border-radius:12px;padding:48px 28px;margin-bottom:24px;text-align:center">
-      <div style="font-size:3rem;margin-bottom:16px">📋</div>
-      <h2 style="color:var(--gold);margin-top:0;margin-bottom:12px">流程教學內容更新中</h2>
-      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:24px">詳細的贊助流程圖文教學即將上線，<br>目前如需贊助請直接聯繫官方小編協助開單。</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="sponsor.html" style="display:inline-block;background:linear-gradient(135deg,#c9a96e,#a07840);color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.95em">💎 查看贊助須知</a>
-        <a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;" style="display:inline-block;background:linear-gradient(135deg,#00b900,#007a00);color:#fff;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.95em">💬 官方LINE</a>
+    <!-- 步驟一 -->
+    <div class="flow-step">
+      <div class="flow-step-header">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-title">選擇支付方式</div>
       </div>
+      <div class="flow-img-frame">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAICh2mMOSW4NiGlF92HXWXjuK5k3HA2AAK7DWsbbuZhVATbboU2wR2NAQADAgADeQADOgQ.png" alt="步驟一：選擇支付方式" loading="lazy">
+      </div>
+      <div class="flow-step-desc">
+        點選贊助按鈕後，請依據您的需求選擇 <span class="hl">「超商代碼」</span> 或 <span class="hl">「網路ATM」</span> 完成付款。
+      </div>
+    </div>
+    <div class="flow-arrow">▼</div>
+
+    <!-- 步驟二 -->
+    <div class="flow-step">
+      <div class="flow-step-header">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-title">輸入遊戲帳號</div>
+      </div>
+      <div class="flow-img-frame">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIChmmMOQb75iMnGz2TrxdqhONpt5ilAAK6DWsbbuZhVPhmdr8hXPhaAQADAgADeQADOgQ.png" alt="步驟二：輸入遊戲帳號" loading="lazy">
+      </div>
+      <div class="flow-step-desc">
+        請輸入您要儲值的 <span class="hl">正確遊戲帳號</span>。請務必再次核對，以免鑽石發送錯誤。
+      </div>
+    </div>
+    <div class="flow-arrow">▼</div>
+
+    <!-- 步驟三 -->
+    <div class="flow-step">
+      <div class="flow-step-header">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-title">獲取繳費帳號</div>
+      </div>
+      <div class="flow-img-frame">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAICiWmMOYCgn57rDUb82DB_z_kB9iARAAK8DWsbbuZhVKqlqAuYySzqAQADAgADeQADOgQ.png" alt="步驟三：獲取繳費帳號" loading="lazy">
+      </div>
+      <div class="flow-step-desc">
+        確認送出後，系統將自動產生繳費代碼。請 <span class="hl">拍照或截圖保存</span>，再前往超商或ATM繳費。
+      </div>
+    </div>
+    <div class="flow-arrow">▼</div>
+
+    <!-- 步驟四 -->
+    <div class="flow-step">
+      <div class="flow-step-header">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-title">主城領取物資</div>
+      </div>
+      <div class="flow-img-frame">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAICimmMOZQF2YHYl0BF6rqYZhnbQqzwAAK-DWsbbuZhVBEYzPi6s-FkAQADAgADbQADOgQ.png" alt="步驟四：主城領取物資" loading="lazy">
+      </div>
+      <div class="flow-step-desc">
+        繳費完成後稍等 <span class="hl">3–5 分鐘</span>，前往 <span class="hl">遊戲主城 NPC</span> 對話，即可領取您的藍鑽。
+      </div>
+    </div>
+
+    <hr class="flow-divider">
+
+    <!-- 溫馨提醒 -->
+    <div class="flow-notice">
+      <strong>🔥 溫馨提醒</strong><br>
+      1. 請保留您的繳費收據／存根聯，以確保您的權益。<br>
+      2. 若繳費後 <strong style="color:var(--text)">15 分鐘</strong>內未收到鑽石，請聯繫官方 LINE 並提供單據照片，專員將立即為您處理。
+    </div>
+
+    <!-- 大贊助按鈕 -->
+    <div class="flow-cta">
+      <div style="margin-bottom:20px">
+        <a href="https://web-hosts.net/%E6%AC%8A%E6%9B%9C%E5%A4%A9%E5%A0%82.html" target="_blank" class="flow-cta-donate">
+          💰 點我前往贊助
+        </a>
+      </div>
+      <hr class="flow-divider" style="margin:24px auto;max-width:300px">
+      <a href="https://lin.ee/a3TiZsP" target="_blank" class="flow-cta-line">
+        💬 洽詢官方 LINE 客服（@021ngtgv）
+      </a>
     </div>
 
   </div>
 </div>
 
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">遊戲特色</a></li><li><a href="download.html">檔案下載</a></li></ul></div><div><div class="footer-col-title">規章說明</div><ul class="footer-links"><li><a href="disclaimer.html">免責聲明</a></li><li><a href="rules.html">遊戲規章</a></li><li><a href="sponsor-info.html">贊助流程教學</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+<script src="main.js"></script>
 <script>
 document.querySelectorAll('.float-btn[data-modal]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const id=btn.getAttribute('data-modal');
-    document.getElementById(id).classList.add('open');
-  });
+  btn.addEventListener('click',()=>{document.getElementById(btn.getAttribute('data-modal')).classList.add('open')});
 });
 document.querySelectorAll('.modal-close').forEach(el=>{
-  el.addEventListener('click',()=>{
-    el.closest('.float-modal').classList.remove('open');
-  });
+  el.addEventListener('click',()=>{el.closest('.float-modal').classList.remove('open')});
 });
 document.querySelectorAll('.float-modal').forEach(modal=>{
-  modal.addEventListener('click',e=>{
-    if(e.target===modal) modal.classList.remove('open');
-  });
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
 });
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') document.querySelectorAll('.float-modal.open').forEach(m=>m.classList.remove('open'));
+  if(e.key==='Escape')document.querySelectorAll('.float-modal.open').forEach(m=>m.classList.remove('open'));
 });
 </script>
 </body>
