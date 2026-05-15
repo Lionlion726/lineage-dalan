@@ -637,6 +637,7 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: unset;
   transition: transform 0.4s;
 }
 
