@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大藍蕉天堂 - 活動公告</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
+    .section     { background:rgba(10,8,8,0.82)  !important; }
+    .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+    /* ── 活動清單 ── */
+    .event-list { max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:12px; padding-bottom:80px; }
+
+    .event-item {
+      display:flex; align-items:center; gap:20px;
+      background:var(--bg2); border:1px solid var(--border);
+      border-radius:12px; padding:20px 24px;
+      text-decoration:none; color:var(--text);
+      transition:border-color .2s, background .2s, transform .2s;
+      position:relative; overflow:hidden;
+    }
+    .event-item::before {
+      content:''; position:absolute; left:0; top:0; bottom:0;
+      width:3px; background:var(--gold); border-radius:3px 0 0 3px;
+      opacity:0; transition:opacity .2s;
+    }
+    .event-item:hover { border-color:var(--gold); background:rgba(201,169,110,.06); transform:translateX(4px); }
+    .event-item:hover::before { opacity:1; }
+
+    .event-tag {
+      flex-shrink:0; min-width:58px; text-align:center;
+      padding:4px 10px; border-radius:20px; font-size:.72rem; font-weight:700; letter-spacing:1px;
+    }
+    .tag-act  { background:rgba(201,169,110,.15); color:var(--gold);  border:1px solid rgba(201,169,110,.3); }
+    .tag-gift { background:rgba(0,229,255,.12);   color:var(--blue);  border:1px solid rgba(0,229,255,.3); }
+    .tag-fest { background:rgba(255,100,30,.12);  color:#ff9060;      border:1px solid rgba(255,100,30,.3); }
+
+    .event-info { flex:1; }
+    .event-title { font-size:1rem; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:4px; }
+    .event-desc  { font-size:.8rem; color:var(--text-muted); line-height:1.6; }
+
+    .event-arrow { font-size:.85rem; color:var(--text-dim); flex-shrink:0; transition:transform .2s, color .2s; }
+    .event-item:hover .event-arrow { transform:translateX(4px); color:var(--gold); }
+  </style>
+</head>
+<body>
+<nav class="topnav"><div class="topnav-logo">⚔ 大藍蕉天堂</div><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><div class="topnav-dropdown"><a class="topnav-link active" href="events-list.html">活動公告 ▾</a><div class="dropdown-menu"><a href="events.html">開局紅變+紅娃</a><a href="event-line.html">預約LINE禮包</a><a href="event-bonfire.html">烽火慶典禮包</a></div></div><div class="topnav-dropdown"><a class="topnav-link">遊戲特色 ▾</a><div class="dropdown-menu"><a href="features.html">特色總覽</a><a href="feature-01.html">法師召喚物系統</a><a href="feature-02.html">職業特色技能</a><a href="feature-03.html">職業之力介紹</a><a href="feature-05.html">寵物系統介紹</a><a href="feature-07.html">威望系統</a><a href="feature-08.html">高寵介紹</a><a href="feature-09.html">在線禮包</a><a href="feature-12.html">換金道具</a><a href="anti-cheat.html">防外掛驗證</a></div></div><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="transform.html">變身介紹</a><a class="topnav-link" href="dolls.html">娃娃介紹</a><a class="topnav-link" href="maps.html">地圖介紹</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/a3TiZsP" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/a3TiZsP" target="_blank">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><div style="width:150px;height:150px;background:var(--bg4);border:1px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px;">LINE QR Code</div><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://lin.ee/a3TiZsP" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="hero" style="height:240px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#0a0808,#080c18);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">EVENTS &amp; ANNOUNCEMENTS</div>
+    <h1 class="hero-title"><span style="font-size:2rem">活動公告</span></h1>
+    <p class="hero-tagline">最新活動・限時好禮・別錯過</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:56px">
+  <div class="section-header">
+    <div class="section-eyebrow">EVENT LIST</div>
+    <h2 class="section-title">活動一覽</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="event-list">
+
+    <a href="events.html" class="event-item">
+      <span class="event-tag tag-act">活動</span>
+      <div class="event-info">
+        <div class="event-title">開局紅變 + 紅娃</div>
+        <div class="event-desc">開服限定活動，取得稀有紅色變身與紅色娃娃，錯過不再有</div>
+      </div>
+      <span class="event-arrow">→</span>
+    </a>
+
+    <a href="event-line.html" class="event-item">
+      <span class="event-tag tag-gift">禮包</span>
+      <div class="event-info">
+        <div class="event-title">預約 LINE 禮包</div>
+        <div class="event-desc">加入官方 LINE 社群預約，開服即可領取專屬新手好禮</div>
+      </div>
+      <span class="event-arrow">→</span>
+    </a>
+
+    <a href="event-bonfire.html" class="event-item">
+      <span class="event-tag tag-fest">慶典</span>
+      <div class="event-info">
+        <div class="event-title">烽火慶典禮包</div>
+        <div class="event-desc">烽火慶典限定好禮，豐厚獎勵等你來領</div>
+      </div>
+      <span class="event-arrow">→</span>
+    </a>
+
+  </div>
+</div>
+
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="features.html">遊戲特色</a></li><li><a href="download.html">檔案下載</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+<script src="main.js"></script>
+</body>
+</html>
