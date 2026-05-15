@@ -11,7 +11,7 @@
  *   date  : 日期字串，用於排序（格式 YYYY-MM-DD）
  *   pin   : true = 置頂（可省略，預設 false）
  */
-const EVENTS = [
+var EVENTS = [
   {
     url:   'event-line.html',
     tag:   '禮包',
@@ -35,3 +35,32 @@ const EVENTS = [
   //   date:  '2026-06-01',
   // },
 ];
+
+// 自動渲染到 #eventList（若頁面存在）
+(function(){
+  var list = document.getElementById('eventList');
+  if(!list) return;
+
+  var sorted = EVENTS.slice().sort(function(a,b){
+    if(a.pin && !b.pin) return -1;
+    if(!a.pin && b.pin) return 1;
+    return (b.date||'').localeCompare(a.date||'');
+  });
+
+  if(sorted.length === 0){
+    list.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px 0">目前沒有進行中的活動</p>';
+    return;
+  }
+
+  list.innerHTML = sorted.map(function(ev){
+    var tagClass = 'tag-' + (ev.tag || '其他');
+    return '<a href="' + ev.url + '" class="event-item">'
+      + '<span class="event-tag ' + tagClass + '">' + (ev.tag||'其他') + '</span>'
+      + '<div class="event-info">'
+      + '<div class="event-title">' + ev.title + '</div>'
+      + '<div class="event-desc">' + (ev.desc||'') + '</div>'
+      + '</div>'
+      + '<span class="event-arrow">→</span>'
+      + '</a>';
+  }).join('');
+})();
