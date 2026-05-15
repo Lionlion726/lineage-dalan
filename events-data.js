@@ -37,7 +37,7 @@ var EVENTS = [
 ];
 
 // 自動渲染到 #eventList（若頁面存在）
-(function(){
+function renderEventList(){
   var list = document.getElementById('eventList');
   if(!list) return;
 
@@ -63,4 +63,5 @@ var EVENTS = [
       + '<span class="event-arrow">→</span>'
       + '</a>';
   }).join('');
-})();
+}
+document.addEventListener('DOMContentLoaded', renderEventList);
