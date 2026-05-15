@@ -44,6 +44,32 @@ var EVENTS = [
   // },
 ];
 
+// 自動渲染上一則/下一則導覽到 #eventNav（若頁面存在）
+function renderEventNav(){
+  var nav = document.getElementById('eventNav');
+  if(!nav) return;
+
+  // 依置頂→日期降序排序，與活動一覽相同
+  var sorted = EVENTS.slice().sort(function(a,b){
+    if(a.pin && !b.pin) return -1;
+    if(!a.pin && b.pin) return 1;
+    return (b.date||'').localeCompare(a.date||'');
+  });
+
+  // 比對目前頁面檔名
+  var current = location.pathname.split('/').pop() || 'index.html';
+  var idx = sorted.findIndex(function(ev){ return ev.url === current; });
+  if(idx === -1) return;
+
+  var prev = idx > 0 ? sorted[idx - 1] : null;
+  var next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+
+  nav.innerHTML = '<div class="feature-nav-btns">'
+    + (prev ? '<a href="' + prev.url + '" class="btn-outline">← ' + prev.title + '</a>' : '<span></span>')
+    + (next ? '<a href="' + next.url + '" class="btn-outline">' + next.title + ' →</a>' : '<span></span>')
+    + '</div>';
+}
+
 // 自動渲染到 #eventList（若頁面存在）
 function renderEventList(){
   var list = document.getElementById('eventList');
@@ -72,4 +98,7 @@ function renderEventList(){
       + '</a>';
   }).join('');
 }
-document.addEventListener('DOMContentLoaded', renderEventList);
+document.addEventListener('DOMContentLoaded', function(){
+  renderEventList();
+  renderEventNav();
+});
