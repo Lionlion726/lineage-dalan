@@ -13,6 +13,14 @@
  */
 var EVENTS = [
   {
+    url:   'events.html',
+    tag:   '活動',
+    title: '開局紅變＋紅娃活動',
+    desc:  '登入就送英雄變身＋娃娃，開局加碼稀有＋7武器，自帶魔武！！練功必備',
+    date:  '2026-05-15',
+    pin:   true,
+  },
+  {
     url:   'event-line.html',
     tag:   '禮包',
     title: '預約 LINE 禮包',

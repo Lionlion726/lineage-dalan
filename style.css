@@ -51,6 +51,7 @@ img { max-width:100%; display:block; }
   color:var(--gold); letter-spacing:2px;
   white-space:nowrap; margin-right:24px;
   text-shadow: 0 0 12px rgba(201,169,110,0.4);
+  text-decoration:none;
 }
 
 .topnav-sep {
