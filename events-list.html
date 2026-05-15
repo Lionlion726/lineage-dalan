@@ -81,7 +81,7 @@
 <script>
 (function(){
   const list = document.getElementById('eventList');
-  if(!list || !window.EVENTS) return;
+  if(!list || typeof EVENTS === 'undefined') return;
 
   // 置頂優先，其餘依日期新→舊排序
   const sorted = [...EVENTS].sort((a,b)=>{
