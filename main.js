@@ -44,9 +44,10 @@ function initParallax() {
 function initDropdowns() {
   document.querySelectorAll('.topnav-dropdown').forEach(dd => {
     dd.querySelector(':scope > .topnav-link').addEventListener('click', e => {
+      // 有 href 的直接跳轉，不開 dropdown
+      if (e.currentTarget.getAttribute('href')) return;
       e.stopPropagation();
       const isOpen = dd.classList.contains('open');
-      // 關閉所有其他
       document.querySelectorAll('.topnav-dropdown.open').forEach(o => o.classList.remove('open'));
       if (!isOpen) dd.classList.add('open');
     });
