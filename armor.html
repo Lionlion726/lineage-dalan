@@ -41,6 +41,7 @@
   <div class="page-tabs">
     <button class="page-tab active" onclick="switchTab('overview')">🛡️ 防具總覽</button>
     <button class="page-tab" onclick="switchTab('craft')">⚒️ 製作系統</button>
+    <button class="page-tab" onclick="switchTab('hellring')">🔥 煉獄耳環升階</button>
   </div>
 
   <!-- ══ TAB 1: 防具總覽 ══ -->
@@ -433,16 +434,85 @@
   </div>
   </div><!-- end tab-craft -->
 
+  <!-- ══ TAB 3: 煉獄耳環升階 ══ -->
+  <div id="tab-hellring" class="tab-content">
+
+    <div style="background:linear-gradient(135deg,#7b1a1a,#3a0000);border-radius:10px;padding:25px;text-align:center;border:2px solid #ef5350;margin-bottom:25px;box-shadow:0 4px 20px rgba(239,83,80,.2)">
+      <h2 style="color:#fff;margin:0 0 10px 0;font-size:1.6em;text-shadow:1px 1px 6px rgba(0,0,0,.6)">🔥 煉獄耳環升階：LINE 好禮限定 🔥</h2>
+      <div style="display:inline-block;background:rgba(255,255,255,.1);color:#ffb74d;font-weight:bold;padding:5px 18px;border-radius:20px;font-size:1em;border:1px solid rgba(255,183,77,.4)">
+        大升級！解鎖終焉的強大力量
+      </div>
+    </div>
+
+    <h3 style="color:#64b5f6;font-size:1.1em;margin-bottom:10px;border-left:4px solid #1e88e5;padding-left:10px">⚒️ 煉獄耳環大升級</h3>
+    <div style="background:var(--bg2);border:1px solid rgba(100,181,246,.3);border-radius:8px;padding:20px;margin-bottom:24px">
+      <ul style="margin:0 0 16px 0;padding-left:20px;color:var(--text-muted);line-height:2">
+        <li><strong style="color:#ef5350">製作 NPC：</strong><span style="color:var(--text)">村莊 NPC 米米 [飾品製作] 已新增製作選項。</span></li>
+        <li><strong style="color:#ef5350">升階目標：</strong><span style="color:var(--text)">可升級為強大的全新飾品 </span><strong style="color:#ffb74d;background:rgba(255,183,77,.1);padding:2px 8px;border-radius:4px;border:1px solid rgba(255,183,77,.3)">[終焉的煉獄耳環]</strong></li>
+      </ul>
+
+      <div style="background:var(--bg3);border:1px solid rgba(100,181,246,.3);padding:16px;border-radius:8px">
+        <strong style="color:#64b5f6;font-size:1em;display:block;margin-bottom:12px;text-align:center;border-bottom:1px dashed var(--border);padding-bottom:10px">✨ [終焉的煉獄耳環] 裝備能力 ✨</strong>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+          <span style="background:rgba(239,83,80,.12);border:1px solid rgba(239,83,80,.3);padding:6px 12px;border-radius:4px;color:#ef5350">🛡️ 防禦 -3</span>
+          <span style="background:rgba(239,83,80,.12);border:1px solid rgba(239,83,80,.3);padding:6px 12px;border-radius:4px;color:#ef5350">🔰 魔防 +8</span>
+          <span style="background:rgba(255,183,77,.1);border:1px solid rgba(255,183,77,.3);padding:6px 12px;border-radius:4px;color:#ffb74d">🌟 全能力 +1</span>
+          <span style="background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.3);padding:6px 12px;border-radius:4px;color:#66bb6a">❤️ HP +500</span>
+          <span style="background:rgba(100,181,246,.1);border:1px solid rgba(100,181,246,.3);padding:6px 12px;border-radius:4px;color:#64b5f6">💧 MP +100</span>
+          <span style="background:rgba(206,147,216,.1);border:1px solid rgba(206,147,216,.3);padding:6px 12px;border-radius:4px;color:#ce93d8">🧪 藥水回復率 +15</span>
+          <span style="background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.3);padding:6px 12px;border-radius:4px;color:#66bb6a">💖 體力回復率 +8</span>
+          <span style="background:rgba(100,181,246,.1);border:1px solid rgba(100,181,246,.3);padding:6px 12px;border-radius:4px;color:#64b5f6">🌀 魔力回復率 +5</span>
+        </div>
+        <div style="text-align:center;margin-top:14px">
+          <span style="background:rgba(249,168,37,.1);border:2px solid #f9a825;padding:4px 16px;border-radius:20px;color:#ffb74d;font-weight:bold;font-size:.95em">✡️ 附註：此裝備「可祝福」</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:#66bb6a;font-size:1.1em;margin-bottom:10px;border-left:4px solid #4caf50;padding-left:10px">📜 [終焉的煉獄耳環] 製作材料清單</h3>
+    <div style="overflow-x:auto;border:1px solid rgba(76,175,80,.3);border-radius:8px;margin-bottom:16px">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:rgba(76,175,80,.2);color:#66bb6a">
+            <th style="padding:12px 15px;text-align:left;width:60%">所需材料</th>
+            <th style="padding:12px 15px;text-align:center;width:40%">需求數量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:rgba(239,83,80,.06);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;font-weight:bold;color:#ef5350">煉獄耳環</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#ef5350;font-size:1.1em">1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">高級製作秘笈</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">200</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">稀有製作秘笈</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">30</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">英雄製作秘笈</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">2</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">傳說製作秘笈</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">鑽石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">100</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">紅寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">100</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">藍寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">100</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">綠寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">100</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">品質鑽石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">50</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">品質紅寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">50</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">品質藍寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">50</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">品質綠寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">50</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">高品質鑽石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">30</td></tr>
+          <tr style="background:var(--bg2);border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">高品質紅寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">30</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 15px;color:var(--text)">高品質藍寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">30</td></tr>
+          <tr style="background:var(--bg2)"><td style="padding:10px 15px;color:var(--text)">高品質綠寶石</td><td style="padding:10px 15px;text-align:center;font-weight:bold;color:#64b5f6">30</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end tab-hellring -->
+
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
 <script src="main.js"></script>
 <script>
 function switchTab(name){
   document.querySelectorAll('.page-tab').forEach((t,i)=>{
-    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft'));
+    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='hellring'));
   });
   document.getElementById('tab-overview').classList.toggle('active',name==='overview');
   document.getElementById('tab-craft').classList.toggle('active',name==='craft');
+  document.getElementById('tab-hellring').classList.toggle('active',name==='hellring');
 }
 </script>
 </body></html>
