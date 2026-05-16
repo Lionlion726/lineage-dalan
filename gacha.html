@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 神奇扭蛋</title><link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
+    .section     { background:rgba(10,8,8,0.82)  !important; }
+    .section-alt { background:rgba(15,12,12,0.88) !important; }
+    .gacha-table{width:100%;border-collapse:collapse;min-width:480px;font-size:14px}
+    .gacha-table th{background:var(--bg3);color:var(--text-muted);padding:12px;text-align:left;border-bottom:2px solid var(--border)}
+    .gacha-table td{padding:13px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+    .gacha-table tr:nth-child(even){background:var(--bg2)}
+    .prob-badge{display:inline-block;padding:2px 9px;border-radius:4px;font-weight:bold;font-size:.88em}
+    .prob-low{background:rgba(100,181,246,.15);color:#64b5f6}
+    .prob-mid{background:rgba(76,175,80,.15);color:#66bb6a}
+    .prob-high{background:rgba(255,152,0,.15);color:#ffa726}
+    .grand-prize-box{background:rgba(147,52,230,.12);border:1px solid rgba(147,52,230,.4);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+    .grand-prize-title{color:#ce93d8;font-size:1.05em;font-weight:bold;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .prize-items{display:flex;flex-wrap:wrap;gap:10px}
+    .prize-item{background:rgba(147,52,230,.18);border:1px solid rgba(147,52,230,.35);border-radius:6px;padding:10px 16px;text-align:center}
+    .prize-item-name{color:#ce93d8;font-weight:bold;font-size:.95em}
+    .prize-item-sub{color:var(--text-muted);font-size:.82em;margin-top:4px}
+  </style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔ 大藍蕉天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://lin.ee/6gGJmND" target="_blank">LINE 官方社群</a><a href="sponsor.html">贊助方案</a><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></div></div><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/6gGJmND" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/6gGJmND" target="_blank">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDk2oGwhkQRirtktOq9fKhQ5sZvoghAALUD2sbEMQwVLEbfMc1ieIBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/8P5gSUdi9Ddfo5Z7X-PFGFkQn4BllPNRA6PuQg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="hero" style="height:240px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#0a001a,#1a0030);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">GACHA MACHINE</div>
+    <h1 class="hero-title"><span style="font-size:2rem">🎰 神奇扭蛋</span></h1>
+    <p class="hero-tagline">投入幸運硬幣，挑戰夢幻大獎！</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:40px;padding-bottom:80px">
+
+  <!-- 特殊大獎 -->
+  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">🏆 特殊大獎</h3>
+  <div class="grand-prize-box">
+    <div class="grand-prize-title">✨ 以下道具為稀有特殊大獎，機率極低，歡迎挑戰！</div>
+    <div class="prize-items">
+      <div class="prize-item">
+        <div class="prize-item-name">🎖️ 神奇徽章</div>
+        <div class="prize-item-sub">時效 3 天</div>
+      </div>
+      <div class="prize-item">
+        <div class="prize-item-name">⚔️ PVP 額外傷害</div>
+        <div class="prize-item-sub">+8</div>
+      </div>
+      <div class="prize-item">
+        <div class="prize-item-name">🛡️ PVP 額外減免</div>
+        <div class="prize-item-sub">+4</div>
+      </div>
+      <div class="prize-item">
+        <div class="prize-item-name">🔮 魔攻</div>
+        <div class="prize-item-sub">+4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 詳細內容物清單 -->
+  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">📋 詳細內容物清單</h3>
+  <div style="color:var(--text-muted);font-size:.88em;margin-bottom:12px">
+    <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-high">橘色</span> = 高機率</span>
+    <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-mid">綠色</span> = 中機率</span>
+    <span style="display:inline-block"><span class="prob-badge prob-low">藍色</span> = 低機率（稀有）</span>
+  </div>
+  <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+    <table class="gacha-table">
+      <thead>
+        <tr>
+          <th style="width:40%">道具名稱</th>
+          <th style="width:20%;text-align:center">數量</th>
+          <th style="width:20%;text-align:center">機率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:bold;color:#ce93d8">🎖️ 神奇徽章（3天）</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-low">極低</span></td>
+        </tr>
+        <tr>
+          <td>⚔️ PVP 額外傷害 +8 徽章</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-low">極低</span></td>
+        </tr>
+        <tr>
+          <td>🛡️ PVP 額外減免 +4 徽章</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-low">極低</span></td>
+        </tr>
+        <tr>
+          <td>🔮 魔攻 +4 徽章</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-low">極低</span></td>
+        </tr>
+        <tr>
+          <td>💎 藍鑽</td>
+          <td style="text-align:center">×50</td>
+          <td style="text-align:center"><span class="prob-badge prob-low">低</span></td>
+        </tr>
+        <tr>
+          <td>💎 藍鑽</td>
+          <td style="text-align:center">×30</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>💎 藍鑽</td>
+          <td style="text-align:center">×10</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>🍀 幸運石</td>
+          <td style="text-align:center">×5</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>🍀 幸運石</td>
+          <td style="text-align:center">×3</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>📜 祝福卷軸</td>
+          <td style="text-align:center">×3</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>📜 祝福卷軸</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>📜 防爆卷軸</td>
+          <td style="text-align:center">×3</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>📜 防爆卷軸</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>⚗️ 強化藥水（大）</td>
+          <td style="text-align:center">×5</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>⚗️ 強化藥水（中）</td>
+          <td style="text-align:center">×10</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>🧪 經驗藥水 200%（1小時）</td>
+          <td style="text-align:center">×3</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>🧪 經驗藥水 150%（1小時）</td>
+          <td style="text-align:center">×5</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>🃏 隨機裝備箱（一般）</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>🎴 隨機卡片箱</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>💰 金幣袋</td>
+          <td style="text-align:center">×500,000</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+        <tr>
+          <td>💰 金幣袋</td>
+          <td style="text-align:center">×1,000,000</td>
+          <td style="text-align:center"><span class="prob-badge prob-mid">中</span></td>
+        </tr>
+        <tr>
+          <td>🌟 推廣兌獎券</td>
+          <td style="text-align:center">×1</td>
+          <td style="text-align:center"><span class="prob-badge prob-high">高</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 注意事項 -->
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:28px;font-size:.9em;color:var(--text-muted)">
+    <strong style="color:var(--text)">📌 注意事項</strong>
+    <ul style="margin:8px 0 0 16px;line-height:1.9">
+      <li>機率為隨機抽取，無保底機制。</li>
+      <li>特殊大獎（神奇徽章等）機率極低，請理性消費。</li>
+      <li>時效性道具一旦獲得即開始計時，請留意使用時機。</li>
+      <li>扭蛋所需道具或費用請至遊戲內確認。</li>
+    </ul>
+  </div>
+
+</div>
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+<script src="main.js"></script>
+</body></html>
