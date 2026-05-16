@@ -25,6 +25,7 @@
     <button class="page-tab active" onclick="switchTab('overview')">⚔️ 武器總覽</button>
     <button class="page-tab" onclick="switchTab('craft')">⚒️ 製作系統</button>
     <button class="page-tab" onclick="switchTab('scroll')">🔥 武器屬性強化捲軸</button>
+    <button class="page-tab" onclick="switchTab('enhance')">📜 裝備強化說明</button>
   </div>
 
   <!-- ══ TAB 1: 武器總覽 ══ -->
@@ -302,17 +303,95 @@
 
   </div><!-- end tab-scroll -->
 
+  <!-- ══ TAB 4: 裝備強化說明 ══ -->
+  <div id="tab-enhance" class="tab-content">
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:24px">
+
+      <h2 style="color:var(--gold);border-bottom:2px solid var(--border);padding-bottom:10px;margin-top:0;display:flex;align-items:center;gap:8px;font-size:1.2em">
+        📜 武器裝備強化與防爆說明
+      </h2>
+
+      <h3 style="color:#ef5350;font-size:1em;margin-bottom:10px">🛡️ 防爆卷軸機制說明</h3>
+
+      <div style="background:rgba(239,83,80,.1);border-left:4px solid #ef5350;padding:12px 15px;margin-bottom:20px;border-radius:4px;font-size:.95em;color:var(--text-muted)">
+        <strong style="color:#ef5350">⚠️ 注意事項：</strong>防爆狀態 <strong style="text-decoration:underline">使用後無法覆蓋</strong>，請務必確認後再點選！<br>
+        <strong style="color:#66bb6a">💡 操作順序：</strong>請先對裝備使用「防爆卷軸」上狀態，再使用對應的「武/防強化卷軸」進行強化。
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:30px">
+
+        <div style="border:1px solid rgba(206,147,216,.4);border-radius:8px;overflow:hidden">
+          <div style="background:#7b1fa2;color:#fff;padding:10px;font-weight:bold;text-align:center;letter-spacing:1px">🟪 詛咒的 防爆卷軸</div>
+          <div style="padding:14px;background:rgba(206,147,216,.1);text-align:center;color:var(--text-muted)">
+            強化失敗懲罰<br>
+            <strong style="font-size:1.3em;color:#ef5350;display:block;margin-top:6px">等級歸 0</strong>
+          </div>
+        </div>
+
+        <div style="border:1px solid rgba(100,181,246,.4);border-radius:8px;overflow:hidden">
+          <div style="background:#1565c0;color:#fff;padding:10px;font-weight:bold;text-align:center;letter-spacing:1px">🟦 一般的 防爆卷軸</div>
+          <div style="padding:14px;background:rgba(100,181,246,.08);text-align:center;color:var(--text-muted)">
+            強化失敗懲罰<br>
+            <strong style="font-size:1.3em;color:#ef5350;display:block;margin-top:6px">等級退 1 階 (-1)</strong>
+          </div>
+        </div>
+
+        <div style="border:1px solid rgba(249,168,37,.4);border-radius:8px;overflow:hidden">
+          <div style="background:#f57f17;color:#fff;padding:10px;font-weight:bold;text-align:center;letter-spacing:1px">🟨 祝福的 防爆卷軸</div>
+          <div style="padding:14px;background:rgba(249,168,37,.08);text-align:center;color:var(--text-muted)">
+            強化失敗懲罰<br>
+            <strong style="font-size:1.3em;color:#66bb6a;display:block;margin-top:6px">維持不變 (無損)</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 style="color:#64b5f6;font-size:1em;margin-bottom:10px">✨ 武器 / 防具 祝福卷軸跳級機率</h3>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:8px">
+        <p style="margin:0 0 14px 0;color:var(--text-muted);font-size:.95em">
+          當武器使用 <strong style="color:#64b5f6">[祝福武卷]</strong> 或防具使用 <strong style="color:#64b5f6">[祝福防卷]</strong> 強化時，將依據當前裝備等級套用以下跳級機率：
+        </p>
+        <table style="width:100%;border-collapse:collapse;text-align:center;font-size:.95em">
+          <thead>
+            <tr style="background:var(--accent);color:#fff">
+              <th style="padding:12px;border-bottom:2px solid var(--border)">裝備當前強化等級</th>
+              <th style="padding:12px;border-bottom:2px solid var(--border)">強化成功機率跳級範圍</th>
+            </tr>
+          </thead>
+          <tbody style="color:var(--text-muted)">
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:12px;font-weight:bold;color:#66bb6a">-2 ~ +4 (含)</td>
+              <td style="padding:12px;font-weight:bold;color:#ef5350">+0 / +1 / +2 / +3</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg2)">
+              <td style="padding:12px;font-weight:bold;color:#ffa726">+5</td>
+              <td style="padding:12px;font-weight:bold;color:#ef5350">+0 / +1 / +2</td>
+            </tr>
+            <tr>
+              <td style="padding:12px;font-weight:bold;color:#ef5350">+6 (含) 以上</td>
+              <td style="padding:12px;font-weight:bold;color:#ef5350">+0 / +1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div><!-- end tab-enhance -->
+
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
 <script src="main.js"></script>
 <script>
 function switchTab(name){
   document.querySelectorAll('.page-tab').forEach((t,i)=>{
-    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='scroll'));
+    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='scroll')||(i===3&&name==='enhance'));
   });
   document.getElementById('tab-overview').classList.toggle('active',name==='overview');
   document.getElementById('tab-craft').classList.toggle('active',name==='craft');
   document.getElementById('tab-scroll').classList.toggle('active',name==='scroll');
+  document.getElementById('tab-enhance').classList.toggle('active',name==='enhance');
 }
 </script>
 </body></html>
