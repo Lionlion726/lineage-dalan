@@ -22,12 +22,137 @@
 <div class="container" style="padding-top:40px;padding-bottom:80px">
 
   <div class="page-tabs">
-    <button class="page-tab active" onclick="switchTab('craft')">⚒️ 製作系統</button>
+    <button class="page-tab active" onclick="switchTab('overview')">⚔️ 武器總覽</button>
+    <button class="page-tab" onclick="switchTab('craft')">⚒️ 製作系統</button>
     <button class="page-tab" onclick="switchTab('scroll')">🔥 武器屬性強化捲軸</button>
   </div>
 
-  <!-- ══ TAB 1: 製作系統 ══ -->
-  <div id="tab-craft" class="tab-content active">
+  <!-- ══ TAB 1: 武器總覽 ══ -->
+  <div id="tab-overview" class="tab-content active">
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:24px">
+      <div style="margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:14px">
+        <h3 style="margin-top:0;color:var(--gold);font-size:1em;border-left:4px solid var(--text-dim);padding-left:10px">📜 基礎規則</h3>
+        <ul style="margin:5px 0 0 0;padding-left:20px;color:var(--text-muted)">
+          <li><strong style="color:var(--text)">獲取方式：</strong>透過怪物掉落及合成製作。</li>
+          <li><strong style="color:var(--text)">耐用度：</strong>所有武器皆 <span style="color:var(--accent);font-weight:bold">不會損壞</span>（技能影響除外）。</li>
+        </ul>
+      </div>
+      <h3 style="margin-top:0;color:#ce93d8;font-size:1em;border-left:4px solid #ce93d8;padding-left:10px">🔮 魔武發動機制</h3>
+      <div style="background:rgba(206,147,216,.1);padding:10px;border-radius:4px;margin-top:10px;color:#ce93d8;font-weight:bold">
+        發動率公式：基本 1% + (強化等級 × 1%)
+      </div>
+      <div style="margin-top:10px;font-size:.9em;color:var(--text-muted)">
+        💡 觸發魔法受 <strong style="color:var(--text)">"智力"</strong> 影響。傷害公式：基礎傷害 + 人物基礎傷害 + 隨機傷害 + 智力倍率
+      </div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+        <div style="border:1px solid rgba(100,181,246,.3);background:rgba(100,181,246,.08);padding:10px;border-radius:4px;color:#64b5f6">🔹 稀有武器：【寒冰氣息】</div>
+        <div style="border:1px solid rgba(239,83,80,.3);background:rgba(239,83,80,.08);padding:10px;border-radius:4px;color:#ef5350">🔥 英雄武器：【煉獄火】</div>
+        <div style="border:1px solid rgba(206,147,216,.3);background:rgba(206,147,216,.08);padding:10px;border-radius:4px;color:#ce93d8">🪨 傳說武器：【地爆】</div>
+        <div style="border:1px solid rgba(255,183,77,.3);background:rgba(255,183,77,.08);padding:10px;border-radius:4px;color:#ffb74d">⚡ 神話武器：【黑閃】</div>
+      </div>
+    </div>
+
+    <!-- 單手劍 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">🗡️</span> 單手劍</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者單手劍</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">8 / 9</td><td style="padding:10px;color:var(--text-muted)">近距離命中+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製單手劍</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">11 / 12</td><td style="padding:10px;color:var(--text-muted)">近距離命中+1, 額外攻擊+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神單手劍</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">15 / 16</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+2, 額外攻擊+3</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄單手劍</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">20 / 21</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+4, 額外攻擊+5</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">死亡騎士之劍</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">25 / 26</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+8, 額外攻擊+10</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">風刃之劍</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王,騎,妖</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">30 / 31</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+10, 額外攻擊+15</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 雙手劍 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">⚔️</span> 雙手劍</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者雙手劍</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">14 / 15</td><td style="padding:10px;color:var(--text-muted)">近距離命中+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製雙手劍</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">17 / 18</td><td style="padding:10px;color:var(--text-muted)">近距離命中+2, 額外攻擊+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神雙手劍</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">21 / 22</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+3, 額外攻擊+4</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄雙手劍</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">26 / 27</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+4, 額外攻擊+5, 昏迷命中+5</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">騎士范德之劍</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">31 / 32</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+9, 額外攻擊+10, 昏迷命中+7</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">真‧冥皇執行劍</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">王族,騎士</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">36 / 37</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+10, 額外攻擊+15, 昏迷命中+10</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 矛 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">🔱</span> 矛</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者長矛</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">8 / 9</td><td style="padding:10px;color:var(--text-muted)">近距離命中+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製長矛</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">11 / 12</td><td style="padding:10px;color:var(--text-muted)">近距離命中+1, 額外攻擊+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神之矛</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">14 / 16</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+2, 額外攻擊+3</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄之矛</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">19 / 21</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+4, 額外攻擊+5, 昏迷命中+5</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">守護者之矛</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">24 / 26</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+8, 額外攻擊+10, 昏迷命中+7</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">海神三叉戟</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">29 / 31</td><td style="padding:10px;color:var(--text-muted)">力量+1, 攻擊成功+10, 額外攻擊+15, 昏迷命中+10</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 弓 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">🏹</span> 弓</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者之弓</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">2 / 2</td><td style="padding:10px;color:var(--text-muted)">-</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製弩弓</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">3 / 3</td><td style="padding:10px;color:var(--text-muted)">遠距離命中+1, 額外攻擊+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神之弓</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">4 / 4</td><td style="padding:10px;color:var(--text-muted)">遠距離命中+2, 額外攻擊+3</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄神弓</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">5 / 5</td><td style="padding:10px;color:var(--text-muted)">遠距離命中+5, 額外攻擊+6</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">惡夢的長弓</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">6 / 6</td><td style="padding:10px;color:var(--text-muted)">遠距離命中+8, 額外攻擊+11</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">大地女神的激怒</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">全職業</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">7 / 7</td><td style="padding:10px;color:var(--text-muted)">遠距離命中+10, 額外攻擊+15</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 法杖 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">🪄</span> 法杖</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者魔杖</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">5 / 5</td><td style="padding:10px;color:var(--text-muted)">吸取魔力1, 隨機吸取魔力3</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製魔杖</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">8 / 8</td><td style="padding:10px;color:var(--text-muted)">吸取魔力2, 隨機吸取魔力4, 近距離命中+3, 額外攻擊+5, 魔攻+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神魔杖</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">12 / 12</td><td style="padding:10px;color:var(--text-muted)">吸取魔力3, 隨機吸取魔力6, 近距離命中+6, 額外攻擊+8, 魔攻+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄魔杖</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">17 / 17</td><td style="padding:10px;color:var(--text-muted)">吸取魔力3, 隨機吸取魔力8, 近距離命中+8, 額外攻擊+11, 魔攻+3, 魔法命中+1</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">傑羅斯的魔杖</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">23 / 23</td><td style="padding:10px;color:var(--text-muted)">吸取魔力4, 隨機吸取魔力10, 近距離命中+11, 額外攻擊+15, 魔攻+5, 魔法命中+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">聖晶魔杖</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">法師</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">28 / 28</td><td style="padding:10px;color:var(--text-muted)">吸取魔力5, 隨機吸取魔力15, 近距離命中+13, 額外攻擊+18, 魔攻+8, 魔法命中+3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 雙刀 -->
+    <h3 style="color:var(--text);font-size:1.1em;margin-bottom:10px;display:flex;align-items:center;gap:10px"><span style="background:var(--bg3);padding:5px 10px;border-radius:50%">🌑</span> 雙刀</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:8px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead><tr style="background:var(--bg3);color:var(--text-muted)"><th style="padding:10px;text-align:left">武器名稱</th><th style="padding:10px;text-align:center">稀有度</th><th style="padding:10px;text-align:center">職業</th><th style="padding:10px;text-align:center">傷害</th><th style="padding:10px;text-align:left">附加能力</th></tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">修練者雙刀</td><td style="padding:10px;text-align:center;color:var(--text-muted)">一般</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">8 / 7</td><td style="padding:10px;color:var(--text-muted)">-</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">超特製雙刀</td><td style="padding:10px;text-align:center;color:#4caf50;font-weight:bold">高級</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">11 / 10</td><td style="padding:10px;color:var(--text-muted)">近距離命中+1, 額外攻擊+2</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">戰神雙刀</td><td style="padding:10px;text-align:center;color:#64b5f6;font-weight:bold">稀有</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">15 / 14</td><td style="padding:10px;color:var(--text-muted)">攻擊成功+2, 額外攻擊+3</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)"><td style="padding:10px;color:var(--text)">英雄雙刀</td><td style="padding:10px;text-align:center;color:#ef5350;font-weight:bold">英雄</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">20 / 19</td><td style="padding:10px;color:var(--text-muted)">攻擊成功+4, 額外攻擊+5</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px;color:var(--text)">咆哮雙刀</td><td style="padding:10px;text-align:center;color:#ce93d8;font-weight:bold">傳說</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">25 / 24</td><td style="padding:10px;color:var(--text-muted)">攻擊成功+8, 額外攻擊+10</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(255,183,77,.05)"><td style="padding:10px;color:var(--text)">紅影雙刀</td><td style="padding:10px;text-align:center;color:#ffb74d;font-weight:bold">神話</td><td style="padding:10px;text-align:center;color:var(--text-muted)">黑暗妖精</td><td style="padding:10px;text-align:center;color:var(--text);white-space:nowrap">30 / 29</td><td style="padding:10px;color:var(--text-muted)">攻擊成功+10, 額外攻擊+15</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end tab-overview -->
+
+  <!-- ══ TAB 2: 製作系統 ══ -->
+  <div id="tab-craft" class="tab-content">
   <div style="margin-top:8px">
     <div class="section-header" style="text-align:left;margin-bottom:24px">
       <div class="section-eyebrow">CRAFTING SYSTEM</div>
@@ -183,8 +308,9 @@
 <script>
 function switchTab(name){
   document.querySelectorAll('.page-tab').forEach((t,i)=>{
-    t.classList.toggle('active',(i===0&&name==='craft')||(i===1&&name==='scroll'));
+    t.classList.toggle('active',(i===0&&name==='overview')||(i===1&&name==='craft')||(i===2&&name==='scroll'));
   });
+  document.getElementById('tab-overview').classList.toggle('active',name==='overview');
   document.getElementById('tab-craft').classList.toggle('active',name==='craft');
   document.getElementById('tab-scroll').classList.toggle('active',name==='scroll');
 }
