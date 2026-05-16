@@ -5,6 +5,12 @@
     body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+  </style>
+  <style>
+    .page-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:30px;position:sticky;top:56px;z-index:100;background:var(--bg);padding-top:8px}
+    .page-tab{padding:10px 24px;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;font-size:14px;background:none;border-top:none;border-left:none;border-right:none}
+    .page-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .tab-content{display:none}.tab-content.active{display:block}
   </style></head>
 <body>
 <nav class="topnav"><a class="topnav-logo" href="index.html">⚔ 大藍蕉天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動公告</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="sponsor.html">贊助系統</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="transform.html">變身介紹</a><a class="topnav-link" href="dolls.html">娃娃介紹</a><a class="topnav-link" href="maps.html">地圖介紹</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">規章說明 ▾</a><div class="dropdown-menu"><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲規章</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/6gGJmND" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
@@ -13,9 +19,16 @@
 <div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/6gGJmND" target="_blank">前往 LINE 領取</a></div></div>
 <div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDk2oGwhkQRirtktOq9fKhQ5sZvoghAALUD2sbEMQwVLEbfMc1ieIBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/8P5gSUdi9Ddfo5Z7X-PFGFkQn4BllPNRA6PuQg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
 <div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#0a1008,#181808);"></div><div class="hero-content"><div class="hero-badge">WEAPONS</div><h1 class="hero-title"><span style="font-size:2rem">武器介紹</span></h1><p class="hero-tagline">強力武器一覽，找到最適合你的武器</p></div></div>
-<div class="container" style="padding-top:56px;padding-bottom:80px">
-  <!-- 製作系統 -->
-  <div style="margin-top:48px">
+<div class="container" style="padding-top:40px;padding-bottom:80px">
+
+  <div class="page-tabs">
+    <button class="page-tab active" onclick="switchTab('craft')">⚒️ 製作系統</button>
+    <button class="page-tab" onclick="switchTab('scroll')">🔥 武器屬性強化捲軸</button>
+  </div>
+
+  <!-- ══ TAB 1: 製作系統 ══ -->
+  <div id="tab-craft" class="tab-content active">
+  <div style="margin-top:8px">
     <div class="section-header" style="text-align:left;margin-bottom:24px">
       <div class="section-eyebrow">CRAFTING SYSTEM</div>
       <h2 class="section-title" style="text-align:left">⚒️ 武器防具飾品製作介紹</h2>
@@ -83,6 +96,86 @@
       <div style="text-align:center;margin-top:10px;font-size:.85em;color:var(--text-dim)">(※ 各部位分解獲得之數量皆相同)</div>
     </div>
   </div>
+  </div><!-- end tab-craft -->
+
+  <!-- ══ TAB 2: 武器屬性強化捲軸 ══ -->
+  <div id="tab-scroll" class="tab-content">
+
+    <div style="background:var(--bg2);border:1px solid rgba(249,168,37,.2);border-radius:10px;padding:18px;margin-bottom:24px">
+      <h3 style="margin-top:0;color:var(--gold);font-size:1em;border-left:3px solid var(--gold);padding-left:10px">💡 強化資訊</h3>
+      <ul style="margin:8px 0 0 0;padding-left:20px;color:var(--text-muted);line-height:1.9">
+        <li><strong style="color:var(--text)">成功機率：</strong>全階級皆為 <span style="color:#ef5350;font-weight:bold;font-size:1.1em">5%</span></li>
+        <li><strong style="color:var(--text)">獲取管道：</strong>請前往主城鎮找 <span style="color:var(--accent);font-weight:bold">"藍鑽/推文商店"</span> 購買。</li>
+      </ul>
+    </div>
+
+    <h3 style="color:var(--accent);border-left:4px solid var(--accent);padding-left:12px;margin-bottom:16px">⚔️ 四大屬性效果一覽</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px">
+      <table style="width:100%;border-collapse:collapse;min-width:750px;font-size:14px">
+        <thead>
+          <tr style="background:var(--bg3);color:var(--text-muted)">
+            <th style="padding:12px;text-align:left;width:15%">屬性分類</th>
+            <th style="padding:12px;text-align:left;width:30%">階級名稱（1階 → 5階）</th>
+            <th style="padding:12px;text-align:center;width:15%">發動機率</th>
+            <th style="padding:12px;text-align:left">特殊效果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:15px 10px;background:rgba(239,83,80,.08);border-left:4px solid #ef5350;font-weight:bold;color:#ef5350">🔥 火之武器</td>
+            <td style="padding:15px 10px">
+              <div style="font-size:.9em;color:var(--text-muted)">火之 ➔ 烈焰 ➔ 火靈</div>
+              <div style="font-weight:bold;color:#ef5350">赤炎 ➔ 帕格里奧</div>
+            </td>
+            <td style="padding:15px 10px;text-align:center;font-weight:bold;color:var(--text)">1% ~ 5%<br><span style="font-size:.8em;color:var(--text-dim);font-weight:normal">(每階+1%)</span></td>
+            <td style="padding:15px 10px">
+              <div style="font-weight:bold;color:#ef5350">額外傷害加成</div>
+              <div style="font-size:.9em;margin-top:4px;color:var(--text-muted)">依階級造成額外 <span style="background:rgba(239,83,80,.15);color:#ef5350;padding:0 4px;border-radius:4px">2%、4%、6%、8%、10%</span> 傷害</div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)">
+            <td style="padding:15px 10px;background:rgba(76,175,80,.08);border-left:4px solid #4caf50;font-weight:bold;color:#4caf50">🍃 風之武器</td>
+            <td style="padding:15px 10px">
+              <div style="font-size:.9em;color:var(--text-muted)">風之 ➔ 暴風 ➔ 風靈</div>
+              <div style="font-weight:bold;color:#4caf50">蒼蘭 ➔ 沙哈</div>
+            </td>
+            <td style="padding:15px 10px;text-align:center;font-weight:bold;color:var(--text)">1% ~ 5%<br><span style="font-size:.8em;color:var(--text-dim);font-weight:normal">(每階+1%)</span></td>
+            <td style="padding:15px 10px">
+              <div style="font-weight:bold;color:#4caf50">遠程傷害強化</div>
+              <div style="font-size:.9em;margin-top:4px;color:var(--text-muted)">發動時附加 <span style="background:rgba(76,175,80,.15);color:#4caf50;padding:0 4px;border-radius:4px">遠距離額外傷害 +30</span></div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:15px 10px;background:rgba(100,181,246,.08);border-left:4px solid #64b5f6;font-weight:bold;color:#64b5f6">💧 水之武器</td>
+            <td style="padding:15px 10px">
+              <div style="font-size:.9em;color:var(--text-muted)">水之 ➔ 海嘯 ➔ 水靈</div>
+              <div style="font-weight:bold;color:#64b5f6">霜凍 ➔ 伊娃</div>
+            </td>
+            <td style="padding:15px 10px;text-align:center;font-weight:bold;color:var(--text)">1% ~ 8%<br><span style="font-size:.8em;color:var(--text-dim);font-weight:normal">(1%-2%-4%-5%-8%)</span></td>
+            <td style="padding:15px 10px">
+              <div style="font-weight:bold;color:#64b5f6">魔力吸取</div>
+              <div style="font-size:.9em;margin-top:4px;color:var(--text-muted)">固定吸取敵方 <span style="background:rgba(100,181,246,.15);color:#64b5f6;padding:0 4px;border-radius:4px">2 ~ 10 點魔力</span></div>
+              <div style="font-size:.8em;color:var(--text-dim)">(依階級提升吸取量)</div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg2)">
+            <td style="padding:15px 10px;background:rgba(161,136,127,.08);border-left:4px solid #a1887f;font-weight:bold;color:#a1887f">🪨 地之武器</td>
+            <td style="padding:15px 10px">
+              <div style="font-size:.9em;color:var(--text-muted)">地之 ➔ 崩裂 ➔ 地靈</div>
+              <div style="font-weight:bold;color:#a1887f">輝岩 ➔ 馬普勒</div>
+            </td>
+            <td style="padding:15px 10px;text-align:center;font-weight:bold;color:var(--text)">1% ~ 5%<br><span style="font-size:.8em;color:var(--text-dim);font-weight:normal">(每階+1%)</span></td>
+            <td style="padding:15px 10px">
+              <div style="font-weight:bold;color:#a1887f">束縛控制</div>
+              <div style="font-size:.9em;margin-top:4px;color:var(--text-muted)">束縛敵人 <span style="background:rgba(161,136,127,.15);color:#a1887f;padding:0 4px;border-radius:4px">1秒</span></div>
+              <div style="font-size:.8em;color:var(--text-dim)">(定身效果，無法瞬移)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end tab-scroll -->
 
 </div>
 <footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
