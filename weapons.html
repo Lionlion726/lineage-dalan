@@ -7,9 +7,10 @@
     .section-alt { background:rgba(15,12,12,0.88) !important; }
   </style>
   <style>
-    .page-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:30px;position:sticky;top:56px;z-index:100;background:var(--bg);padding-top:8px}
-    .page-tab{padding:10px 24px;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;font-size:14px;background:none;border-top:none;border-left:none;border-right:none}
-    .page-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .page-tabs{display:flex;gap:6px;border-bottom:2px solid var(--border);margin-bottom:30px;position:sticky;top:56px;z-index:100;background:var(--bg);padding:10px 0 0 0}
+    .page-tab{padding:10px 20px;cursor:pointer;color:var(--text-muted);border:1px solid var(--border);border-bottom:none;border-radius:6px 6px 0 0;margin-bottom:-2px;font-size:14px;background:var(--bg2);transition:color .2s,background .2s,border-color .2s;white-space:nowrap}
+    .page-tab:hover{color:var(--text);background:var(--bg3);border-color:var(--accent)}
+    .page-tab.active{color:var(--accent);background:var(--bg);border-color:var(--accent);border-bottom-color:var(--bg);font-weight:bold}
     .tab-content{display:none}.tab-content.active{display:block}
   </style></head>
 <body>
