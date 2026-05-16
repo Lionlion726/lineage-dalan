@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 回憶蠟燭與洗血</title><link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
+    .section     { background:rgba(10,8,8,0.82)  !important; }
+    .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+    .br-wrap { max-width:860px; margin:0 auto; }
+
+    /* 回憶蠟燭卡 */
+    .item-card { border-radius:12px; overflow:hidden; margin-bottom:28px; }
+    .item-card-header { padding:14px 20px; font-weight:bold; font-size:1.15em; display:flex; align-items:center; justify-content:space-between; }
+    .item-card-body { padding:20px; display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; }
+    .item-card-img { flex:1; min-width:240px; max-width:360px; }
+    .item-card-img img { width:100%; border-radius:8px; display:block; }
+    .item-card-info { flex:1.2; min-width:260px; }
+
+    /* 蠟燭（金色主題） */
+    .card-candle { background:#1a1200; border:1px solid #f9a825; }
+    .card-candle .item-card-header { background:linear-gradient(135deg,#c47f00,#e65100); color:#fff; }
+    .card-candle .item-subtitle { font-size:.72em; background:rgba(255,255,255,.2); padding:2px 10px; border-radius:20px; }
+    .candle-section-title { color:#ffa726; border-left:4px solid #ffa726; padding-left:10px; margin:0 0 10px; font-size:.98em; }
+    .candle-tip { background:#1e1500; padding:12px; border-radius:6px; border:1px dashed rgba(251,192,45,.4); margin-bottom:10px; color:var(--text-muted); font-size:.92em; }
+    .candle-tip strong { color:#ffd54f; }
+    .candle-warn { color:#ef9a9a; font-weight:bold; font-size:.88em; background:#2a0a0a; padding:8px 12px; border-radius:4px; border-left:3px solid #ef5350; }
+
+    /* 洗血藥水（灰色主題） */
+    .card-blood { background:#141414; border:1px solid #444; }
+    .card-blood .item-card-header { background:#2a2a2a; color:#ccc; }
+    .blood-section-title { color:#aaa; border-left:4px solid #666; padding-left:10px; margin:0 0 10px; font-size:.98em; }
+    .blood-tip { background:#1c1c1c; padding:12px; border-radius:6px; border:1px dashed #444; color:var(--text-muted); font-size:.92em; }
+    .blood-tip strong { color:#bdbdbd; }
+
+    /* 共用列表 */
+    .item-list { padding-left:20px; color:var(--text-muted); margin-bottom:16px; line-height:2; }
+    .item-list strong { color:var(--text); }
+    .item-list .hl { color:#ef5350; font-weight:bold; }
+  </style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔ 大藍蕉天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://lin.ee/6gGJmND" target="_blank">LINE 官方社群</a><a href="sponsor.html">贊助方案</a><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></div></div><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/6gGJmND" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/6gGJmND" target="_blank">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDk2oGwhkQRirtktOq9fKhQ5sZvoghAALUD2sbEMQwVLEbfMc1ieIBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/8P5gSUdi9Ddfo5Z7X-PFGFkQn4BllPNRA6PuQg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="hero" style="height:240px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#1a0e00,#0a0a14);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">RESET SYSTEM</div>
+    <h1 class="hero-title"><span style="font-size:2rem">🕯️ 回憶蠟燭與洗血</span></h1>
+    <p class="hero-tagline">核心道具介紹：洗血與能力重置</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:40px;padding-bottom:80px;background:#0a0808">
+<div class="br-wrap">
+
+  <!-- 回憶蠟燭 -->
+  <div class="item-card card-candle">
+    <div class="item-card-header">
+      <span>🕯️ 回憶蠟燭（能力重置）</span>
+      <span class="item-subtitle">推薦首選</span>
+    </div>
+    <div class="item-card-body">
+      <div class="item-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIC02nPyB3v87panPoE6TDNGP_0J-iCAAL9D2sbfymBVjVeeSojYnZOAQADAgADbQADOwQ.png" alt="回憶蠟燭">
+      </div>
+      <div class="item-card-info">
+        <h4 class="candle-section-title">📜 詳細說明</h4>
+        <ul class="item-list">
+          <li><strong>功能：</strong>重置角色初始點數、等級配點及萬能藥。</li>
+          <li><strong>優勢：</strong><span class="hl">等級與經驗值完全保留</span>，無需重練。</li>
+          <li><strong>機制：</strong>配點後，系統依據新點數重新計算血魔最大值。</li>
+          <li><strong>管道：</strong>藍鑽商城 / 推文商城。</li>
+        </ul>
+        <div class="candle-tip">
+          <strong>💡 白話懶人包：</strong><br>
+          不想重新練等的人選這個！點數重配後，血量會根據新能力直接更新。
+        </div>
+        <div class="candle-warn">
+          ⚠️ 注意：使用完畢後請「重新登入」遊戲以同步數值。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 洗血藥水 -->
+  <div class="item-card card-blood">
+    <div class="item-card-header">
+      <span>🩸 洗血藥水（基礎重置）</span>
+    </div>
+    <div class="item-card-body">
+      <div class="item-card-img">
+        <img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIC1GnPyEbSAAFTn4eZtYmzr5DPHjbImAAC_g9rG38pgVaISPmWxG5YawEAAwIAA20AAzsE.png" alt="洗血藥水">
+      </div>
+      <div class="item-card-info">
+        <h4 class="blood-section-title">📜 詳細說明</h4>
+        <ul class="item-list">
+          <li><strong>功能：</strong>角色等級降回 <span class="hl">LV.1</span>。</li>
+          <li><strong>機制：</strong>建議先將「體質」點滿至 25 再使用。重新練等時，系統會依當前體質/精神給予血魔加成。</li>
+          <li><strong>管道：</strong>奇物商。</li>
+        </ul>
+        <div class="blood-tip">
+          <strong>💡 白話懶人包：</strong><br>
+          適合想挑戰最高血量且「願意重新練等」的玩家，等級會歸零。
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+<script src="main.js"></script>
+</body></html>
