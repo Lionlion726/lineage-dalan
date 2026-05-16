@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>大藍蕉天堂 - 推文與直播</title><link rel="stylesheet" href="style.css">
+  <style>
+    body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
+    .section     { background:rgba(10,8,8,0.82)  !important; }
+    .section-alt { background:rgba(15,12,12,0.88) !important; }
+  </style>
+  <style>
+    .page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;position:sticky;top:56px;z-index:100;background:var(--bg);padding:10px 0}
+    .page-tab{padding:9px 20px;cursor:pointer;color:var(--text-muted);border:1px solid var(--border);border-radius:6px;font-size:14px;background:var(--bg2);transition:color .2s,background .2s,border-color .2s;white-space:nowrap}
+    .page-tab:hover{color:var(--text);border-color:var(--accent)}
+    .page-tab.active{color:#fff;background:var(--accent);border-color:var(--accent);font-weight:bold}
+    .tab-content{display:none}.tab-content.active{display:block}
+    /* 推文直播通用 */
+    .promo-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:20px}
+    .promo-h3{font-size:1em;margin:0 0 12px 0;padding-left:10px}
+    .promo-ul{margin:8px 0 0 0;padding-left:20px;color:var(--text-muted);font-size:.93em;line-height:1.9}
+    .promo-ul li{margin-bottom:4px}
+    .report-form{background:var(--bg3);padding:10px;border:1px dashed var(--border);margin-top:10px;font-size:.88em;font-family:monospace;line-height:1.6;color:var(--text-muted)}
+    .promo-table{width:100%;border-collapse:collapse;font-size:14px}
+    .promo-table th{background:var(--bg3);color:var(--text-muted);padding:10px 12px;text-align:left;border-bottom:2px solid var(--border)}
+    .promo-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text)}
+    .promo-table tr:nth-child(even){background:var(--bg2)}
+    .badge-box{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .badge-item{border:1px solid var(--border);border-radius:8px;padding:14px;background:var(--bg3);flex:1;min-width:240px}
+  </style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔ 大藍蕉天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://lin.ee/6gGJmND" target="_blank">LINE 官方社群</a><a href="sponsor.html">贊助方案</a><a href="#" onclick="document.getElementById('modal-gift').classList.add('open');return false;">申請新手禮包</a></div></div><a class="topnav-link" href="promote.html">推文與直播</a></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/6gGJmND" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn sponsor" data-modal="modal-sponsor">💰 贊助方案</button><button class="float-btn" data-modal="modal-gift">🎁 申請禮包</button><button class="float-btn" data-modal="modal-line">💬 LINE</button></div>
+<div class="float-modal" id="modal-sponsor"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💰 贊助方案</div><div class="modal-body"><p>▸ 贊助詳情請加入 LINE 社群詢問</p></div><a class="modal-btn" href="sponsor.html">查看贊助頁面</a></div></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 新手禮包</div><div class="modal-body"><p>加入 LINE 官方社群後私訊管理員即可領取。</p></div><a class="modal-btn" href="https://lin.ee/6gGJmND" target="_blank">前往 LINE 領取</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDk2oGwhkQRirtktOq9fKhQ5sZvoghAALUD2sbEMQwVLEbfMc1ieIBAQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"></div><a class="modal-btn" href="https://line.me/ti/g2/8P5gSUdi9Ddfo5Z7X-PFGFkQn4BllPNRA6PuQg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+<div class="hero" style="height:240px"><div class="hero-bg" style="background:linear-gradient(135deg,#0a0a18,#080818);"></div><div class="hero-content"><div class="hero-badge">PROMOTE</div><h1 class="hero-title"><span style="font-size:2rem">推文與直播</span></h1><p class="hero-tagline">推廣活動說明、獎勵兌換與直播規章</p></div></div>
+
+<div class="container" style="padding-top:40px;padding-bottom:80px">
+
+  <div class="page-tabs">
+    <button class="page-tab active" onclick="switchTab('tweet')">📢 推文說明</button>
+    <button class="page-tab" onclick="switchTab('live')">🎬 直播說明</button>
+  </div>
+
+  <!-- ══ TAB 1: 推文說明 ══ -->
+  <div id="tab-tweet" class="tab-content active">
+
+    <!-- 包月代工橫幅 -->
+    <div style="background:linear-gradient(135deg,#3a1500,#1a0800);border-radius:10px;padding:22px;text-align:center;border:2px solid rgba(249,168,37,.4);margin-bottom:24px;box-shadow:0 4px 20px rgba(249,168,37,.15)">
+      <strong style="color:#ffb74d;font-size:1.5em;display:block;margin-bottom:8px;text-shadow:0 1px 4px rgba(0,0,0,.5)">✨ 官方提供：包月推文代工服務 ✨</strong>
+      <div style="color:var(--text);font-size:1.15em;font-weight:bold">
+        每月只要 <span style="color:#ef5350;font-size:1.3em;text-decoration:underline">$300 TWD</span>（不計算讚石與累計）
+      </div>
+      <p style="margin:10px 0 0 0;color:var(--text-muted);font-weight:bold;font-size:.93em">
+        團隊親自操盤，省去每日回報煩惱，獎勵直接入庫！(詳情請私訊客服)
+      </p>
+    </div>
+
+    <!-- 重要時程 -->
+    <div style="background:rgba(239,83,80,.08);border-left:5px solid #ef5350;padding:14px 16px;margin-bottom:22px;border-radius:4px">
+      <strong style="color:#ef5350;font-size:1em">⏰ 重要時程</strong>
+      <ul class="promo-ul" style="margin-top:8px">
+        <li><strong style="color:var(--text)">開放推文回報：</strong>2026/02/11 封測登入後開放。</li>
+        <li><strong style="color:var(--text)">獎勵發放時間：</strong><span style="color:#ef5350;font-weight:bold">2026/02/28 20:00</span> 開服後統一發放。</li>
+        <li><strong style="color:var(--text)">受理原則：</strong>為避免爭議，僅受理 2026/2/11 以後的推文回報。</li>
+      </ul>
+    </div>
+
+    <!-- 回報範例 + 發文規定 -->
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-bottom:24px">
+      <div class="promo-box" style="margin:0">
+        <strong style="color:#64b5f6">📋 推文回報範例</strong>
+        <div class="report-form" style="margin-top:10px">
+          推文回報日期：<br>
+          遊戲ＩＤ：<br>
+          遊戲帳號：<br>
+          1.(網址/截圖)<br>
+          2.(網址/截圖)<br>
+          3.(網址/截圖)<br>
+          4.(網址/截圖)<br>
+          5.(網址/截圖)
+        </div>
+        <p style="margin-top:10px;text-align:center">
+          <a href="https://web-hosts.net/share/6Vo0nTtP" target="_blank" style="background:var(--accent);color:#fff;padding:6px 15px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:.88em">👉 前往推文回報區</a>
+        </p>
+      </div>
+      <div class="promo-box" style="margin:0">
+        <strong style="color:#ffa726">📜 發文規定</strong>
+        <ul class="promo-ul">
+          <li><strong style="color:var(--text)">粉絲團：</strong>至「曜天堂粉絲團」置頂文按讚分享並貼上官方文案。</li>
+          <li><strong style="color:var(--text)">社團限制：</strong>分享至 <span style="color:#ef5350;font-weight:bold">1 萬人以上</span> 臉書天堂社團。</li>
+          <li><strong style="color:var(--text)">內容要求：</strong>分享貼文必須留下下方官方美化文案。</li>
+          <li><strong style="color:var(--text)">重複規範：</strong>同則推文限領 1 隻角色，且必須分享至不同社團。</li>
+          <li><strong style="color:var(--text)">獎勵上限：</strong>單則 6 顆印章 / <span style="color:#64b5f6;font-weight:bold">單日上限 30 顆</span> (5次)。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FB 官方推廣文案 -->
+    <div style="margin-bottom:24px">
+      <h3 style="color:var(--text-muted);font-size:1em;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+        <span style="background:#1877f2;color:#fff;padding:2px 8px;border-radius:4px;font-size:.8em">FB</span>
+        官方推廣文案 <span style="font-size:.85em;color:var(--text-dim)">(請完整複製下方內容)</span>
+      </h3>
+      <div style="background:var(--bg2);padding:20px;border-radius:8px;font-size:.92em;color:var(--text-muted);border:1px solid var(--border);white-space:pre-wrap;font-family:inherit;line-height:1.7">━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨【 曜天堂 3.81 手動天M版 】等你來加入！✨
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+日期:
+遊戲名稱:
+🔥 真正的手動浪漫，找回最初的感動！
+💎 經典 3.81 版本，融入天M創新元素，打造最平衡的遊戲環境！
+
+⭐【 基礎倍率｜進度適中 】
+🔹 經驗倍率：10 倍
+🔹 金幣倍率：3 倍
+🔹 掉寶倍率：2 倍
+🔹 武防強化：2 倍
+🔹 正義倍率：3 倍
+🔹 負重倍率：4 倍
+🔹 寵物倍率：5 倍（上限 58）
+
+📊【 角色素質｜公平競爭 】
+🔸 手點能力上限：25 點
+🔸 萬能藥限制：10 瓶
+🔸 素質總上限：35 點（含萬能藥）
+
+⚔️【 平衡機制｜熱血戰術 】
+✨ 負面魔法動態調整，無絕對命中或絕對免疫！
+💡 戰術核心：善用「魔法消除」破除免疫取得優勢！
+
+🌍 官方網站：https://sites.google.com/view/quan-yao-heaven/
+📢 快來開啟你的全新傳奇！
+#曜天堂 #手動天堂 #天堂M變身 #私服經典 #手動浪漫
+━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+    </div>
+
+    <!-- 社團列表 -->
+    <h3 style="color:var(--text-muted);font-size:1em;margin-bottom:10px">👥 社團推薦列表</h3>
+    <div class="promo-box" style="font-size:.92em;line-height:2">
+      • <a href="https://www.facebook.com/groups/1479500612362554/" target="_blank" style="color:var(--accent)">TW天堂私服列表網</a><br>
+      • <a href="https://www.facebook.com/groups/335046453597856/" target="_blank" style="color:var(--accent)">天堂私服分享區</a><br>
+      • <a href="https://www.facebook.com/groups/162326847259633/" target="_blank" style="color:var(--accent)">天堂私服好朋友~</a><br>
+      • <a href="https://www.facebook.com/groups/1993631524206941/" target="_blank" style="color:var(--accent)">天堂123最新私服宣傳區</a><br>
+      • <a href="https://www.facebook.com/groups/1697243327244454/" target="_blank" style="color:var(--accent)">天堂私服宣傳</a>
+    </div>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:28px 0">
+
+    <!-- 艾莉莉兌換清單 -->
+    <h3 style="color:#66bb6a;border-left:4px solid #4caf50;padding-left:10px;margin-bottom:14px">🎁 推廣商人「艾莉莉」兌換清單</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:24px">
+      <table class="promo-table">
+        <thead><tr><th>兌換項目</th><th style="text-align:center;width:18%">所需印章</th><th>兌換項目</th><th style="text-align:center;width:18%">所需印章</th></tr></thead>
+        <tbody>
+          <tr><td>推廣勳章 LV.1 (限時7日)</td><td style="text-align:center;font-weight:bold">30</td><td>回憶蠟燭</td><td style="text-align:center;font-weight:bold">300</td></tr>
+          <tr><td>推廣勳章強化卷軸 (100%成功)</td><td style="text-align:center;font-weight:bold">10</td><td>進化 / 勝利果實</td><td style="text-align:center;font-weight:bold">120 / 180</td></tr>
+          <tr><td>BUFF 推廣勳章 (1 / 3 / 6HR)</td><td style="text-align:center;font-weight:bold">30 / 60 / 90</td><td>對武器祝福卷軸</td><td style="text-align:center;font-weight:bold">90</td></tr>
+          <tr><td>四大屬性武器強化卷軸</td><td style="text-align:center;font-weight:bold">6</td><td>對防具 / 飾品祝福卷軸</td><td style="text-align:center;font-weight:bold">30 / 45</td></tr>
+          <tr><td>不朽體力恢復劑系列</td><td style="text-align:center;font-weight:bold">360 ~ 900</td><td>魔法屏障卷軸 * 50</td><td style="text-align:center;font-weight:bold">6</td></tr>
+          <tr><td>密碼修改卷軸</td><td style="text-align:center;font-weight:bold">240</td><td>魔法卷軸 (聖潔之光) * 30</td><td style="text-align:center;font-weight:bold">6</td></tr>
+          <tr><td><span style="color:#66bb6a;font-weight:bold">🎟️ 推廣兌獎券</span></td><td style="text-align:center;font-weight:bold">15</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 勳章能力 -->
+    <h3 style="color:var(--text-muted);font-size:1em;margin-bottom:14px">🎖️ 推廣獎勵物品能力介紹</h3>
+    <div class="badge-box" style="margin-bottom:16px">
+      <div class="badge-item">
+        <strong style="color:#64b5f6">🏅 推廣勳章 LV.1 ~ LV.3</strong>
+        <div style="font-size:.88em;margin-top:8px;line-height:1.7;color:var(--text-muted)">
+          <span style="font-weight:bold;color:var(--text)">LV.1:</span> 近遠傷+1, 魔防+1, 魔攻+1, 負重+10, 經驗+10%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.2:</span> 近遠傷+1, 魔防+2, 魔攻+1, 負重+20, 經驗+12%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.3:</span> 近遠傷+2, 魔防+3, 魔攻+1, 負重+30, 經驗+14%
+        </div>
+      </div>
+      <div class="badge-item">
+        <strong style="color:#64b5f6">🏅 推廣勳章 LV.4 ~ LV.5</strong>
+        <div style="font-size:.88em;margin-top:8px;line-height:1.7;color:var(--text-muted)">
+          <span style="font-weight:bold;color:var(--text)">LV.4:</span> 近遠傷+2, 魔防+4, 魔攻+1, 負重+40, 經驗+16%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.5:</span> 近遠傷+3, 魔防+5, 魔攻+2, 負重+50, 經驗+20%
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(100,181,246,.08);padding:14px;border-radius:8px;border:1px solid rgba(100,181,246,.2);margin-bottom:20px">
+      <strong style="color:#64b5f6">✨ BUFF 類推廣勳章 (1 / 3 / 6 HR 共通能力)</strong>
+      <div style="margin-top:8px;font-size:.93em;color:#90caf9;font-weight:bold">HP +80, 魔力回復 +2, 魔防 +5, 傷害減免 +2, 爆擊 +3% (1倍), 負重 +50</div>
+      <div style="font-size:.82em;color:var(--text-muted);margin-top:4px">(兌換後即刻開始計時，不使用時請勿領取)</div>
+    </div>
+
+    <!-- 推廣兌獎券 -->
+    <div style="border:1px solid rgba(76,175,80,.3);border-radius:8px;padding:18px;background:rgba(76,175,80,.05);margin-bottom:24px">
+      <strong style="color:#66bb6a;font-size:1em">🎟️ 推廣兌獎券詳情</strong>
+      <p style="margin:5px 0 14px 0;color:var(--text-muted);font-size:.9em">開啟後可獲得以下道具：</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px;background:var(--bg2);padding:14px;border-radius:6px;border-left:4px solid #1e88e5">
+          <strong style="color:#64b5f6">🔵 必定開啟以下</strong>
+          <ul style="margin:8px 0 0 0;padding-left:0;color:var(--text-muted);font-size:.9em;line-height:1.9;list-style:none">
+            <li>🏹 穿雲箭(組隊) <span style="color:#64b5f6;font-weight:bold">1個</span></li>
+            <li>🏹 穿雲箭(血盟) <span style="color:#64b5f6;font-weight:bold">1個</span></li>
+          </ul>
+        </div>
+        <div style="flex:1;min-width:260px;background:var(--bg2);padding:14px;border-radius:6px;border-left:4px solid #ef6c00">
+          <strong style="color:#ffa726">🟠 機率開啟以下</strong>
+          <ul style="margin:8px 0 0 0;padding-left:0;color:var(--text-muted);font-size:.88em;line-height:1.8;list-style:none">
+            <li>💰 金幣 <span style="color:#ef5350;font-weight:bold">5000~10000</span></li>
+            <li>🧪 經驗藥水(200%/300%) <span style="color:#ef5350;font-weight:bold">1~5個</span></li>
+            <li>🌪️ 四大屬性武器卷軸 <span style="color:#ef5350;font-weight:bold">1~2個</span></li>
+            <li>⭐ 六芒星/戰馬/聖物升級石 <span style="color:#ef5350;font-weight:bold">1~2個</span></li>
+            <li>🛡️ 祝/咒/一般對武防卷軸 <span style="color:#ef5350;font-weight:bold">1~3個</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end tab-tweet -->
+
+  <!-- ══ TAB 2: 直播說明 ══ -->
+  <div id="tab-live" class="tab-content">
+
+    <!-- 行為規範 -->
+    <div style="background:rgba(249,168,37,.07);border:1px solid rgba(249,168,37,.25);border-radius:8px;padding:18px;margin-bottom:20px">
+      <h3 style="margin-top:0;color:#ffb74d;font-size:1em;border-left:4px solid #fbc02d;padding-left:10px">📢 推廣活動 ‧ 行為規範 📢</h3>
+      <p style="margin:10px 0 4px 0;font-weight:bold;color:var(--text)">【 推廣宗旨 】</p>
+      <p style="margin:0 0 14px 0;color:var(--text-muted);font-size:.93em">推廣本質應是「互利互惠」，在讓更多人看見大藍蕉天堂之餘，也讓熱心參與的玩家獲得實質回饋。</p>
+      <p style="margin:10px 0 4px 0;font-weight:bold;color:#ef5350">活動審核</p>
+      <p style="margin:0 0 4px 0;color:var(--text-muted);font-size:.9em">若發現以下惡意行為且屢勸不聽者，將嚴格執行禁止領取獎勵資格：</p>
+      <ul class="promo-ul">
+        <li>推文內容重複上傳或洗版行為。</li>
+        <li>同時多開直播、洗活動物資。</li>
+        <li>直播開始時未明確顯示「日期與時間」。</li>
+      </ul>
+      <div style="font-size:.88em;color:#ffa726;font-weight:bold;margin-top:6px">※ 旨在確保每位誠信推廣的玩家權益，請務必遵守活動規則。</div>
+    </div>
+
+    <!-- 直播規章 -->
+    <div class="promo-box">
+      <h3 class="promo-h3" style="color:#ef5350;border-left:4px solid #ef5350">📺 直播規章 (務必遵守)</h3>
+      <ul class="promo-ul">
+        <li><strong style="color:var(--text)">直播平台：</strong>FB天堂私服社團、Youtube、Twitch。</li>
+        <li><strong style="color:var(--text)">開播判定：</strong>需於螢幕喊話及輸入<strong style="color:var(--text)">白字</strong>（ID+幾月幾日幾點幾分）。</li>
+        <li><strong style="color:var(--text)">禁止掛網：</strong>直播禁止純掛網，超過 <span style="color:#ef5350;font-weight:bold">30 分鐘</span> 將取消資格。</li>
+        <li><strong style="color:var(--text)">時數上限：</strong>每日最高獎勵時數為 <strong style="color:var(--text)">3 小時</strong>（可分段，需備註）。</li>
+        <li><strong style="color:var(--text)">限制說明：</strong>一帳號限申請一次，嚴禁假影片或相同 IP 重複領取。</li>
+        <li><strong style="color:var(--text)">審核發放：</strong>每日 <span style="color:#64b5f6;font-weight:bold">24:00</span> 統一審核。</li>
+        <li style="color:#ef5350;font-weight:bold">⚠️ 補件限制：逾時上傳，不予補件發放。</li>
+      </ul>
+      <div style="margin-top:10px;background:rgba(239,83,80,.1);padding:8px 12px;border-radius:4px;color:#ef9a9a;font-size:.88em;font-weight:bold">
+        ⛔ 違規懲處：使用非本人、重複影片或相同 IP 直播，一律【封鎖帳號】。
+      </div>
+    </div>
+
+    <!-- 回報範例 + 推廣箱 -->
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-bottom:24px">
+      <div class="promo-box" style="margin:0">
+        <strong style="color:#64b5f6">📋 直播回報範例</strong>
+        <div class="report-form" style="margin-top:10px">
+          直播回報日期：<br>
+          遊戲ＩＤ：<br>
+          遊戲帳號：<br>
+          1.(網址)
+        </div>
+        <p style="margin:8px 0 0 0;color:#ef5350;font-size:.82em;font-weight:bold;text-align:center">※ 逾時上傳不予補發</p>
+        <p style="margin-top:8px;text-align:center">
+          <a href="https://web-hosts.net/share/6Vo0nTtP" target="_blank" style="background:var(--accent);color:#fff;padding:6px 15px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:.88em">👉 前往直播回報區</a>
+        </p>
+      </div>
+      <div class="promo-box" style="margin:0">
+        <strong style="color:#ffa726">🎁 直播推廣箱內容物</strong>
+        <div style="margin-top:10px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;text-align:center">
+            <thead>
+              <tr style="background:rgba(249,168,37,.12);color:#ffb74d">
+                <th style="padding:5px 8px;border:1px solid var(--border)">直播時數</th>
+                <th style="padding:5px 8px;border:1px solid var(--border)">藍鑽</th>
+                <th style="padding:5px 8px;border:1px solid var(--border)">推廣幣</th>
+                <th style="padding:5px 8px;border:1px solid var(--border)">BUFF勳章</th>
+              </tr>
+            </thead>
+            <tbody style="color:var(--text-muted)">
+              <tr><td style="border:1px solid var(--border);padding:5px">1 HR</td><td style="border:1px solid var(--border);padding:5px">60</td><td style="border:1px solid var(--border);padding:5px">15</td><td style="border:1px solid var(--border);padding:5px">1 個</td></tr>
+              <tr style="background:var(--bg2)"><td style="border:1px solid var(--border);padding:5px">2 HR</td><td style="border:1px solid var(--border);padding:5px">120</td><td style="border:1px solid var(--border);padding:5px">30</td><td style="border:1px solid var(--border);padding:5px">1 個</td></tr>
+              <tr><td style="border:1px solid var(--border);padding:5px">3 HR</td><td style="border:1px solid var(--border);padding:5px;color:#ef5350;font-weight:bold">150</td><td style="border:1px solid var(--border);padding:5px;color:#ef5350;font-weight:bold">45</td><td style="border:1px solid var(--border);padding:5px">1 個</td></tr>
+            </tbody>
+          </table>
+          <div style="font-size:.78em;color:var(--text-dim);margin-top:5px">※ 獎勵箱依據回報時數發放對應箱子。</div>
+        </div>
+      </div>
+    </div>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:24px 0">
+
+    <!-- 艾莉莉兌換清單（直播版） -->
+    <h3 style="color:#66bb6a;border-left:4px solid #4caf50;padding-left:10px;margin-bottom:14px">🎁 推廣商人「艾莉莉」兌換清單</h3>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:8px;margin-bottom:22px">
+      <table class="promo-table">
+        <thead><tr><th>兌換項目</th><th style="text-align:center;width:20%">所需幣/印章</th><th>兌換項目</th><th style="text-align:center;width:20%">所需幣/印章</th></tr></thead>
+        <tbody>
+          <tr><td>推廣勳章 LV.1 (限時7日)</td><td style="text-align:center;font-weight:bold">30</td><td>回憶蠟燭</td><td style="text-align:center;font-weight:bold">300</td></tr>
+          <tr><td>推廣勳章強化卷軸</td><td style="text-align:center;font-weight:bold">10</td><td>進化 / 勝利果實</td><td style="text-align:center;font-weight:bold">120 / 180</td></tr>
+          <tr><td>BUFF 勳章 (1 / 3 / 6HR)</td><td style="text-align:center;font-weight:bold">30 / 60 / 90</td><td>對武器祝福卷軸</td><td style="text-align:center;font-weight:bold">90</td></tr>
+          <tr><td>四大屬性武器強化卷</td><td style="text-align:center;font-weight:bold">6</td><td>對防具 / 飾品祝福卷</td><td style="text-align:center;font-weight:bold">30 / 45</td></tr>
+          <tr><td>不朽體力恢復劑系列</td><td style="text-align:center;font-weight:bold">360 ~ 900</td><td>魔法屏障卷軸 * 10</td><td style="text-align:center;font-weight:bold">30</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 勳章說明（直播版） -->
+    <h3 style="color:var(--text-muted);font-size:1em;margin-bottom:14px">🎖️ 推廣勳章屬性說明 (限時 7 日)</h3>
+    <div class="badge-box" style="margin-bottom:16px">
+      <div class="badge-item">
+        <strong style="color:#64b5f6">🏅 推廣勳章 LV.1 ~ LV.3</strong>
+        <div style="font-size:.88em;margin-top:8px;line-height:1.7;color:var(--text-muted)">
+          <span style="font-weight:bold;color:var(--text)">LV.1:</span> 近遠傷+1, 魔防+1, 魔攻+1, 負重+10, 經驗+10%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.2:</span> 近遠傷+1, 魔防+2, 魔攻+1, 負重+20, 經驗+12%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.3:</span> 近遠傷+2, 魔防+3, 魔攻+1, 負重+30, 經驗+14%
+        </div>
+      </div>
+      <div class="badge-item">
+        <strong style="color:#64b5f6">🏅 推廣勳章 LV.4 ~ LV.5</strong>
+        <div style="font-size:.88em;margin-top:8px;line-height:1.7;color:var(--text-muted)">
+          <span style="font-weight:bold;color:var(--text)">LV.4:</span> 近遠傷+2, 魔防+4, 魔攻+1, 負重+40, 經驗+16%<br>
+          <span style="font-weight:bold;color:var(--text)">LV.5:</span> 近遠傷+3, 魔防+5, 魔攻+2, 負重+50, 經驗+20%<br>
+          <span style="font-weight:bold;color:#ffa726">永久:</span> 力敏智+1 (LV.5進階，暫未開放)
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(100,181,246,.08);padding:14px;border-radius:8px;border:1px solid rgba(100,181,246,.2);margin-bottom:20px">
+      <strong style="color:#64b5f6">✨ 直播 BUFF 勳章效果 (1 / 2 / 3 HR)</strong>
+      <div style="margin-top:8px;font-size:.93em;color:#90caf9;font-weight:bold">HP +80, 魔力回復 +2, 魔防 +5, 傷害減免 +2, 爆擊 +3% (1倍), 負重 +50</div>
+      <div style="font-size:.82em;color:var(--text-muted);margin-top:4px">(兌換或領取後即刻開始計時)</div>
+    </div>
+
+    <div style="margin-top:20px;background:rgba(249,168,37,.08);padding:18px;border-radius:8px;border:2px dashed rgba(249,168,37,.4);text-align:center">
+      <strong style="color:#ffa726;font-size:1.1em">📸 直播請放入以下兩張圖片明顯標示</strong>
+    </div>
+
+  </div><!-- end tab-live -->
+
+</div>
+<footer><div class="footer-inner"><div><div class="footer-col-title">大藍蕉天堂</div><ul class="footer-links"><li><a href="index.html">首頁</a></li><li><a href="download.html">檔案下載</a></li><li><a href="sponsor.html">贊助系統</a></li></ul></div><div><div class="footer-col-title">遊戲資訊</div><ul class="footer-links"><li><a href="features.html">遊戲特色</a></li><li><a href="items.html">裝備與道具</a></li><li><a href="transform.html">變身介紹</a></li><li><a href="dolls.html">娃娃介紹</a></li><li><a href="boss.html">BOSS介紹</a></li><li><a href="maps.html">地圖介紹</a></li></ul></div></div><div class="footer-copy">© 2026 大藍蕉天堂</div></footer>
+<script src="main.js"></script>
+<script>
+function switchTab(name){
+  document.querySelectorAll('.page-tab').forEach((t,i)=>{
+    t.classList.toggle('active',(i===0&&name==='tweet')||(i===1&&name==='live'));
+  });
+  document.getElementById('tab-tweet').classList.toggle('active',name==='tweet');
+  document.getElementById('tab-live').classList.toggle('active',name==='live');
+}
+</script>
+</body></html>
