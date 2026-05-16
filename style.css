@@ -108,31 +108,81 @@ img { max-width:100%; display:block; }
   position:fixed; right:0; top:50%;
   transform:translateY(-50%);
   z-index:800;
-  display:flex; flex-direction:column; gap:2px;
+  display:flex; flex-direction:column; gap:4px;
 }
 
 .float-btn {
-  display:block; padding:10px 14px;
-  background:rgba(12,10,8,0.92);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:62px; height:68px;
+  background:#0e0c0a;
   border:1px solid var(--border);
   border-right:none;
+  border-left:3px solid var(--border);
   color:var(--text-dim);
-  font-size:0.75rem; letter-spacing:1px;
+  font-size:0.7rem; letter-spacing:1px;
   cursor:pointer; font-family:inherit;
-  text-align:left;
-  transition:all 0.2s;
-  writing-mode:horizontal-tb;
-  border-radius:4px 0 0 4px;
+  text-align:center;
+  transition:all 0.22s;
+  border-radius:8px 0 0 8px;
   white-space:nowrap;
+  gap:5px;
+  box-shadow:-2px 0 8px rgba(0,0,0,0.4);
+}
+.float-btn .fb-icon {
+  font-size:1.45rem; line-height:1;
+  display:block;
+}
+.float-btn .fb-icon img {
+  width:26px; height:26px; object-fit:contain; display:block;
+}
+.float-btn .fb-label {
+  font-size:0.65rem; letter-spacing:0.5px; line-height:1;
 }
 
 .float-btn:hover {
-  background:rgba(201,169,110,0.12);
-  color:var(--gold-light);
-  border-color:var(--border-hi);
+  width:70px;
+  background:#1a1510;
+  color:#fff;
 }
 
-.float-btn.sponsor { color:var(--gold); }
+/* 贊助 — 金色 */
+.float-btn.sponsor {
+  color:var(--gold);
+  border-left-color:#c9a96e;
+  box-shadow:-2px 0 10px rgba(201,169,110,0.25);
+}
+.float-btn.sponsor:hover {
+  background:#1a1400;
+  color:#ffd54f;
+  border-left-color:#ffd54f;
+  box-shadow:-4px 0 16px rgba(201,169,110,0.45);
+}
+
+/* 禮包 — 橘色 */
+.float-btn.gift {
+  color:#ffa726;
+  border-left-color:#ffa726;
+  box-shadow:-2px 0 10px rgba(255,167,38,0.2);
+}
+.float-btn.gift:hover {
+  background:#1a1100;
+  color:#ffcc80;
+  border-left-color:#ffcc80;
+  box-shadow:-4px 0 16px rgba(255,167,38,0.4);
+}
+
+/* LINE — 綠色 */
+.float-btn.line-btn {
+  color:#00c300;
+  border-left-color:#00c300;
+  box-shadow:-2px 0 10px rgba(0,195,0,0.2);
+}
+.float-btn.line-btn:hover {
+  background:#001a00;
+  color:#69f069;
+  border-left-color:#69f069;
+  box-shadow:-4px 0 16px rgba(0,195,0,0.4);
+}
 
 /* ══ Modal ══ */
 .float-modal {
